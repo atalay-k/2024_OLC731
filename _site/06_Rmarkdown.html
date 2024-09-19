@@ -215,6 +215,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1>Markdown</h1>
 <p>Bu bölümde kullanacağımız paketler şunlardır.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># bu bölüm için gerekli paketler</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse) <span class="co"># çeşitli veri manipülasyon fonksiyonları</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr) <span class="co"># tablo ve görüntü gösterimi için</span></span>
@@ -222,6 +224,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(papaja) <span class="co"># APA tarzı tablolar için</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt) <span class="co"># süslü tablolar için</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DT) <span class="co"># etkileşimli tablolar için</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <p>🔗İndir <a href="https://www.rstudio.org/links/r_markdown_cheat_sheet">R Markdown Cheat Sheet</a>.</p>
 <p>🔗İndir <a href="https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf">R Markdown Cheat Sheet TURKCE</a></p>
@@ -292,20 +295,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>Kodunuz çalışma dizininizin bir alt dizinindeki bir dosyaya ihtiyaç duyuyorsa (örneğin, import/veri1.txt), çalışma dizinini başka bir konuma veya bilgisayara taşıdığınızda erişilebilir olması için dosyayı göreli bir yol kullanarak yükleyin:</p></li>
 </ul>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">"import/veri1.txt"</span>)  <span class="co"># dogru</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <p>Bu dosyayı aşağıdaki gibi mutlak yol/adres ile yüklemeyin:</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">"c:/Users/Kubra/Desktop/OLC731/import/veri1.txt"</span>)  <span class="co"># yanlıs</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <ul>
 <li>Örnek veriyi düzgün aktarmak aşağıdaki kodla sağlanır.</li>
 </ul>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>(veri1 <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">"import/veri1.txt"</span>,</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>                    <span class="at">header=</span> <span class="cn">TRUE</span>,</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>                    <span class="at">sep=</span> <span class="st">";"</span>,</span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>                    <span class="at">dec=</span> <span class="st">","</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>   no m_1  m_2 m_3  m_4 m_5
 1 522  12 14.0  16 20.0  10
@@ -415,12 +427,17 @@ output:
 <li>Varsayılan şablonu kullanarak RStudio’da yeni bir R Markdown dosyası oluşturduğunuzda, otomatik olarak bir kurulum blogu oluşturulur.</li>
 </ul>
 <div class="cell" data-verbatim="r setup, include=FALSE">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">echo =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <ul>
 <li>Kod parçaları için daha fazla varsayılan seçeneği buradan ayarlayabilirsiniz. Olası seçeneklerin açıklamaları için knitr seçenekleri belgelerine bakın. <a href="https://yihui.name/knitr/options/" target="_blank">knitr dokumanı</a></li>
 </ul>
 <div class="cell" data-verbatim="r setup, include=FALSE">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">fig.width  =</span> <span class="dv">8</span>,</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">fig.height =</span> <span class="dv">5</span>,</span>
@@ -430,6 +447,7 @@ output:
 <span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">message    =</span> <span class="cn">FALSE</span>,</span>
 <span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">cache      =</span> <span class="cn">FALSE</span></span>
 <span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <p>Yukarıdaki kod aşağıdaki seçenekleri ayarlar:</p>
 <ul>
@@ -467,8 +485,11 @@ output:
 <li><p>İlk olarak, belgenizde bir kod bloğu oluşturun. Bu kod iris veri setini yükler.</p></li>
 </ul>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(datasets)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(iris)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 </section>
 <section id="yorumlar" class="level3">
@@ -477,12 +498,15 @@ output:
 <li>Kod blokları içine hash sembolü (#) ile yorum ekleyebilirsiniz. R yorumlayıcısı, hash’ten satır sonuna kadar olan karakterleri yoksayacaktır.</li>
 </ul>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">nrow</span>(iris) <span class="co"># toplam satır sayısı</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>mu <span class="ot">&lt;-</span> <span class="fu">mean</span>(iris<span class="sc">$</span>Petal.Length)  <span class="co"># taç yaprak uzunluğu ortalaması</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>sd <span class="ot">&lt;-</span> <span class="fu">sd</span>(iris<span class="sc">$</span>Petal.Length) <span class="co"># taç yaprak uzunluğu standart sapması</span></span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>simule_deger <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n, mu, sd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <ul>
 <li><p>Bir kod parçasını, özellikle kod rapor metninde açıklanmamışsa, orada ne yaptığınızı açıklayan bir yorumla başlatmak genellikle iyi bir uygulamadır.</p></li>
@@ -490,9 +514,12 @@ output:
 <li><p>Yorumların bir başka kullanımı da çalıştırmak istemediğiniz ancak silmek de istemediğiniz bir kod bölümünü “yorumlamaktır”. Örneğin, bir paketi yüklemek için kullanılan kodu kodunuza dahil edebilirsiniz, ancak kodun her çalıştırıldığında uzun bir yüklemeye zorlamaması için her zaman yorumlamanız gerekir.</p></li>
 </ul>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("dplyr")</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("tidyr")</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("ggplot2")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <div class="info">
 <p>Satırları seçip Cmd-shift-C (Mac) veya Ctrl-shift-C (Windows) yazarak aynı anda birden fazla satıra yorum yazabilir veya yorumu kaldırabilirsiniz.</p>
@@ -507,6 +534,8 @@ output:
 <li>Şimdi setosa ve virginica çiçek türlerinde yaprak uzunluklarını analiz edelim. Önce analiz kodunu çalıştıracağız. Daha sonra makalemizde kullanmak isteyebileceğimiz sayıları değişkenlere kaydedeceğiz ve uygun şekilde yuvarlayacağız. Son olarak, bir sonuçları biçimlendirmek için glue::glue() kullanacağız.</li>
 </ul>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># analiz</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>setosa_petal <span class="ot">&lt;-</span> <span class="fu">filter</span>(iris, Species <span class="sc">==</span> <span class="st">"setosa"</span>) <span class="sc">%&gt;%</span> <span class="fu">pull</span>(Petal.Length)</span>
@@ -523,6 +552,7 @@ output:
 <span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a><span class="co"># sonucları birleştirme</span></span>
 <span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>petal_result <span class="ot">&lt;-</span> glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">"t = {t}, df = {df}, p {p_symbol} {p}"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <ul>
 <li>Sonuçları, aşağıdaki gibi görünen satır içi R kodu ile bir paragrafa ekleyebilirsiniz:</li>
@@ -536,6 +566,8 @@ output:
 <li>Çalışmaların yöntem bölümüne betimsel bilgiler eklemek istediğimizde</li>
 </ul>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>ozet_tablo <span class="ot">&lt;-</span> iris <span class="sc">%&gt;%</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Species) <span class="sc">%&gt;%</span></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
@@ -544,6 +576,7 @@ output:
 <span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">sd =</span> <span class="fu">sd</span>(Petal.Length)</span>
 <span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  )</span>
 <span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>ozet_tablo</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 4
   Species        n ortalama    sd
@@ -564,12 +597,15 @@ output:
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>yeni_ad <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Çiçek Türü"</span>, <span class="st">"Frekans"</span>, <span class="st">"Ortalama"</span>, <span class="st">"Sd"</span>)</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(ozet_tablo,</span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">digits =</span> <span class="dv">2</span>,</span>
 <span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">col.names =</span> yeni_ad,</span>
 <span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">caption =</span> <span class="st">"Petal Uzulukları için Özet Tablo"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <table class="table table-sm table-striped small">
 <caption>Petal Uzulukları için Özet Tablo</caption>
@@ -608,6 +644,8 @@ output:
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <p><a href="https://haozhu233.github.io/kableExtra/awesome_table_in_html.html"><strong>kableExtra</strong></a> <strong>paketi çok sayıda seçenek sunar.</strong></p>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(ozet_tablo,</span>
@@ -618,6 +656,7 @@ output:
 <span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">full_width =</span> <span class="cn">FALSE</span>, <span class="at">font_size =</span> <span class="dv">20</span>) <span class="sc">|&gt;</span></span>
 <span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_header_above</span>(<span class="fu">c</span>(<span class="st">" "</span> <span class="ot">=</span> <span class="dv">2</span>, <span class="st">"Degerler"</span> <span class="ot">=</span> <span class="dv">2</span>)) <span class="sc">|&gt;</span></span>
 <span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>  kableExtra<span class="sc">::</span><span class="fu">row_spec</span>(<span class="dv">2</span>, <span class="at">bold =</span> <span class="cn">TRUE</span>, <span class="at">background =</span> <span class="st">"lightgrey"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <div>
 <table class="lightable-classic table table-sm table-striped small" data-quarto-postprocess="true">
@@ -672,10 +711,13 @@ Degerler
 <div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
 <p><a href="https://crsh.github.io/papaja_man/reporting.html#tables"><strong>papaja</strong></a> <strong>paketi ile APA formatında tablolar elde edebilirsiniz.</strong></p>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>papaja<span class="sc">::</span><span class="fu">apa_table</span>(ozet_tablo,</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>                  <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Çiçek Türü"</span>, <span class="st">"Frekans"</span>, <span class="st">"Ortalama"</span>, <span class="st">"Sd"</span>),</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>                  <span class="at">caption =</span> <span class="st">"Petal Uzulukları için Özet Tablo"</span>,</span>
 <span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>                  <span class="at">col_spanners =</span> <span class="fu">list</span>(<span class="st">"Means"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">4</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <table class="table table-sm table-striped small">
 <caption>(#tab:papaja-demo) Petal Uzulukları için Özet Tablo</caption>
@@ -714,6 +756,8 @@ Degerler
 <div id="tabset-1-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-4-tab">
 <p><a href="https://gt.rstudio.com/index.html"><strong>gt</strong></a> <strong>paketinde de çok sayıda seçenek bulunmaktadır.</strong></p>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="fu">gt</span>(ozet_tablo, <span class="at">caption =</span> <span class="st">"Petal Uzulukları için Özet Tablo"</span>) <span class="sc">|&gt;</span></span>
@@ -726,25 +770,26 @@ Degerler
 <span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_spanner</span>(<span class="at">label =</span> <span class="st">"Degerler"</span>,</span>
 <span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>              <span class="at">columns =</span> <span class="fu">c</span>(ortalama, sd)) <span class="sc">|&gt;</span></span>
 <span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">opt_stylize</span>(<span class="at">style =</span> <span class="dv">6</span>, <span class="at">color =</span> <span class="st">"blue"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <div>
-<div id="tecsjorjid" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#tecsjorjid table {
+<div id="woqcpprfvn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#woqcpprfvn table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#tecsjorjid thead, #tecsjorjid tbody, #tecsjorjid tfoot, #tecsjorjid tr, #tecsjorjid td, #tecsjorjid th {
+#woqcpprfvn thead, #woqcpprfvn tbody, #woqcpprfvn tfoot, #woqcpprfvn tr, #woqcpprfvn td, #woqcpprfvn th {
   border-style: none;
 }
 
-#tecsjorjid p {
+#woqcpprfvn p {
   margin: 0;
   padding: 0;
 }
 
-#tecsjorjid .gt_table {
+#woqcpprfvn .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -770,12 +815,12 @@ Degerler
   border-left-color: #D3D3D3;
 }
 
-#tecsjorjid .gt_caption {
+#woqcpprfvn .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#tecsjorjid .gt_title {
+#woqcpprfvn .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -787,7 +832,7 @@ Degerler
   border-bottom-width: 0;
 }
 
-#tecsjorjid .gt_subtitle {
+#woqcpprfvn .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -799,7 +844,7 @@ Degerler
   border-top-width: 0;
 }
 
-#tecsjorjid .gt_heading {
+#woqcpprfvn .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -811,13 +856,13 @@ Degerler
   border-right-color: #D3D3D3;
 }
 
-#tecsjorjid .gt_bottom_border {
+#woqcpprfvn .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #5F5F5F;
 }
 
-#tecsjorjid .gt_col_headings {
+#woqcpprfvn .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #5F5F5F;
@@ -832,7 +877,7 @@ Degerler
   border-right-color: #D3D3D3;
 }
 
-#tecsjorjid .gt_col_heading {
+#woqcpprfvn .gt_col_heading {
   color: #FFFFFF;
   background-color: #0076BA;
   font-size: 100%;
@@ -852,7 +897,7 @@ Degerler
   overflow-x: hidden;
 }
 
-#tecsjorjid .gt_column_spanner_outer {
+#woqcpprfvn .gt_column_spanner_outer {
   color: #FFFFFF;
   background-color: #0076BA;
   font-size: 100%;
@@ -864,15 +909,15 @@ Degerler
   padding-right: 4px;
 }
 
-#tecsjorjid .gt_column_spanner_outer:first-child {
+#woqcpprfvn .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#tecsjorjid .gt_column_spanner_outer:last-child {
+#woqcpprfvn .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#tecsjorjid .gt_column_spanner {
+#woqcpprfvn .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #5F5F5F;
@@ -884,11 +929,11 @@ Degerler
   width: 100%;
 }
 
-#tecsjorjid .gt_spanner_row {
+#woqcpprfvn .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#tecsjorjid .gt_group_heading {
+#woqcpprfvn .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -914,7 +959,7 @@ Degerler
   text-align: left;
 }
 
-#tecsjorjid .gt_empty_group_heading {
+#woqcpprfvn .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -929,15 +974,15 @@ Degerler
   vertical-align: middle;
 }
 
-#tecsjorjid .gt_from_md > :first-child {
+#woqcpprfvn .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#tecsjorjid .gt_from_md > :last-child {
+#woqcpprfvn .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#tecsjorjid .gt_row {
+#woqcpprfvn .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -956,7 +1001,7 @@ Degerler
   overflow-x: hidden;
 }
 
-#tecsjorjid .gt_stub {
+#woqcpprfvn .gt_stub {
   color: #333333;
   background-color: #89D3FE;
   font-size: 100%;
@@ -969,7 +1014,7 @@ Degerler
   padding-right: 5px;
 }
 
-#tecsjorjid .gt_stub_row_group {
+#woqcpprfvn .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -983,15 +1028,15 @@ Degerler
   vertical-align: top;
 }
 
-#tecsjorjid .gt_row_group_first td {
+#woqcpprfvn .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#tecsjorjid .gt_row_group_first th {
+#woqcpprfvn .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#tecsjorjid .gt_summary_row {
+#woqcpprfvn .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1001,16 +1046,16 @@ Degerler
   padding-right: 5px;
 }
 
-#tecsjorjid .gt_first_summary_row {
+#woqcpprfvn .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #5F5F5F;
 }
 
-#tecsjorjid .gt_first_summary_row.thick {
+#woqcpprfvn .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#tecsjorjid .gt_last_summary_row {
+#woqcpprfvn .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1020,7 +1065,7 @@ Degerler
   border-bottom-color: #5F5F5F;
 }
 
-#tecsjorjid .gt_grand_summary_row {
+#woqcpprfvn .gt_grand_summary_row {
   color: #333333;
   background-color: #D5D5D5;
   text-transform: inherit;
@@ -1030,7 +1075,7 @@ Degerler
   padding-right: 5px;
 }
 
-#tecsjorjid .gt_first_grand_summary_row {
+#woqcpprfvn .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1040,7 +1085,7 @@ Degerler
   border-top-color: #5F5F5F;
 }
 
-#tecsjorjid .gt_last_grand_summary_row_top {
+#woqcpprfvn .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1050,11 +1095,11 @@ Degerler
   border-bottom-color: #5F5F5F;
 }
 
-#tecsjorjid .gt_striped {
+#woqcpprfvn .gt_striped {
   background-color: #EDF7FC;
 }
 
-#tecsjorjid .gt_table_body {
+#woqcpprfvn .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #5F5F5F;
@@ -1063,7 +1108,7 @@ Degerler
   border-bottom-color: #5F5F5F;
 }
 
-#tecsjorjid .gt_footnotes {
+#woqcpprfvn .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1077,7 +1122,7 @@ Degerler
   border-right-color: #D3D3D3;
 }
 
-#tecsjorjid .gt_footnote {
+#woqcpprfvn .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1086,7 +1131,7 @@ Degerler
   padding-right: 5px;
 }
 
-#tecsjorjid .gt_sourcenotes {
+#woqcpprfvn .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1100,7 +1145,7 @@ Degerler
   border-right-color: #D3D3D3;
 }
 
-#tecsjorjid .gt_sourcenote {
+#woqcpprfvn .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1108,72 +1153,72 @@ Degerler
   padding-right: 5px;
 }
 
-#tecsjorjid .gt_left {
+#woqcpprfvn .gt_left {
   text-align: left;
 }
 
-#tecsjorjid .gt_center {
+#woqcpprfvn .gt_center {
   text-align: center;
 }
 
-#tecsjorjid .gt_right {
+#woqcpprfvn .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#tecsjorjid .gt_font_normal {
+#woqcpprfvn .gt_font_normal {
   font-weight: normal;
 }
 
-#tecsjorjid .gt_font_bold {
+#woqcpprfvn .gt_font_bold {
   font-weight: bold;
 }
 
-#tecsjorjid .gt_font_italic {
+#woqcpprfvn .gt_font_italic {
   font-style: italic;
 }
 
-#tecsjorjid .gt_super {
+#woqcpprfvn .gt_super {
   font-size: 65%;
 }
 
-#tecsjorjid .gt_footnote_marks {
+#woqcpprfvn .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#tecsjorjid .gt_asterisk {
+#woqcpprfvn .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#tecsjorjid .gt_indent_1 {
+#woqcpprfvn .gt_indent_1 {
   text-indent: 5px;
 }
 
-#tecsjorjid .gt_indent_2 {
+#woqcpprfvn .gt_indent_2 {
   text-indent: 10px;
 }
 
-#tecsjorjid .gt_indent_3 {
+#woqcpprfvn .gt_indent_3 {
   text-indent: 15px;
 }
 
-#tecsjorjid .gt_indent_4 {
+#woqcpprfvn .gt_indent_4 {
   text-indent: 20px;
 }
 
-#tecsjorjid .gt_indent_5 {
+#woqcpprfvn .gt_indent_5 {
   text-indent: 25px;
 }
 
-#tecsjorjid .katex-display {
+#woqcpprfvn .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#tecsjorjid div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#woqcpprfvn div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1224,9 +1269,12 @@ Degerler
 <h4 class="anchored" data-anchor-id="manuel-tablo">Manuel tablo</h4>
 <p>Tablo eklemek için diğer bir yol ise elle tablo oluşturmaktadır. Tablo oluşturulmak istendiğinde aşağıdaki şekilde eklenebilir.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="sc">|</span> col1   <span class="sc">|</span>col2    <span class="sc">|</span>  </span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="er">|:</span><span class="sc">------</span><span class="er">:|:</span><span class="sc">------</span><span class="er">:|</span></span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="er">|</span>içerik1 <span class="sc">|</span>içerik2 <span class="sc">|</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <p>Yukarıdaki içerik örüldüğünde aşağıdaki tablo oluşmaktadır.</p>
 <table class="table">
@@ -1252,6 +1300,8 @@ Degerler
 <li>Şekil başlığının kod bloğında nasıl biçimlendirildiğine dikkat edin.</li>
 </ul>
 <div class="cell" data-verbatim="r boxplot">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">subset</span>(iris, Species <span class="sc">!=</span> <span class="st">"versicolor"</span>)</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>dat<span class="sc">$</span>Species <span class="ot">&lt;-</span> <span class="fu">factor</span>(dat<span class="sc">$</span>Species)</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1260,6 +1310,7 @@ Degerler
 <span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>               <span class="at">show.legend =</span> <span class="cn">FALSE</span>)  <span class="sc">+</span></span>
 <span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">""</span>, <span class="at">y =</span> <span class="st">"Petal Uzunluğu"</span>) <span class="sc">+</span></span>
 <span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">20</span>, <span class="at">family =</span> <span class="st">"Times"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -1301,10 +1352,16 @@ Degerler
 <li><p>Tablolara ve şekillere bağlantılar oluşturmak için, şekillerinizi veya tablolarınızı oluşturan kod bloklarınız adlandırmanız ve ardından satır içi kodlamanızda bu adları çağırmanız gerekir:</p></li>
 </ul>
 <div class="cell" data-verbatim="r tablo1">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># kodlar</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <div class="cell" data-verbatim="r sekil1">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># kodlar</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <pre><code>Bakınız Tablo\ \@ref(tab:tablo1) or Sekil\ \@ref(fig:sekil1).</code></pre>
 <div class="warning">
@@ -1450,7 +1507,10 @@ csl: apa.csl
 <p>See <a href="https://www.bibtex.com/g/bibtex-format/" target="_blank">A complete guide to the BibTeX format</a> kitaplara, teknik raporlara ve daha fazlasına atıfta bulunma talimatları için.</p>
 <p>Bir R paketinin referansını <code>citation()</code> ve <code>toBibtex()</code> fonksiyonlarını kullanarak alabilirsiniz. Bibtex girişini bibliography.bib dosyanıza yapıştırabilirsiniz. Referansa atıfta bulunmak için ilk virgülden önce kısa bir ad (örneğin, “ggplot2”) eklediğinizden emin olun.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">citation</span>(<span class="at">package=</span><span class="st">"ggplot2"</span>) <span class="sc">%&gt;%</span> <span class="fu">toBibtex</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>@Book{,
   author = {Hadley Wickham},
@@ -1508,7 +1568,10 @@ csl: apa.csl
 <p>Bazı paketler özel R Markdown şablonları sağlar. reprores, YAML başlığındaki tüm olası seçenekleri gösteren, kaynakça ve stil dosyalarına sahip olan ve bağlantılı şekil ve tabloların nasıl ayarlanacağını açıklayan bir Rapor şablonuna sahiptir. Birden fazla dosya içerdiğinden, RStudio sizden tüm dosyaları tutmak için yeni bir klasör oluşturmanızı isteyecektir.</p>
 <p>Ödevinizi yapmak için aşağdaki kodla reproses pakeini yükleyebilirsiniz.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># devtools::install_github("psyteachr/reprores-v3")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <p>Daha sonra aşağıdaki gibi taslağı (template) açabilirsiniz. Örnek dosyayı inceledikten sonra kendi içerieğinizi oluşturabilirsiniz.</p>
 <div class="cell">
