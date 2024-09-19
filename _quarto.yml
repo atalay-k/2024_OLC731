@@ -1,0 +1,26 @@
+project:
+  type: website
+
+website:
+  title: "2024_OLC731"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Ders
+      - about.qmd
+
+format:
+  html:
+    theme: cerulean
+    css: slides-style.css
+    toc: true
+    code-fold: true # Useful for speeding up code-heavy pages
+
+editor: visual
+
+knitr:
+  opts_chunk:
+    cache: true
+    warning: false
+    message: false
+
