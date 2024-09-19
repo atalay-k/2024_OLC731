@@ -1,0 +1,27 @@
+body {
+    font-size: 22px;
+}
+
+pre code {
+    font-size: 18px; /* R code chunk için yazı tipi boyutu */
+}
+
+pre {
+    font-size: 20px; /* Kod bloğu çıktıları için yazı tipi boyutu */
+    background-color: #f5f5f5; /* Arka plan rengi */
+    padding: 10px; /* İç boşluk */
+    border-radius: 5px; /* Köşe yuvarlama */
+}
+
+.handwriting {
+  font-family: 'Gochi Hand', cursive;
+  color: #5DADE2; /* Deniz mavisi renk */
+  font-size: 125%;
+}
+
+.small code {
+    font-size: 12px; /* Satır içi kodlar için yazı tipi boyutu */
+    background-color: #f5f5f5; /* Arka plan rengi */
+    padding: 2px 4px; /* İç boşluk */
+    border-radius: 4px; /* Köşe yuvarlama */
+}
