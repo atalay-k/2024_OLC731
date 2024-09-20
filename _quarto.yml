@@ -1,6 +1,6 @@
 project:
   type: website
-  output-dir: docs   # Specify 'docs' as the output directory
+  output-dir: "docs"   # Specify 'docs' as the output directory
 
 website:
   title: "2024_OLC731"
@@ -24,4 +24,7 @@ knitr:
     cache: true
     warning: false
     message: false
+    
+
+
 

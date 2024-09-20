@@ -1,8 +1,0 @@
-
-
-| Col1        | Gözlenen Puan          | Col3           | Col4           | Col5           |   
-|-------------|----------------|----------------|----------------|----------------|
-| Model       | İki Kategorili | Çok Kategorili | İki Kategorili | Çok Kategorili |   
-| Paramterik Olmayan  |                |                |                |                |   
-| Parametrik          |                |                |                |                |   
-
