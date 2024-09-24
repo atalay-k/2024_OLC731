@@ -220,6 +220,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>RStudio, R ile çalışmayı kolaylaştıran bir Entegre Geliştirme Ortamıdır (Integrated Development Environment[IDE]).</p></li>
 <li><p>Bunu İngilizce bilmek ve kitap yazmak için NotePad gibi düz bir metin editörü kullanmak ile Microsoft Word gibi bir kelime işlemci kullanmak gibi düşünün. Bunu yapabilirsiniz, ancak bu kadar iyi görünmez ve yazım denetimi ve biçimlendirme gibi şeyler olmadan çok daha zor olur. Benzer bir şekilde, <strong>R Studio olmadan da R kullanabilirsiniz ancak bunu tavsiye etmiyorum.</strong></p></li>
 <li><p>Unutmamanız gereken en önemli şey, bu ders için tüm çalışmalarınızı RStudio kullanarak yapacak olsanız da, aslında iki yazılım parçasını da kullanıyorsunuz, bu da zaman zaman her ikisinin de <strong>ayrı güncellemeleri</strong> olabileceği anlamına geliyor.</p></li>
+<li><p>R versiyonunu güncellerken installr paketini etkinleştirip <code>installr(GUI=TRUE)</code> komutunu çalıştırın. Bu komut size sıra ile yapılacakları söyleyecektir. Ancak bu komutu Rstudiodan değil doğrudan R üzerinden çalıştırınız.</p></li>
 <li><p>R’yi ölçme için kullanmanın iki yolu vardır. İlk olarak, web tarayıcınız aracılığıyla R ve R’nin çevrimiçi bir sürümünü kullanabilirsiniz (<strong>R server/sunucusu)</strong>. İkincisi, R ve RStudio’yu dizüstü veya masaüstü bilgisayarınıza ücretsiz olarak indirip kurabilirsiniz.</p></li>
 </ul>
 </section>
@@ -304,6 +305,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>Benim açıklamalarım yetmediyse R’yi bilgisayarınızda kullanmak için, lütfen daha ayrıntılı talimatlar ve indirmeniz gereken dosyaların bağlantılarının yanı sıra R’yi farklı bilgisayar türlerine yüklemek için bir dizi kılavuza bağlantılar içeren <a href="https://psyteachr.github.io/data-skills-v1/installing-r.html">Installing R</a> adresine bakın!!</p></li>
 <li><p>Yüklemeler konusunda daha da fazlasına ihtiyacımız var ise <a href="https://psyteachr.github.io/data-skills-v1/appendix-updating-r.html">R studio R</a> !</p></li>
 <li><p>Verilen linkte yer alsa da ayrıca eklemeye ihtiyaç duyduğum bağlantılar:</p></li>
+</ul>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+!!!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Java ve Rtools sadece Windows kullanıcıları için gereklidir.</p>
+</div>
+</div>
+<ul>
 <li><p><a href="https://javadl.oracle.com/webapps/download/AutoDL?BundleId=245479_4d5417147a92418ea8b615e228bb6935">Java</a></p></li>
 <li><p><a href="https://cloud.r-project.org/bin/windows/Rtools/">Rtools</a> Rtools, kaynak koddan derleme yapmaya yarayan araçları içeren bir R yardımcısıdır. <strong>Önemli:</strong> Eğer Windows kullanıyorsanız, ayrıca Rtools yüklemeniz gerekir.</p></li>
 <li><p>devtools</p></li>
@@ -422,7 +438,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>çıkarma işlemi için <strong>-</strong>,</p></li>
 <li><p>çarpma işlemi için <strong>*</strong>,</p></li>
 <li><p>bölme işlemi için <strong>/</strong>,</p></li>
-<li><p>üs alma işlemi için <strong>^</strong> veya *</p></li>
+<li><p>üs alma işlemi için <strong>^</strong></p></li>
 <li><p>mod alma icin ise <strong>%%</strong> operatorleri kullanılmaktadır.</p></li>
 <li><p>Kodlamanızın büyük bir kısmı nesne oluşturmayı ve nesneleri manipüle etmeyi içerecektir. Nesneler bir şeyler içerir. Bu şeyler sayılar, kelimeler veya işlemlerin ve analizlerin sonucu olabilir</p></li>
 </ul>
