@@ -261,8 +261,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>Show <span class="cf">in</span> New Window</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>── Attaching core tidyverse packages ────── tidyverse <span class="dv">2</span>.<span class="fl">0.0</span> ──</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>✔ forcats   <span class="dv">1</span>.<span class="fl">0.0</span>     ✔ readr     <span class="dv">2</span>.<span class="fl">1.5</span></span>
@@ -274,7 +272,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>✖ dplyr<span class="sc">::</span><span class="fu">lag</span>()    masks stats<span class="sc">::</span><span class="fu">lag</span>()</span>
 <span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>✖ MASS<span class="sc">::</span><span class="fu">select</span>()  masks dplyr<span class="sc">::</span><span class="fu">select</span>()</span>
 <span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>ℹ Use the conflicted package to force all conflicts to become errors</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 <ul>
 <li><p>Bir hata mesajı gibi görünen bir şey alacaksınız - öyle değil. Bu sadece R’nin size ne yaptığını anlatmasıdır.</p></li>
@@ -326,8 +323,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(MASS)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>Attaching package<span class="sc">:</span> ‘dplyr’</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>The following objects are masked from ‘package<span class="sc">:</span>stats’<span class="sc">:</span></span>
@@ -344,7 +339,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>The following object is masked from ‘package<span class="sc">:</span>dplyr’<span class="sc">:</span></span>
 <span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>    select</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 <ul>
 <li><p>Bu durumda, R size <code>dplyr</code> paketindeki <code>select()</code> fonksiyonunun aynı isimli başka bir fonksiyon tarafından gizlendiğini (veya ‘maskelendiğini’) söylüyor. Eğer <code>select()</code> fonksiyonunu kullanmayı deneseydiniz, R en son yüklenen paketteki fonksiyonu kullanacaktı - bu durumda <code>MASS</code> fonksiyonunu kullanacaktı.</p></li>
