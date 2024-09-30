@@ -5,4 +5,5 @@
 *.qmd
 *.Rproj
 *.R
+*.docx
 /.quarto/

@@ -316,7 +316,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="conflicts" class="level2">
 <h2 class="anchored" data-anchor-id="conflicts">Paket çakışmaları</h2>
 <ul>
-<li>Daha da fazla fonksiyona sahip binlerce farklı R paketi vardır. Ne yazık ki, bazen farklı paketler aynı fonksiyon isimlerine sahiptir. Örneğin, <code>dplyr</code> ve <code>MASS</code> paketlerinin her ikisi de <code>select()</code> adında bir fonksiyona sahiptir. Bu paketlerin her ikisini de yüklerseniz, R size bir çakışma olduğunu söyleyen bir uyarı üretecektir.</li>
+<li>Daha da fazla fonksiyona sahip binlerce farklı R paketi vardır. Ne yazık ki, bazen farklı paketler aynı fonksiyon isimlerine sahiptir. Örneğin, <code>dplyr</code> ve <code>MASS</code> paketlerinin her ikisi de <code>select()</code> adında bir fonksiyona sahiptir. Bu paketlerin her ikisini de etkinleştirirseniz, R size bir çakışma olduğunu söyleyen bir uyarı üretecektir.</li>
 </ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
