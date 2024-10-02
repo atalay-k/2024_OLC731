@@ -372,10 +372,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>x <span class="sc">+</span> y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 2 4 4 6 6</code></pre>
 </div>
@@ -471,7 +468,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Vektörlerden eleman sırası, isim ve mantıksal operatörler olmak üzere üç farklı yolla eleman seçilebilir.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>ad  <span class="ot">&lt;-</span>  <span class="fu">c</span>(<span class="st">"Ali"</span>,<span class="st">"Elif"</span>,<span class="st">"Su"</span>,<span class="st">"Deniz"</span>,<span class="st">"Aras"</span>,<span class="st">"Berk"</span>,<span class="st">"Can"</span>,<span class="st">"Ece"</span>,<span class="st">"Efe"</span>,<span class="st">"Arda"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>ad  <span class="ot">&lt;-</span>  <span class="fu">c</span>(<span class="st">"Ali"</span>,<span class="st">"Elif"</span>,<span class="st">"Su"</span>,<span class="st">"Deniz"</span>,<span class="st">"Aras"</span>,</span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>          <span class="st">"Berk"</span>,<span class="st">"Can"</span>,<span class="st">"Ece"</span>,<span class="st">"Efe"</span>,<span class="st">"Arda"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>ad vektörünün 1. elemanı</li>
@@ -625,9 +623,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>10 kişiden oluşan bir gruptaki kişilerinin boy ve kilo ölçümleri için ise aşağıdaki vektör oluşturulmuştur.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a>ad  <span class="ot">&lt;-</span>  <span class="fu">c</span>(<span class="st">"Ali"</span>,<span class="st">"Elif"</span>,<span class="st">"Su"</span>,<span class="st">"Deniz"</span>,<span class="st">"Aras"</span>,<span class="st">"Berk"</span>,<span class="st">"Can"</span>,<span class="st">"Ece"</span>,<span class="st">"Efe"</span>,<span class="st">"Arda"</span>)</span>
-<span id="cb81-2"><a href="#cb81-2" aria-hidden="true" tabindex="-1"></a>boy <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">160</span>,<span class="dv">165</span>,<span class="dv">170</span>,<span class="dv">155</span>,<span class="dv">167</span>,<span class="dv">162</span>,<span class="dv">169</span>,<span class="dv">158</span>,<span class="dv">160</span>,<span class="dv">164</span>)</span>
-<span id="cb81-3"><a href="#cb81-3" aria-hidden="true" tabindex="-1"></a>kilo <span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">50</span>,<span class="dv">55</span>,<span class="dv">57</span>,<span class="dv">50</span>,<span class="dv">48</span>,<span class="dv">65</span>,<span class="dv">58</span>,<span class="dv">62</span>,<span class="dv">45</span>,<span class="dv">47</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a>ad  <span class="ot">&lt;-</span>  <span class="fu">c</span>(<span class="st">"Ali"</span>,<span class="st">"Elif"</span>,<span class="st">"Su"</span>,<span class="st">"Deniz"</span>,<span class="st">"Aras"</span>,</span>
+<span id="cb81-2"><a href="#cb81-2" aria-hidden="true" tabindex="-1"></a>          <span class="st">"Berk"</span>,<span class="st">"Can"</span>,<span class="st">"Ece"</span>,<span class="st">"Efe"</span>,<span class="st">"Arda"</span>)</span>
+<span id="cb81-3"><a href="#cb81-3" aria-hidden="true" tabindex="-1"></a>boy <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">160</span>,<span class="dv">165</span>,<span class="dv">170</span>,<span class="dv">155</span>,<span class="dv">167</span>,<span class="dv">162</span>,<span class="dv">169</span>,<span class="dv">158</span>,<span class="dv">160</span>,<span class="dv">164</span>)</span>
+<span id="cb81-4"><a href="#cb81-4" aria-hidden="true" tabindex="-1"></a>kilo <span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">50</span>,<span class="dv">55</span>,<span class="dv">57</span>,<span class="dv">50</span>,<span class="dv">48</span>,<span class="dv">65</span>,<span class="dv">58</span>,<span class="dv">62</span>,<span class="dv">45</span>,<span class="dv">47</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>Eğer elimizdeki vektör isimlendirilmiş bir vektör ise eleman seçimini isimle de yapabiliriz.</li>
@@ -880,9 +879,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="alıştırma-1">Alıştırma</h2>
 <p>BKI vücut ağırlığınızın metre cinsinden boy uzunluğunun karesine bölünmesi ile elde edilmektedir. Her bir bireye ait BKI değerini hesaplayınız. BKI değerlerinin ortalaması kaçtır (iki ondalığa yuvarlayınız)?</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb125"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb125-1"><a href="#cb125-1" aria-hidden="true" tabindex="-1"></a>ad  <span class="ot">&lt;-</span>  <span class="fu">c</span>(<span class="st">"Ali"</span>,<span class="st">"Elif"</span>,<span class="st">"Su"</span>,<span class="st">"Deniz"</span>,<span class="st">"Aras"</span>,<span class="st">"Berk"</span>,<span class="st">"Can"</span>,<span class="st">"Ece"</span>,<span class="st">"Efe"</span>,<span class="st">"Arda"</span>)</span>
-<span id="cb125-2"><a href="#cb125-2" aria-hidden="true" tabindex="-1"></a>boy <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">160</span>,<span class="dv">165</span>,<span class="dv">170</span>,<span class="dv">155</span>,<span class="dv">167</span>,<span class="dv">162</span>,<span class="dv">169</span>,<span class="dv">158</span>,<span class="dv">160</span>,<span class="dv">164</span>)</span>
-<span id="cb125-3"><a href="#cb125-3" aria-hidden="true" tabindex="-1"></a>kilo <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">55</span>,<span class="dv">55</span>,<span class="dv">57</span>,<span class="dv">50</span>,<span class="dv">48</span>,<span class="dv">65</span>,<span class="dv">58</span>,<span class="dv">62</span>,<span class="dv">45</span>,<span class="dv">47</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb125"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb125-1"><a href="#cb125-1" aria-hidden="true" tabindex="-1"></a>ad  <span class="ot">&lt;-</span>  <span class="fu">c</span>(<span class="st">"Ali"</span>,<span class="st">"Elif"</span>,<span class="st">"Su"</span>,<span class="st">"Deniz"</span>,<span class="st">"Aras"</span>,</span>
+<span id="cb125-2"><a href="#cb125-2" aria-hidden="true" tabindex="-1"></a>          <span class="st">"Berk"</span>,<span class="st">"Can"</span>,<span class="st">"Ece"</span>,<span class="st">"Efe"</span>,<span class="st">"Arda"</span>)</span>
+<span id="cb125-3"><a href="#cb125-3" aria-hidden="true" tabindex="-1"></a>boy <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">160</span>,<span class="dv">165</span>,<span class="dv">170</span>,<span class="dv">155</span>,<span class="dv">167</span>,<span class="dv">162</span>,<span class="dv">169</span>,<span class="dv">158</span>,<span class="dv">160</span>,<span class="dv">164</span>)</span>
+<span id="cb125-4"><a href="#cb125-4" aria-hidden="true" tabindex="-1"></a>kilo <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">55</span>,<span class="dv">55</span>,<span class="dv">57</span>,<span class="dv">50</span>,<span class="dv">48</span>,<span class="dv">65</span>,<span class="dv">58</span>,<span class="dv">62</span>,<span class="dv">45</span>,<span class="dv">47</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <details class="code-fold">
@@ -1234,10 +1234,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb204"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb204-1"><a href="#cb204-1" aria-hidden="true" tabindex="-1"></a><span class="fu">is.double</span>(y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] FALSE</code></pre>
 </div>
@@ -1301,14 +1298,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tbody>
 </table>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb209"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb209-1"><a href="#cb209-1" aria-hidden="true" tabindex="-1"></a>Geçme notlarının minumum değeri<span class="sc">:</span></span>
 <span id="cb209-2"><a href="#cb209-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb209-3"><a href="#cb209-3" aria-hidden="true" tabindex="-1"></a>Geçme notlarının ortalama değeri<span class="sc">:</span></span>
 <span id="cb209-4"><a href="#cb209-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb209-5"><a href="#cb209-5" aria-hidden="true" tabindex="-1"></a>Geçme notlarının maksimum değeri<span class="sc">:</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 <p><strong>S2.</strong> Birden n’e kadar olan sayların toplamını hesaplayan fonksiyon yazımı <code>toplam()</code> tek argümanlı fonksiyon oluşturunuz. Argüman değeri 5 olduğunda 1+2+3+4+5=15 değerini versin.</p>
 <ul>
@@ -1327,7 +1321,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1><strong>ODEV</strong></h1>
 <ul>
 <li><p>Kitap Bölüm 2 1. Soruyu tamamlayınız.</p></li>
-<li><p>swirl package - learn R in R (Programming ilk 6 modul)</p></li>
+<li><p>swirl package - learn R in R (Programming ilk 9 modul) bitimediyseniz tamamlayınız</p></li>
 <li><p>datacamp ödevinizi yapmayını unutmayın 😄</p></li>
 </ul>
 

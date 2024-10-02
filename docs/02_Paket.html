@@ -284,26 +284,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="paket-yükleme-yaygın-hatalar">Paket yükleme yaygın hatalar</h2>
 <ol type="1">
 <li><p>Bazı paketler daha yeni bir R sürümü gerektirir bu nedenler R’yi düzenli olarak en son sürüme güncelleyin. Ayrıca güncelledikten sonra eski R versiyonlarını bilgisayarınızdan kaldırınız.</p></li>
-<li><p>Birden fazla R sürümünüz olduğunda ya da bilgisyarınızda birden fazla kullanıcı olduğunda “Permission Denied” hatası alırsınız. Bu sorundan kurtalmak için eski R versiyonlarını bilgisayarınızdan kaldırınız ve R’i yönetici olarak çalıştırınız.</p></li>
+<li><p>Birden fazla R sürümünüz olduğunda ya da bilgisyarınızda birden fazla kullanıcı olduğunda “Permission Denied” hatası alabilirsiniz. Bu sorundan kurtalmak için eski R versiyonlarını bilgisayarınızdan kaldırınız ve/ve ya R’i yönetici olarak çalıştırınız.</p></li>
 <li><p>Birçok R paketi diğer paketlere bağlıdır ve bu bağımlı olduğu paketler yüklenmez veya güncellenmezse kurulum başarısız olur. R paketlerinizi de güncel tutun.</p></li>
-<li><p>Rcpp veya rJava gibi bazı R paketleri harici sistem kütüphanelerine bağlıdır. Eğer bunlar sisteminizde yüklü değilse, paket kurulumu başarısız olur.</p></li>
+<li><p>Rcpp veya rJava gibi bazı R paketleri harici sistem kütüphanelerine bağlıdır. Eğer bunlar sisteminizde yüklü değilse, paket kurulumu başarısız olur. Hata mesajlarını dikkatli okuyunuz.</p></li>
 <li><p>Bazen paket depoları (CRAN) geçici olarak kapalı olabilir veya ağ sorunları bunlara erişimi engelleyebilir. Bu durumda internet bağlantınızı kontrol edin. Eğer stabilse, farklı bir yolla yüklemeyi deneyin.</p></li>
 <li><p>Eski paketler arşivlenmiş veya kullanımdan kaldırılmış olabilir ve CRAN üzerinden kurulum için mevcut olmayabilir. Eski sürümler için CRAN arşivini kontrol edip, cranden indirip zip ya da tar.zg uzantılı paketi yükleyebilirsiniz.</p></li>
-<li><p>Bazen indirilen paketlerin önbelleği bozularak kurulum hatalarına yol açabilir. İndirilen paketler için geçici dizini silerek veya çalıştırarak önbelleği temizleyerek yükleyebilirsiniz.</p>
-<div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"your_package"</span>, <span class="at">clean =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div></li>
-<li><p>Büyük paketlerin veya çok sayıda bağımlılığı olanların yüklenmesi uzun sürebilir veya bellek kısıtlamaları nedeniyle başarısız olabilir. İşlemi paralelleştirerek kurulumu hızlandırmak için Ncpus bağımsız değişkenini kullanılabilir.</p>
-<div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"your_package"</span>, <span class="at">Ncpus =</span> parallel<span class="sc">::</span><span class="fu">detectCores</span>() <span class="sc">-</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div></li>
+<li><p>Bazen indirilen paketlerin önbelleği bozularak kurulum hatalarına yol açabilir. İndirilen paketler için geçici dizini silerek veya çalıştırarak önbelleği temizleyerek yükleyebilirsiniz.</p></li>
 </ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"your_package"</span>, <span class="at">clean =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="8" type="1">
+<li>Büyük paketlerin veya çok sayıda bağımlı olduğu paket olan paketlerde yükleme uzun sürebilir veya bellek kısıtlamaları nedeniyle başarısız olabilir. İşlemi paralelleştirerek kurulumu hızlandırmak için Ncpus argümanı kullanılabilir.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"your_package"</span>, <span class="at">Ncpus =</span> parallel<span class="sc">::</span><span class="fu">detectCores</span>() <span class="sc">-</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="github-paketleri-yükleme" class="level2">
 <h2 class="anchored" data-anchor-id="github-paketleri-yükleme">Github paketleri yükleme</h2>

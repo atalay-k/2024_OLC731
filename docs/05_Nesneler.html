@@ -158,6 +158,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#veri-yapısı-inceleme" id="toc-veri-yapısı-inceleme" class="nav-link" data-scroll-target="#veri-yapısı-inceleme">Veri yapısı inceleme</a></li>
   <li><a href="#isimlendirme" id="toc-isimlendirme" class="nav-link" data-scroll-target="#isimlendirme">Isimlendirme</a></li>
   <li><a href="#betimsel-istatistikler" id="toc-betimsel-istatistikler" class="nav-link" data-scroll-target="#betimsel-istatistikler">Betimsel istatistikler</a></li>
+  <li><a href="#listeler" id="toc-listeler" class="nav-link" data-scroll-target="#listeler">Listeler</a></li>
   </ul></li>
   <li><a href="#kendinizi-test-edin" id="toc-kendinizi-test-edin" class="nav-link" data-scroll-target="#kendinizi-test-edin">Kendinizi Test Edin</a></li>
   <li><a href="#odev" id="toc-odev" class="nav-link" data-scroll-target="#odev">Odev</a></li>
@@ -900,6 +901,304 @@ $row.names
 </div>
 </div>
 </section>
+<section id="listeler" class="level2">
+<h2 class="anchored" data-anchor-id="listeler">Listeler</h2>
+<p>Liste cok esnek ve karmasik bir veri yapisidir. <code>list()</code> fonksiyonu ile olusturulur. Listelerde farkli turden yeri yapilari, farkli uzunlukta yer alabilir.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb98"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb98-1"><a href="#cb98-1" aria-hidden="true" tabindex="-1"></a>ad  <span class="ot">&lt;-</span>  <span class="fu">c</span>(<span class="st">"Ali"</span>,<span class="st">"Elif"</span>,<span class="st">"Su"</span>,<span class="st">"Deniz"</span>,<span class="st">"Aras"</span>,<span class="st">"Berk"</span>,<span class="st">"Can"</span>,<span class="st">"Ece"</span>,<span class="st">"Efe"</span>,<span class="st">"Arda"</span>)</span>
+<span id="cb98-2"><a href="#cb98-2" aria-hidden="true" tabindex="-1"></a>boy <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">160</span>,<span class="dv">165</span>,<span class="dv">170</span>,<span class="dv">155</span>,<span class="dv">167</span>,<span class="dv">162</span>,<span class="dv">169</span>,<span class="dv">158</span>,<span class="dv">160</span>,<span class="dv">164</span>)</span>
+<span id="cb98-3"><a href="#cb98-3" aria-hidden="true" tabindex="-1"></a>kilo <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">55</span>,<span class="dv">55</span>,<span class="dv">57</span>,<span class="dv">50</span>,<span class="dv">48</span>,<span class="dv">65</span>,<span class="dv">58</span>,<span class="dv">62</span>,<span class="dv">45</span>,<span class="dv">47</span>)</span>
+<span id="cb98-4"><a href="#cb98-4" aria-hidden="true" tabindex="-1"></a><span class="co"># ad, boy ve kilo vektorleri ile liste olusturulmasi</span></span>
+<span id="cb98-5"><a href="#cb98-5" aria-hidden="true" tabindex="-1"></a>liste <span class="ot">&lt;-</span> <span class="fu">list</span>(ad,boy,kilo)</span>
+<span id="cb98-6"><a href="#cb98-6" aria-hidden="true" tabindex="-1"></a>liste</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[1]]
+ [1] "Ali"   "Elif"  "Su"    "Deniz" "Aras"  "Berk"  "Can"   "Ece"   "Efe"  
+[10] "Arda" 
+
+[[2]]
+ [1] 160 165 170 155 167 162 169 158 160 164
+
+[[3]]
+ [1] 55 55 57 50 48 65 58 62 45 47</code></pre>
+</div>
+</div>
+<p>Bir listedeki tum bilesenleri ve turleri gormek icin <code>str()</code> fonksiyonu kullanilabilir.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb100"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb100-1"><a href="#cb100-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(liste) <span class="co">#uc bilesen  ve iki farkli nesne turu</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>List of 3
+ $ : chr [1:10] "Ali" "Elif" "Su" "Deniz" ...
+ $ : num [1:10] 160 165 170 155 167 162 169 158 160 164
+ $ : num [1:10] 55 55 57 50 48 65 58 62 45 47</code></pre>
+</div>
+</div>
+<p>Listeler kendi icinde de farklı listeler barindirabilir. 4 bilesenli liste</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb102"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb102-1"><a href="#cb102-1" aria-hidden="true" tabindex="-1"></a>liste2 <span class="ot">&lt;-</span> <span class="fu">list</span>(liste,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>) <span class="co"># liste ici liste</span></span>
+<span id="cb102-2"><a href="#cb102-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(liste2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>List of 4
+ $ :List of 3
+  ..$ : chr [1:10] "Ali" "Elif" "Su" "Deniz" ...
+  ..$ : num [1:10] 160 165 170 155 167 162 169 158 160 164
+  ..$ : num [1:10] 55 55 57 50 48 65 58 62 45 47
+ $ : num 1
+ $ : num 2
+ $ : num 3</code></pre>
+</div>
+</div>
+<p>Liste bilesenleri isimlendirilebilir. Listelerde bilesenler numara <code>[[1]]</code> ya da <code>$</code> ile eleman secilir.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb104"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb104-1"><a href="#cb104-1" aria-hidden="true" tabindex="-1"></a>liste <span class="co"># isimsiz liste, isim degil numara [[1]]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[1]]
+ [1] "Ali"   "Elif"  "Su"    "Deniz" "Aras"  "Berk"  "Can"   "Ece"   "Efe"  
+[10] "Arda" 
+
+[[2]]
+ [1] 160 165 170 155 167 162 169 158 160 164
+
+[[3]]
+ [1] 55 55 57 50 48 65 58 62 45 47</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb106"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb106-1"><a href="#cb106-1" aria-hidden="true" tabindex="-1"></a>liste[[<span class="dv">3</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] 55 55 57 50 48 65 58 62 45 47</code></pre>
+</div>
+</div>
+<p>Isımlendirilmis listelerde ise bu islem <code>$</code> operatoru ile yapilabilir.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb108"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb108-1"><a href="#cb108-1" aria-hidden="true" tabindex="-1"></a>liste_isim <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">isim =</span> ad,<span class="at">boyolcum =</span> boy,<span class="at">kiloolcum =</span>kilo)</span>
+<span id="cb108-2"><a href="#cb108-2" aria-hidden="true" tabindex="-1"></a>liste_isim <span class="co"># isimli liste $</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$isim
+ [1] "Ali"   "Elif"  "Su"    "Deniz" "Aras"  "Berk"  "Can"   "Ece"   "Efe"  
+[10] "Arda" 
+
+$boyolcum
+ [1] 160 165 170 155 167 162 169 158 160 164
+
+$kiloolcum
+ [1] 55 55 57 50 48 65 58 62 45 47</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb110"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb110-1"><a href="#cb110-1" aria-hidden="true" tabindex="-1"></a>liste_isim<span class="sc">$</span>kiloolcum</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] 55 55 57 50 48 65 58 62 45 47</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb112"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb112-1"><a href="#cb112-1" aria-hidden="true" tabindex="-1"></a><span class="co"># liste nesnesinin ilk bileseninin secilmesi</span></span>
+<span id="cb112-2"><a href="#cb112-2" aria-hidden="true" tabindex="-1"></a>liste[[<span class="dv">1</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "Ali"   "Elif"  "Su"    "Deniz" "Aras"  "Berk"  "Can"   "Ece"   "Efe"  
+[10] "Arda" </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb114"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb114-1"><a href="#cb114-1" aria-hidden="true" tabindex="-1"></a>liste_isim[[<span class="dv">1</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "Ali"   "Elif"  "Su"    "Deniz" "Aras"  "Berk"  "Can"   "Ece"   "Efe"  
+[10] "Arda" </code></pre>
+</div>
+</div>
+<p>Listeler, verileri organize etmenin ve mumkun oldugunca az sayida degisken adina sahip olmanin kullanisli bir yoludur. Listeler genellikle R’da istatistiksel analizlerin ciktisinda kullanilmaktadir. Ornegin regresyon analizinin ciktisinda yer alan nesne parametre kestirimlerini, artiklari, yordanan degerleri liste seklinde tutmaktadir.</p>
+<dl>
+<dt>R’da <code>lm()</code> fonksiyonlari regresyon icin kullanilir.</dt>
+<dd>
+<p>~ isareti oncesine bagimli degiskenler, sonrasina ise bagimsiz degiskenler eklenerek model kurulur.</p>
+</dd>
+</dl>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb116"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb116-1"><a href="#cb116-1" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(stats); <span class="fu">require</span>(graphics)</span>
+<span id="cb116-2"><a href="#cb116-2" aria-hidden="true" tabindex="-1"></a>fm1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(sr <span class="sc">~</span> pop15 <span class="sc">+</span> pop75 <span class="sc">+</span> dpi <span class="sc">+</span> ddpi, <span class="at">data =</span> LifeCycleSavings)</span>
+<span id="cb116-3"><a href="#cb116-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fm1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = sr ~ pop15 + pop75 + dpi + ddpi, data = LifeCycleSavings)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-8.2422 -2.6857 -0.2488  2.4280  9.7509 
+
+Coefficients:
+              Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) 28.5660865  7.3545161   3.884 0.000334 ***
+pop15       -0.4611931  0.1446422  -3.189 0.002603 ** 
+pop75       -1.6914977  1.0835989  -1.561 0.125530    
+dpi         -0.0003369  0.0009311  -0.362 0.719173    
+ddpi         0.4096949  0.1961971   2.088 0.042471 *  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 3.803 on 45 degrees of freedom
+Multiple R-squared:  0.3385,    Adjusted R-squared:  0.2797 
+F-statistic: 5.756 on 4 and 45 DF,  p-value: 0.0007904</code></pre>
+</div>
+</div>
+<p>Regresyon sonuclarinin yer aldigi <code>fm</code> nesnesi bilesenleri</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb118"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb118-1"><a href="#cb118-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(fm1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>List of 12
+ $ coefficients : Named num [1:5] 28.566087 -0.461193 -1.691498 -0.000337 0.409695
+  ..- attr(*, "names")= chr [1:5] "(Intercept)" "pop15" "pop75" "dpi" ...
+ $ residuals    : Named num [1:50] 0.864 0.616 2.219 -0.698 3.553 ...
+  ..- attr(*, "names")= chr [1:50] "Australia" "Austria" "Belgium" "Bolivia" ...
+ $ effects      : Named num [1:50] -68.38 -14.29 7.3 -3.52 -7.94 ...
+  ..- attr(*, "names")= chr [1:50] "(Intercept)" "pop15" "pop75" "dpi" ...
+ $ rank         : int 5
+ $ fitted.values: Named num [1:50] 10.57 11.45 10.95 6.45 9.33 ...
+  ..- attr(*, "names")= chr [1:50] "Australia" "Austria" "Belgium" "Bolivia" ...
+ $ assign       : int [1:5] 0 1 2 3 4
+ $ qr           :List of 5
+  ..$ qr   : num [1:50, 1:5] -7.071 0.141 0.141 0.141 0.141 ...
+  .. ..- attr(*, "dimnames")=List of 2
+  .. .. ..$ : chr [1:50] "Australia" "Austria" "Belgium" "Bolivia" ...
+  .. .. ..$ : chr [1:5] "(Intercept)" "pop15" "pop75" "dpi" ...
+  .. ..- attr(*, "assign")= int [1:5] 0 1 2 3 4
+  ..$ qraux: num [1:5] 1.14 1.17 1.16 1.15 1.05
+  ..$ pivot: int [1:5] 1 2 3 4 5
+  ..$ tol  : num 1e-07
+  ..$ rank : int 5
+  ..- attr(*, "class")= chr "qr"
+ $ df.residual  : int 45
+ $ xlevels      : Named list()
+ $ call         : language lm(formula = sr ~ pop15 + pop75 + dpi + ddpi, data = LifeCycleSavings)
+ $ terms        :Classes 'terms', 'formula'  language sr ~ pop15 + pop75 + dpi + ddpi
+  .. ..- attr(*, "variables")= language list(sr, pop15, pop75, dpi, ddpi)
+  .. ..- attr(*, "factors")= int [1:5, 1:4] 0 1 0 0 0 0 0 1 0 0 ...
+  .. .. ..- attr(*, "dimnames")=List of 2
+  .. .. .. ..$ : chr [1:5] "sr" "pop15" "pop75" "dpi" ...
+  .. .. .. ..$ : chr [1:4] "pop15" "pop75" "dpi" "ddpi"
+  .. ..- attr(*, "term.labels")= chr [1:4] "pop15" "pop75" "dpi" "ddpi"
+  .. ..- attr(*, "order")= int [1:4] 1 1 1 1
+  .. ..- attr(*, "intercept")= int 1
+  .. ..- attr(*, "response")= int 1
+  .. ..- attr(*, ".Environment")=&lt;environment: R_GlobalEnv&gt; 
+  .. ..- attr(*, "predvars")= language list(sr, pop15, pop75, dpi, ddpi)
+  .. ..- attr(*, "dataClasses")= Named chr [1:5] "numeric" "numeric" "numeric" "numeric" ...
+  .. .. ..- attr(*, "names")= chr [1:5] "sr" "pop15" "pop75" "dpi" ...
+ $ model        :'data.frame':  50 obs. of  5 variables:
+  ..$ sr   : num [1:50] 11.43 12.07 13.17 5.75 12.88 ...
+  ..$ pop15: num [1:50] 29.4 23.3 23.8 41.9 42.2 ...
+  ..$ pop75: num [1:50] 2.87 4.41 4.43 1.67 0.83 2.85 1.34 0.67 1.06 1.14 ...
+  ..$ dpi  : num [1:50] 2330 1508 2108 189 728 ...
+  ..$ ddpi : num [1:50] 2.87 3.93 3.82 0.22 4.56 2.43 2.67 6.51 3.08 2.8 ...
+  ..- attr(*, "terms")=Classes 'terms', 'formula'  language sr ~ pop15 + pop75 + dpi + ddpi
+  .. .. ..- attr(*, "variables")= language list(sr, pop15, pop75, dpi, ddpi)
+  .. .. ..- attr(*, "factors")= int [1:5, 1:4] 0 1 0 0 0 0 0 1 0 0 ...
+  .. .. .. ..- attr(*, "dimnames")=List of 2
+  .. .. .. .. ..$ : chr [1:5] "sr" "pop15" "pop75" "dpi" ...
+  .. .. .. .. ..$ : chr [1:4] "pop15" "pop75" "dpi" "ddpi"
+  .. .. ..- attr(*, "term.labels")= chr [1:4] "pop15" "pop75" "dpi" "ddpi"
+  .. .. ..- attr(*, "order")= int [1:4] 1 1 1 1
+  .. .. ..- attr(*, "intercept")= int 1
+  .. .. ..- attr(*, "response")= int 1
+  .. .. ..- attr(*, ".Environment")=&lt;environment: R_GlobalEnv&gt; 
+  .. .. ..- attr(*, "predvars")= language list(sr, pop15, pop75, dpi, ddpi)
+  .. .. ..- attr(*, "dataClasses")= Named chr [1:5] "numeric" "numeric" "numeric" "numeric" ...
+  .. .. .. ..- attr(*, "names")= chr [1:5] "sr" "pop15" "pop75" "dpi" ...
+ - attr(*, "class")= chr "lm"</code></pre>
+</div>
+</div>
+<p>psych paketinde <code>fa()</code> fonksiyonu ile gerceklestirilen analiz sonuclari</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb120"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb120-1"><a href="#cb120-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(psych)</span>
+<span id="cb120-2"><a href="#cb120-2" aria-hidden="true" tabindex="-1"></a>wls <span class="ot">&lt;-</span> <span class="fu">fa</span>(Harman74.cor<span class="sc">$</span>cov,<span class="dv">4</span>,<span class="at">fm=</span><span class="st">"wls"</span>) </span>
+<span id="cb120-3"><a href="#cb120-3" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(wls)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>List of 46
+ $ residual     : num [1:24, 1:24] 0.4452 -0.0348 -0.0152 0.0401 0.0145 ...
+  ..- attr(*, "dimnames")=List of 2
+  .. ..$ : chr [1:24] "VisualPerception" "Cubes" "PaperFormBoard" "Flags" ...
+  .. ..$ : chr [1:24] "VisualPerception" "Cubes" "PaperFormBoard" "Flags" ...
+ $ dof          : num 186
+ $ ENull        : num NA
+ $ chi          : num NA
+ $ rms          : num 0.0408
+ $ nh           : logi NA
+ $ EPVAL        : num NA
+ $ crms         : num 0.0497
+ $ EBIC         : num NA
+ $ ESABIC       : num NA
+ $ fit          : num 0.903
+ $ fit.off      : num 0.984
+ $ sd           : num 0.04
+ $ factors      : num 4
+ $ complexity   : Named num [1:24] 1.03 1.04 1.23 1.25 1.05 ...
+  ..- attr(*, "names")= chr [1:24] "VisualPerception" "Cubes" "PaperFormBoard" "Flags" ...
+ $ n.obs        : logi NA
+ $ PVAL         : logi NA
+ $ objective    : num 1.72
+ $ criteria     : Named num [1:3] 1.72 NA NA
+  ..- attr(*, "names")= chr [1:3] "objective" "" ""
+ $ Call         : language fa(r = Harman74.cor$cov, nfactors = 4, fm = "wls")
+ $ null.model   : num 11.4
+ $ null.dof     : num 276
+ $ r.scores     : num [1:4, 1:4] 1 0.484 0.339 0.491 0.484 ...
+ $ R2           : num [1:4] 0.918 0.815 0.859 0.766
+ $ valid        : num [1:4] 0.933 0.862 0.879 0.851
+ $ score.cor    : num [1:4, 1:4] 1 0.627 0.485 0.493 0.627 ...
+ $ weights      : num [1:24, 1:4] -0.02148 -0.00436 0.02699 0.00951 0.16055 ...
+  ..- attr(*, "dimnames")=List of 2
+  .. ..$ : chr [1:24] "VisualPerception" "Cubes" "PaperFormBoard" "Flags" ...
+  .. ..$ : chr [1:4] "WLS1" "WLS3" "WLS2" "WLS4"
+ $ rotation     : chr "oblimin"
+ $ hyperplane   : Named num [1:4] 14 9 16 14
+  ..- attr(*, "names")= chr [1:4] "WLS1" "WLS3" "WLS2" "WLS4"
+ $ communality  : Named num [1:24] 0.555 0.227 0.344 0.349 0.642 ...
+  ..- attr(*, "names")= chr [1:24] "VisualPerception" "Cubes" "PaperFormBoard" "Flags" ...
+ $ communalities: Named num [1:24] 0.561 0.22 0.356 0.349 0.648 ...
+  ..- attr(*, "names")= chr [1:24] "VisualPerception" "Cubes" "PaperFormBoard" "Flags" ...
+ $ uniquenesses : Named num [1:24] 0.445 0.773 0.656 0.651 0.358 ...
+  ..- attr(*, "names")= chr [1:24] "VisualPerception" "Cubes" "PaperFormBoard" "Flags" ...
+ $ values       : num [1:24] 7.646 1.692 1.221 0.915 0.403 ...
+ $ e.values     : num [1:24] 8.14 2.1 1.69 1.5 1.03 ...
+ $ loadings     : 'loadings' num [1:24, 1:4] 0.0427 0.056 0.0874 0.1782 0.7639 ...
+  ..- attr(*, "dimnames")=List of 2
+  .. ..$ : chr [1:24] "VisualPerception" "Cubes" "PaperFormBoard" "Flags" ...
+  .. ..$ : chr [1:4] "WLS1" "WLS3" "WLS2" "WLS4"
+ $ model        : num [1:24, 1:24] 0.555 0.353 0.418 0.428 0.306 ...
+  ..- attr(*, "dimnames")=List of 2
+  .. ..$ : chr [1:24] "VisualPerception" "Cubes" "PaperFormBoard" "Flags" ...
+  .. ..$ : chr [1:24] "VisualPerception" "Cubes" "PaperFormBoard" "Flags" ...
+ $ fm           : chr "wls"
+ $ rot.mat      : num [1:4, 1:4] 0.4887 -0.8531 -0.6178 -0.0472 0.2601 ...
+ $ Phi          : num [1:4, 1:4] 1 0.41 0.295 0.408 0.41 ...
+  ..- attr(*, "dimnames")=List of 2
+  .. ..$ : chr [1:4] "WLS1" "WLS3" "WLS2" "WLS4"
+  .. ..$ : chr [1:4] "WLS1" "WLS3" "WLS2" "WLS4"
+ $ Structure    : 'loadings' num [1:24, 1:4] 0.361 0.241 0.29 0.369 0.794 ...
+  ..- attr(*, "dimnames")=List of 2
+  .. ..$ : chr [1:24] "VisualPerception" "Cubes" "PaperFormBoard" "Flags" ...
+  .. ..$ : chr [1:4] "WLS1" "WLS3" "WLS2" "WLS4"
+ $ method       : chr "regression"
+ $ R2.scores    : Named num [1:4] 0.918 0.815 0.859 0.766
+  ..- attr(*, "names")= chr [1:4] "WLS1" "WLS3" "WLS2" "WLS4"
+ $ r            : num [1:24, 1:24] 1 0.318 0.403 0.468 0.321 0.335 0.304 0.332 0.326 0.116 ...
+  ..- attr(*, "dimnames")=List of 2
+  .. ..$ : chr [1:24] "VisualPerception" "Cubes" "PaperFormBoard" "Flags" ...
+  .. ..$ : chr [1:24] "VisualPerception" "Cubes" "PaperFormBoard" "Flags" ...
+ $ fn           : chr "fa"
+ $ Vaccounted   : num [1:5, 1:4] 3.996 0.166 0.166 0.348 0.348 ...
+  ..- attr(*, "dimnames")=List of 2
+  .. ..$ : chr [1:5] "SS loadings" "Proportion Var" "Cumulative Var" "Proportion Explained" ...
+  .. ..$ : chr [1:4] "WLS1" "WLS3" "WLS2" "WLS4"
+ $ ECV          : Named num [1:4] 0.348 0.592 0.804 1
+  ..- attr(*, "names")= chr [1:4] "WLS1" "WLS3" "WLS2" "WLS4"
+ - attr(*, "class")= chr [1:2] "psych" "fa"</code></pre>
+</div>
+</div>
+</section>
 </section>
 <section id="kendinizi-test-edin" class="level1">
 <h1>Kendinizi Test Edin</h1>
@@ -907,30 +1206,33 @@ $row.names
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb98"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb98-1"><a href="#cb98-1" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"Bos data.framenin yapısı:"</span></span>
-<span id="cb98-2"><a href="#cb98-2" aria-hidden="true" tabindex="-1"></a><span class="st">'data.frame'</span><span class="sc">:</span>   <span class="dv">0</span> obs. of  <span class="dv">5</span> variables<span class="sc">:</span>  </span>
-<span id="cb98-3"><a href="#cb98-3" aria-hidden="true" tabindex="-1"></a> <span class="er">$</span> TamSayi    <span class="sc">:</span> int   </span>
-<span id="cb98-4"><a href="#cb98-4" aria-hidden="true" tabindex="-1"></a> <span class="sc">$</span> OndalikSayi<span class="sc">:</span> num  </span>
-<span id="cb98-5"><a href="#cb98-5" aria-hidden="true" tabindex="-1"></a> <span class="sc">$</span> Karakter   <span class="sc">:</span> chr  </span>
-<span id="cb98-6"><a href="#cb98-6" aria-hidden="true" tabindex="-1"></a> <span class="sc">$</span> Mantiksal  <span class="sc">:</span> logi  </span>
-<span id="cb98-7"><a href="#cb98-7" aria-hidden="true" tabindex="-1"></a> <span class="sc">$</span> Faktor     <span class="sc">:</span> Factor w<span class="sc">/</span> <span class="dv">0</span> levels<span class="sc">:</span>  </span>
-<span id="cb98-8"><a href="#cb98-8" aria-hidden="true" tabindex="-1"></a><span class="cn">NULL</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb122"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb122-1"><a href="#cb122-1" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"Bos data.framenin yapısı:"</span></span>
+<span id="cb122-2"><a href="#cb122-2" aria-hidden="true" tabindex="-1"></a><span class="st">'data.frame'</span><span class="sc">:</span>   <span class="dv">0</span> obs. of  <span class="dv">5</span> variables<span class="sc">:</span>  </span>
+<span id="cb122-3"><a href="#cb122-3" aria-hidden="true" tabindex="-1"></a> <span class="er">$</span> TamSayi    <span class="sc">:</span> int   </span>
+<span id="cb122-4"><a href="#cb122-4" aria-hidden="true" tabindex="-1"></a> <span class="sc">$</span> OndalikSayi<span class="sc">:</span> num  </span>
+<span id="cb122-5"><a href="#cb122-5" aria-hidden="true" tabindex="-1"></a> <span class="sc">$</span> Karakter   <span class="sc">:</span> chr  </span>
+<span id="cb122-6"><a href="#cb122-6" aria-hidden="true" tabindex="-1"></a> <span class="sc">$</span> Mantiksal  <span class="sc">:</span> logi  </span>
+<span id="cb122-7"><a href="#cb122-7" aria-hidden="true" tabindex="-1"></a> <span class="sc">$</span> Faktor     <span class="sc">:</span> Factor w<span class="sc">/</span> <span class="dv">0</span> levels<span class="sc">:</span>  </span>
+<span id="cb122-8"><a href="#cb122-8" aria-hidden="true" tabindex="-1"></a><span class="cn">NULL</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p><strong>S2.</strong> Aşağıda size verilen dört vektörden bir veri seti oluşturunuz. Oluşturduğunuz veri setinin deneme sütunundaki eksik veri sayısını hesaplayan komut yazınız.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb99"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb99-1"><a href="#cb99-1" aria-hidden="true" tabindex="-1"></a>ad <span class="ot">=</span> <span class="fu">c</span>(<span class="st">'Su'</span>,<span class="st">'Pera'</span>,<span class="st">'Sule'</span>,<span class="st">'Can'</span>,<span class="st">'Cem'</span>,<span class="st">'Name'</span>,<span class="st">'Aras'</span>,<span class="st">'Mete'</span>,<span class="st">'Kaan'</span>,<span class="st">'Pelin'</span>)</span>
-<span id="cb99-2"><a href="#cb99-2" aria-hidden="true" tabindex="-1"></a>puan <span class="ot">=</span> <span class="fu">c</span>(<span class="fl">12.5</span>, <span class="dv">9</span>, <span class="fl">16.5</span>, <span class="dv">12</span>, <span class="dv">9</span>, <span class="dv">20</span>, <span class="fl">14.5</span>, <span class="fl">13.5</span>, <span class="dv">8</span>, <span class="dv">19</span>)</span>
-<span id="cb99-3"><a href="#cb99-3" aria-hidden="true" tabindex="-1"></a>deneme <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="cn">NA</span>, <span class="dv">2</span>, <span class="cn">NA</span>, <span class="dv">2</span>, <span class="cn">NA</span>, <span class="dv">1</span>, <span class="cn">NA</span>, <span class="dv">2</span>, <span class="dv">1</span>)</span>
-<span id="cb99-4"><a href="#cb99-4" aria-hidden="true" tabindex="-1"></a>bonus <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>,<span class="dv">0</span>, <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb123"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb123-1"><a href="#cb123-1" aria-hidden="true" tabindex="-1"></a>ad <span class="ot">=</span> <span class="fu">c</span>(<span class="st">'Su'</span>,<span class="st">'Pera'</span>,<span class="st">'Sule'</span>,<span class="st">'Can'</span>,<span class="st">'Cem'</span>,<span class="st">'Name'</span>,<span class="st">'Aras'</span>,<span class="st">'Mete'</span>,<span class="st">'Kaan'</span>,<span class="st">'Pelin'</span>)</span>
+<span id="cb123-2"><a href="#cb123-2" aria-hidden="true" tabindex="-1"></a>puan <span class="ot">=</span> <span class="fu">c</span>(<span class="fl">12.5</span>, <span class="dv">9</span>, <span class="fl">16.5</span>, <span class="dv">12</span>, <span class="dv">9</span>, <span class="dv">20</span>, <span class="fl">14.5</span>, <span class="fl">13.5</span>, <span class="dv">8</span>, <span class="dv">19</span>)</span>
+<span id="cb123-3"><a href="#cb123-3" aria-hidden="true" tabindex="-1"></a>deneme <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="cn">NA</span>, <span class="dv">2</span>, <span class="cn">NA</span>, <span class="dv">2</span>, <span class="cn">NA</span>, <span class="dv">1</span>, <span class="cn">NA</span>, <span class="dv">2</span>, <span class="dv">1</span>)</span>
+<span id="cb123-4"><a href="#cb123-4" aria-hidden="true" tabindex="-1"></a>bonus <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>,<span class="dv">0</span>, <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>“Deneme sütunundaki NA sayısı:” [1] 4</p>
 </section>
 <section id="odev" class="level1">
 <h1>Odev</h1>
+<ul>
+<li>Kitap Bölüm 2 ve Bölüm 3’te yer alan tüm soruları tamamlayınız.</li>
+</ul>
 <p>Lütfen aşağıdaki bölümleri haftaya kadar okuyunuz.</p>
 <ul>
 <li><p><a href="http://adv-r.had.co.nz/Data-structures.html" class="uri">http://adv-r.had.co.nz/Data-structures.html</a></p></li>
