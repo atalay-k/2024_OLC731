@@ -933,19 +933,17 @@ $row.names
  $ : num [1:10] 55 55 57 50 48 65 58 62 45 47</code></pre>
 </div>
 </div>
-<p>Listeler kendi icinde de farklı listeler barindirabilir. 4 bilesenli liste</p>
+<p>Listeler kendi icinde de farklı listeler barindirabilir. 2 bilesenli liste</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb102"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb102-1"><a href="#cb102-1" aria-hidden="true" tabindex="-1"></a>liste2 <span class="ot">&lt;-</span> <span class="fu">list</span>(liste,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>) <span class="co"># liste ici liste</span></span>
+<div class="sourceCode cell-code" id="cb102"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb102-1"><a href="#cb102-1" aria-hidden="true" tabindex="-1"></a>liste2 <span class="ot">&lt;-</span> <span class="fu">list</span>(liste,<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)) <span class="co"># liste ici liste</span></span>
 <span id="cb102-2"><a href="#cb102-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(liste2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>List of 4
+<pre><code>List of 2
  $ :List of 3
   ..$ : chr [1:10] "Ali" "Elif" "Su" "Deniz" ...
   ..$ : num [1:10] 160 165 170 155 167 162 169 158 160 164
   ..$ : num [1:10] 55 55 57 50 48 65 58 62 45 47
- $ : num 1
- $ : num 2
- $ : num 3</code></pre>
+ $ : num [1:3] 1 2 3</code></pre>
 </div>
 </div>
 <p>Liste bilesenleri isimlendirilebilir. Listelerde bilesenler numara <code>[[1]]</code> ya da <code>$</code> ile eleman secilir.</p>
@@ -1000,20 +998,11 @@ $kiloolcum
 [10] "Arda" </code></pre>
 </div>
 </div>
-<p>Listeler, verileri organize etmenin ve mumkun oldugunca az sayida degisken adina sahip olmanin kullanisli bir yoludur. Listeler genellikle R’da istatistiksel analizlerin ciktisinda kullanilmaktadir. Ornegin regresyon analizinin ciktisinda yer alan nesne parametre kestirimlerini, artiklari, yordanan degerleri liste seklinde tutmaktadir.</p>
-<dl>
-<dt>R’da <code>lm()</code> fonksiyonlari regresyon icin kullanilir.</dt>
-<dd>
-<p>~ isareti oncesine bagimli degiskenler, sonrasina ise bagimsiz degiskenler eklenerek model kurulur.</p>
-</dd>
-</dl>
+<p>Listeler, verileri organize etmenin ve mumkun oldugunca az sayida degisken adina sahip olmanin kullanisli bir yoludur. Listeler genellikle R’da istatistiksel analizlerin ciktisinda kullanilmaktadir. Ornegin regresyon analizinin ciktisinda yer alan nesne parametre kestirimlerini, artiklari, yordanan degerleri liste seklinde tutmaktadir. <code>lm()</code> fonksiyonlari regresyon icin kullanilir, fonksiyon içindeki <code>~</code> isareti oncesine bagimli degiskenler, sonrasina ise bagimsiz degiskenler eklenerek model kurulur.</p>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb116"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb116-1"><a href="#cb116-1" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(stats); <span class="fu">require</span>(graphics)</span>
 <span id="cb116-2"><a href="#cb116-2" aria-hidden="true" tabindex="-1"></a>fm1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(sr <span class="sc">~</span> pop15 <span class="sc">+</span> pop75 <span class="sc">+</span> dpi <span class="sc">+</span> ddpi, <span class="at">data =</span> LifeCycleSavings)</span>
 <span id="cb116-3"><a href="#cb116-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fm1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
@@ -1040,10 +1029,7 @@ F-statistic: 5.756 on 4 and 45 DF,  p-value: 0.0007904</code></pre>
 </div>
 <p>Regresyon sonuclarinin yer aldigi <code>fm</code> nesnesi bilesenleri</p>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb118"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb118-1"><a href="#cb118-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(fm1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>List of 12
  $ coefficients : Named num [1:5] 28.566087 -0.461193 -1.691498 -0.000337 0.409695
@@ -1109,12 +1095,9 @@ F-statistic: 5.756 on 4 and 45 DF,  p-value: 0.0007904</code></pre>
 </div>
 <p>psych paketinde <code>fa()</code> fonksiyonu ile gerceklestirilen analiz sonuclari</p>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb120"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb120-1"><a href="#cb120-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(psych)</span>
 <span id="cb120-2"><a href="#cb120-2" aria-hidden="true" tabindex="-1"></a>wls <span class="ot">&lt;-</span> <span class="fu">fa</span>(Harman74.cor<span class="sc">$</span>cov,<span class="dv">4</span>,<span class="at">fm=</span><span class="st">"wls"</span>) </span>
 <span id="cb120-3"><a href="#cb120-3" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(wls)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>List of 46
  $ residual     : num [1:24, 1:24] 0.4452 -0.0348 -0.0152 0.0401 0.0145 ...
