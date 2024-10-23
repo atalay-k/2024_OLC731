@@ -172,7 +172,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#repro-figures" id="toc-repro-figures" class="nav-link" data-scroll-target="#repro-figures">Görseller</a></li>
   <li><a href="#bağlantılı-dökümanlar" id="toc-bağlantılı-dökümanlar" class="nav-link" data-scroll-target="#bağlantılı-dökümanlar">Bağlantılı Dökümanlar</a></li>
   </ul></li>
-  <li><a href="#kaynakça" id="toc-kaynakça" class="nav-link" data-scroll-target="#kaynakça">Kaynakça</a>
+  <li><a href="#Kaynakça" id="toc-Kaynakça" class="nav-link" data-scroll-target="#Kaynakça">Kaynakça</a>
   <ul class="collapse">
   <li><a href="#referans-yazılımdan-dönüştürme" id="toc-referans-yazılımdan-dönüştürme" class="nav-link" data-scroll-target="#referans-yazılımdan-dönüştürme">Referans yazılımdan dönüştürme</a></li>
   <li><a href="#bibtex-dosyası-oluşturma" id="toc-bibtex-dosyası-oluşturma" class="nav-link" data-scroll-target="#bibtex-dosyası-oluşturma">BibTeX Dosyası Oluşturma</a></li>
@@ -304,7 +304,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">"import/veri1.txt"</span>)  <span class="co"># dogru</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Bu dosyayı aşağıdaki gibi mutlak yol/adres ile yüklemeyin🚯:</p>
+<p>Bu dosyayı aşağıdaki gibi mutlak yol/adres ile yüklemeyin🚷:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">"c:/Users/Kubra/Desktop/OLC731/import/veri1.txt"</span>)  <span class="co"># yanlıs</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -522,8 +522,18 @@ output:
 <li><p>cache = FALSE : her örgü ördüğünüzde tüm görüntüleri ve nesneleri oluşturmak için tüm kodu çalıştırın (zaman alıcı kodunuz varsa TRUE olarak ayarlayın) Konsola <code>str(knitr::opts_chunk$get())</code> yazarak geçerli kod bloğu seçeneklerinin bir listesini bulun.</p></li>
 </ul>
 <p>İhtiyacınız olan paketleri <code>library()</code>kullanarak da bu bloğunuza ekleyebilirsiniz. Genellikle bir komut dosyası üzerinde çalışırken, başka bir eklenti paketi yüklemeniz gerektiğini fark edersiniz. <code>library(...)</code> çağrısını kodun en altına gömmeyin. En üste koyun, böylece kullanıcı hangi paketlerin gerekli olduğuna dair genel bir fikir elde edilir.</p>
-<div class="try">
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+!!!
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>tidyverse paketinden fonksiyon kullanacağız, bu yüzden kurulum bloğunuza yükleyin.</p>
+</div>
 </div>
 </section>
 <section id="yapı" class="level3">
@@ -536,8 +546,18 @@ output:
 <li><p>birlikte çalışacağınız verileri yükleyin veya simüle edin</p></li>
 <li><p>kaydetmeniz gereken her şeyi kaydedin</p></li>
 </ul>
-<div class="try">
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+!!!
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Varsayılan metni silin ve başlıklar ve alt başlıklar oluşturarak belgenize biraz yapı ekleyin. Bazı verileri yükleyeceğiz, bir özet tablo oluşturacağız, grafik çizeceğiz ve analiz edeceğiz.</p>
+</div>
 </div>
 </section>
 <section id="kod-blokları" class="level3">
@@ -566,7 +586,7 @@ output:
 </div>
 <ul>
 <li><p>Bir kod parçasını, özellikle kod rapor metninde açıklanmamışsa, orada ne yaptığınızı açıklayan bir yorumla başlatmak genellikle iyi bir uygulamadır.</p></li>
-<li><p>Nesnelerinizi açık bir şekilde adlandırırsanız, genellikle açıklayıcı yorumlar eklemeniz gerekmez. Örneğin, yukarıdaki üç nesneyi n_iris, ort_petal ve sd_petal olarak adlandırmış olsaydım, yorumları atlardım.</p></li>
+<li><p>Nesnelerinizi açık bir şekilde adlandırırsanız, genellikle açıklayıcı yorumlar eklemeniz gerekmez. Örneğin, yukarıdaki üç nesneyi <code>n_iris</code>, <code>ort_petal</code> ve <code>sd_petal</code> olarak adlandırmış olsaydım, yorumları atlardım.</p></li>
 <li><p>Yorumların bir başka kullanımı da çalıştırmak istemediğiniz ancak silmek de istemediğiniz bir kod bölümünü “yorumlamaktır”. Örneğin, bir paketi yüklemek için kullanılan kodu kodunuza dahil edebilirsiniz, ancak kodun her çalıştırıldığında uzun bir yüklemeye zorlamaması için her zaman yorumlamanız gerekir.</p></li>
 </ul>
 <div class="cell">
@@ -599,28 +619,39 @@ output:
 <div class="cell">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># analiz</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>setosa_petal <span class="ot">&lt;-</span> <span class="fu">filter</span>(iris, Species <span class="sc">==</span> <span class="st">"setosa"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(Petal.Length)</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>virginica_petal <span class="ot">&lt;-</span> <span class="fu">filter</span>(iris, Species <span class="sc">==</span> <span class="st">"virginica"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(Petal.Length)</span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>petal_test <span class="ot">&lt;-</span> <span class="fu">t.test</span>(setosa_petal, virginica_petal)</span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="co"># rapor edilecek degerleri yorumlama</span></span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>t <span class="ot">&lt;-</span> petal_test<span class="sc">$</span>statistic <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">2</span>)</span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> petal_test<span class="sc">$</span>parameter <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">1</span>)</span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> petal_test<span class="sc">$</span>p.value <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">3</span>)</span>
-<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="co"># handle p-values &lt; .001</span></span>
-<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>p_symbol <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(p <span class="sc">&lt;</span> .<span class="dv">001</span>, <span class="st">"&lt;"</span>, <span class="st">"="</span>)</span>
-<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (p <span class="sc">&lt;</span> .<span class="dv">001</span>) p <span class="ot">&lt;-</span> .<span class="dv">001</span></span>
-<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a><span class="co"># sonucları birleştirme</span></span>
-<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>petal_result <span class="ot">&lt;-</span> glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">"t = {t}, df = {df}, p {p_symbol} {p}"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>setosa_petal <span class="ot">&lt;-</span><span class="fu">filter</span>(iris, Species <span class="sc">==</span> <span class="st">"setosa"</span>) <span class="sc">%&gt;%</span>  <span class="fu">pull</span>(Petal.Length)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>virginica_petal <span class="ot">&lt;-</span><span class="fu">filter</span>(iris, Species <span class="sc">==</span> <span class="st">"virginica"</span>) <span class="sc">%&gt;%</span>  <span class="fu">pull</span>(Petal.Length)</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>petal_test <span class="ot">&lt;-</span><span class="fu">t.test</span>(setosa_petal, virginica_petal)</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co"># rapor edilecek degerleri yorumlama</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>t <span class="ot">&lt;-</span> petal_test<span class="sc">$</span>statistic <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">2</span>)</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> petal_test<span class="sc">$</span>parameter <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">1</span>)</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> petal_test<span class="sc">$</span>p.value <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">3</span>)</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="co"># p-değerleri &lt; .001 ata</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>p_symbol <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(p <span class="sc">&lt;</span> .<span class="dv">001</span>, <span class="st">"&lt;"</span>, <span class="st">"="</span>) <span class="do">## kodun bu kısmı elde edilen p değeri .001'den küçük ise p_symbol değerine &lt;, değil ise = atar.</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (p <span class="sc">&lt;</span> .<span class="dv">001</span>) p <span class="ot">&lt;-</span> .<span class="dv">001</span> </span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a><span class="co"># sonucları birleştirme</span></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>petal_result <span class="ot">&lt;-</span> glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">"t = {t}, df = {df}, p {p_symbol} {p}"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>Sonuçları, aşağıdaki gibi görünen satır içi R kodu ile bir paragrafa ekleyebilirsiniz:</li>
 </ul>
 <pre><code> virginica çiçeklerinin yaprakları setosa çiçeklerinin yapraklarından uzundur(`r petal_result`).</code></pre>
 <p>virginica çiçeklerinin yaprakları setosa çiçeklerinin yapraklarından uzundur (t = -49.99, df = 58.6, p &lt; 0.001).</p>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+!!!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Yukarıdaki kod blogunda dplyr paketinin filter() ve pull() fonksiyonları ile yapılan işlemleri subset() fonksiyonu ile yapabilirsiniz. Bunu yapıp öğrenme günlüğünüze ekleyiniz.</p>
+</div>
+</div>
 </section>
 <section id="repro-tables" class="level3">
 <h3 class="anchored" data-anchor-id="repro-tables">Tablolar</h3>
@@ -648,11 +679,21 @@ output:
 3 virginica     50     5.55 0.552</code></pre>
 </div>
 </div>
-<div class="warning">
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+!!!
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Yukarıdaki tablo etkileşimli görünümde tibble biçiminde yazdırılacak, ancak ördüğünüzde YAML başlığındaki df_print ayarındaki biçimi kullanacaktır.</p>
 </div>
+</div>
 <ul>
-<li>Yukarıdaki tabloda, sütun etiketlerini değiştirerek, ortalamaları yuvarlayarak ve bir başlık ekleyerek daha okuyucu dostu hale getirlebilir. Bunun için <code>knitr::kable()</code> işlevini veya tablolarınızı biçimlendirmek için diğer paketlerdeki daha özel işlevleri kullanabilirsiniz.</li>
+<li>Yukarıdaki tabloda, sütun etiketlerini değiştirerek, ortalamaları yuvarlayarak ve bir başlık ekleyerek daha okuyucu dostu hale getirlebilir. Bunun için <code>knitr::kable()</code> işlevini veya tablolarınızı biçimlendirmek için diğer paketlerdeki daha özel fonksiyonlarını kullanabilirsiniz.</li>
 </ul>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">knitr</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">kableExtra</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">papaja</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-4" role="tab" aria-controls="tabset-1-4" aria-selected="false">gt</a></li></ul>
@@ -1411,8 +1452,18 @@ Degerler
 <li><p>Tablolara ve şekillere bağlantılar oluşturmak için, şekillerinizi veya tablolarınızı oluşturan kod bloklarınız adlandırmanız ve ardından satır içi kodlamanızda bu adları çağırmanız gerekir:</p></li>
 </ul>
 <pre><code>Bakınız Tablo \@ref(tab:tablo1) or Sekil \@ref(fig:sekil1).</code></pre>
-<div class="warning">
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+!!!
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Kod blok adları yalnızca harf, rakam ve tire içerebilir. Boşluk veya alt çizgi gibi başka karakterler içeriyorlarsa, referanslama çalışmayacaktır.</p>
+</div>
 </div>
 <p>Başlıklarınızı {#} ile adlandırarak da raporunuzun farklı bölümlerine bağlantı verebilirsiniz:</p>
 <pre><code># Baslık 1 {#baslık-1}
@@ -1421,81 +1472,88 @@ Degerler
 
 Bakınız Bolum \@ref(baslık-1) and Bolum \@ref(baslık-2)</code></pre>
 <ul>
-<li>Aşağıdaki kod, ggplot2 paketindeki <code>diamonds</code> veri seti kullanarak tam bir raporda metnin şekillere veya tablolara nasıl bağlanacağını göstermektedir - bu belgeyi şimdi oluşturmak için aşağıdaki kodları kullanın.</li>
+<li>Aşağıdaki kod, ggplot2 paketindeki <code>diamonds</code> veri seti kullanarak tam bir raporda metnin şekillere veya tablolara nasıl bağlanacağını göstermektedir - bu belgeyi şimdi oluşturmak için aşağıdaki kodları kullanın. Tablo ve şekillere referans verme özelliği bookdown formatına aittir. output seçeneğinin sadece html olarak kalması ile bu özellikten yararlanılamamaktadır.</li>
 </ul>
-<div class="sourceCode" id="cb24"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># ORNEK DOSYA</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="in">```{r setup, include=FALSE}</span></span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="in">knitr::opts_chunk$set(echo = FALSE,</span></span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="in">                      message = FALSE,</span></span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="in">                      warning = FALSE)</span></span>
-<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="in">library(tidyverse)</span></span>
-<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a><span class="in">library(kableExtra)</span></span>
-<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a><span class="in">theme_set(theme_minimal())</span></span>
-<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>Pırlanta ücretleri çeşitli faktörlere bağlıdır</span>
-<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>cut (Bakınız Tablo&nbsp;\@ref(tab:kesim))</span>
-<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>colour (Bakınız Tablo&nbsp;\@ref(tab:renk))</span>
-<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>clarity (Bakınız Şekil&nbsp;\@ref(fig:parlaklik))</span>
-<span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>carats (Bakınız Şekil&nbsp;\@ref(fig:karat))</span>
-<span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Bakınız Bolum&nbsp;\@ref(sonuclar) sonuclar icin</span>
-<span id="cb24-19"><a href="#cb24-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-20"><a href="#cb24-20" aria-hidden="true" tabindex="-1"></a><span class="fu">## Tablolar</span></span>
-<span id="cb24-21"><a href="#cb24-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-22"><a href="#cb24-22" aria-hidden="true" tabindex="-1"></a><span class="fu">### Kesim</span></span>
-<span id="cb24-23"><a href="#cb24-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-24"><a href="#cb24-24" aria-hidden="true" tabindex="-1"></a><span class="in">```{r kesim}</span></span>
-<span id="cb24-25"><a href="#cb24-25" aria-hidden="true" tabindex="-1"></a><span class="in">diamonds %&gt;%</span></span>
-<span id="cb24-26"><a href="#cb24-26" aria-hidden="true" tabindex="-1"></a><span class="in">  group_by(cut) %&gt;%</span></span>
-<span id="cb24-27"><a href="#cb24-27" aria-hidden="true" tabindex="-1"></a><span class="in">  summarise(avg = mean(price),</span></span>
-<span id="cb24-28"><a href="#cb24-28" aria-hidden="true" tabindex="-1"></a><span class="in">            .groups = "drop") %&gt;%</span></span>
-<span id="cb24-29"><a href="#cb24-29" aria-hidden="true" tabindex="-1"></a><span class="in">  kable(digits = 0, </span></span>
-<span id="cb24-30"><a href="#cb24-30" aria-hidden="true" tabindex="-1"></a><span class="in">        col.names = c("Cut", "Average Price"),</span></span>
-<span id="cb24-31"><a href="#cb24-31" aria-hidden="true" tabindex="-1"></a><span class="in">        caption = "Kesime göre ortalama pırlanta fiyatı.") %&gt;%</span></span>
-<span id="cb24-32"><a href="#cb24-32" aria-hidden="true" tabindex="-1"></a><span class="in">  kable_material()</span></span>
-<span id="cb24-33"><a href="#cb24-33" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb24-34"><a href="#cb24-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-35"><a href="#cb24-35" aria-hidden="true" tabindex="-1"></a><span class="fu">### Renk</span></span>
-<span id="cb24-36"><a href="#cb24-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-37"><a href="#cb24-37" aria-hidden="true" tabindex="-1"></a><span class="in">```{r renk}</span></span>
-<span id="cb24-38"><a href="#cb24-38" aria-hidden="true" tabindex="-1"></a><span class="in">diamonds %&gt;%</span></span>
-<span id="cb24-39"><a href="#cb24-39" aria-hidden="true" tabindex="-1"></a><span class="in">  group_by(color) %&gt;%</span></span>
-<span id="cb24-40"><a href="#cb24-40" aria-hidden="true" tabindex="-1"></a><span class="in">  summarise(avg = mean(price),</span></span>
-<span id="cb24-41"><a href="#cb24-41" aria-hidden="true" tabindex="-1"></a><span class="in">            .groups = "drop") %&gt;%</span></span>
-<span id="cb24-42"><a href="#cb24-42" aria-hidden="true" tabindex="-1"></a><span class="in">  kable(digits = 0, </span></span>
-<span id="cb24-43"><a href="#cb24-43" aria-hidden="true" tabindex="-1"></a><span class="in">        col.names = c("Cut", "Average Price"),</span></span>
-<span id="cb24-44"><a href="#cb24-44" aria-hidden="true" tabindex="-1"></a><span class="in">        caption = "Renge göre ortalama pırlanta fiyatı.") %&gt;%</span></span>
-<span id="cb24-45"><a href="#cb24-45" aria-hidden="true" tabindex="-1"></a><span class="in">  kable_material()</span></span>
-<span id="cb24-46"><a href="#cb24-46" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb24-47"><a href="#cb24-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-48"><a href="#cb24-48" aria-hidden="true" tabindex="-1"></a><span class="fu">## Grafikler</span></span>
-<span id="cb24-49"><a href="#cb24-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-50"><a href="#cb24-50" aria-hidden="true" tabindex="-1"></a><span class="fu">### Parlaklık</span></span>
-<span id="cb24-51"><a href="#cb24-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-52"><a href="#cb24-52" aria-hidden="true" tabindex="-1"></a><span class="in">```{r parlaklik, fig.cap = "Parlaklığa göre pırlanta fiyatı"}</span></span>
-<span id="cb24-53"><a href="#cb24-53" aria-hidden="true" tabindex="-1"></a><span class="in">ggplot(diamonds, aes(x = clarity, y = price)) +</span></span>
-<span id="cb24-54"><a href="#cb24-54" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_boxplot() </span></span>
-<span id="cb24-55"><a href="#cb24-55" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<div class="sourceCode" id="cb24"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "referans verme"</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Kubra"</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "`r Sys.Date()`"</span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="an">output:</span><span class="co"> bookdown::html_document2</span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a><span class="fu"># ORNEK DOSYA</span></span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a><span class="in">```{r setup, include=FALSE}</span></span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a><span class="in">knitr::opts_chunk$set(echo = FALSE,</span></span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a><span class="in">                      message = FALSE,</span></span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a><span class="in">                      warning = FALSE)</span></span>
+<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a><span class="in">library(tidyverse)</span></span>
+<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a><span class="in">library(kableExtra)</span></span>
+<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a><span class="in">theme_set(theme_minimal())</span></span>
+<span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-19"><a href="#cb24-19" aria-hidden="true" tabindex="-1"></a>Pırlanta ücretleri çeşitli faktörlere bağlıdır</span>
+<span id="cb24-20"><a href="#cb24-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-21"><a href="#cb24-21" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>cut (Bakınız Tablo&nbsp;\@ref(tab:kesim))</span>
+<span id="cb24-22"><a href="#cb24-22" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>colour (Bakınız Tablo&nbsp;\@ref(tab:renk))</span>
+<span id="cb24-23"><a href="#cb24-23" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>clarity (Bakınız Şekil&nbsp;\@ref(fig:parlaklik))</span>
+<span id="cb24-24"><a href="#cb24-24" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>carats (Bakınız Şekil&nbsp;\@ref(fig:karat))</span>
+<span id="cb24-25"><a href="#cb24-25" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Bakınız Bolum&nbsp;\@ref(sonuclar) sonuclar icin</span>
+<span id="cb24-26"><a href="#cb24-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-27"><a href="#cb24-27" aria-hidden="true" tabindex="-1"></a><span class="fu">## Tablolar</span></span>
+<span id="cb24-28"><a href="#cb24-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-29"><a href="#cb24-29" aria-hidden="true" tabindex="-1"></a><span class="fu">### Kesim</span></span>
+<span id="cb24-30"><a href="#cb24-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-31"><a href="#cb24-31" aria-hidden="true" tabindex="-1"></a><span class="in">```{r kesim}</span></span>
+<span id="cb24-32"><a href="#cb24-32" aria-hidden="true" tabindex="-1"></a><span class="in">diamonds %&gt;%</span></span>
+<span id="cb24-33"><a href="#cb24-33" aria-hidden="true" tabindex="-1"></a><span class="in">  group_by(cut) %&gt;%</span></span>
+<span id="cb24-34"><a href="#cb24-34" aria-hidden="true" tabindex="-1"></a><span class="in">  summarise(avg = mean(price),</span></span>
+<span id="cb24-35"><a href="#cb24-35" aria-hidden="true" tabindex="-1"></a><span class="in">            .groups = "drop") %&gt;%</span></span>
+<span id="cb24-36"><a href="#cb24-36" aria-hidden="true" tabindex="-1"></a><span class="in">  kable(digits = 0, </span></span>
+<span id="cb24-37"><a href="#cb24-37" aria-hidden="true" tabindex="-1"></a><span class="in">        col.names = c("Cut", "Average Price"),</span></span>
+<span id="cb24-38"><a href="#cb24-38" aria-hidden="true" tabindex="-1"></a><span class="in">        caption = "Kesime göre ortalama pırlanta fiyatı.") %&gt;%</span></span>
+<span id="cb24-39"><a href="#cb24-39" aria-hidden="true" tabindex="-1"></a><span class="in">  kable_material()</span></span>
+<span id="cb24-40"><a href="#cb24-40" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb24-41"><a href="#cb24-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-42"><a href="#cb24-42" aria-hidden="true" tabindex="-1"></a><span class="fu">### Renk</span></span>
+<span id="cb24-43"><a href="#cb24-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-44"><a href="#cb24-44" aria-hidden="true" tabindex="-1"></a><span class="in">```{r renk}</span></span>
+<span id="cb24-45"><a href="#cb24-45" aria-hidden="true" tabindex="-1"></a><span class="in">diamonds %&gt;%</span></span>
+<span id="cb24-46"><a href="#cb24-46" aria-hidden="true" tabindex="-1"></a><span class="in">  group_by(color) %&gt;%</span></span>
+<span id="cb24-47"><a href="#cb24-47" aria-hidden="true" tabindex="-1"></a><span class="in">  summarise(avg = mean(price),</span></span>
+<span id="cb24-48"><a href="#cb24-48" aria-hidden="true" tabindex="-1"></a><span class="in">            .groups = "drop") %&gt;%</span></span>
+<span id="cb24-49"><a href="#cb24-49" aria-hidden="true" tabindex="-1"></a><span class="in">  kable(digits = 0, </span></span>
+<span id="cb24-50"><a href="#cb24-50" aria-hidden="true" tabindex="-1"></a><span class="in">        col.names = c("Cut", "Average Price"),</span></span>
+<span id="cb24-51"><a href="#cb24-51" aria-hidden="true" tabindex="-1"></a><span class="in">        caption = "Renge göre ortalama pırlanta fiyatı.") %&gt;%</span></span>
+<span id="cb24-52"><a href="#cb24-52" aria-hidden="true" tabindex="-1"></a><span class="in">  kable_material()</span></span>
+<span id="cb24-53"><a href="#cb24-53" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb24-54"><a href="#cb24-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-55"><a href="#cb24-55" aria-hidden="true" tabindex="-1"></a><span class="fu">## Grafikler</span></span>
 <span id="cb24-56"><a href="#cb24-56" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-57"><a href="#cb24-57" aria-hidden="true" tabindex="-1"></a><span class="fu">### Karat</span></span>
+<span id="cb24-57"><a href="#cb24-57" aria-hidden="true" tabindex="-1"></a><span class="fu">### Parlaklık</span></span>
 <span id="cb24-58"><a href="#cb24-58" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-59"><a href="#cb24-59" aria-hidden="true" tabindex="-1"></a><span class="in">```{r karat, fig.cap = "Karata göre pırlanta fiyatı"}</span></span>
-<span id="cb24-60"><a href="#cb24-60" aria-hidden="true" tabindex="-1"></a><span class="in">ggplot(diamonds, aes(x = carat, y = price)) +</span></span>
-<span id="cb24-61"><a href="#cb24-61" aria-hidden="true" tabindex="-1"></a><span class="in">  stat_smooth()</span></span>
+<span id="cb24-59"><a href="#cb24-59" aria-hidden="true" tabindex="-1"></a><span class="in">```{r parlaklik, fig.cap = "Parlaklığa göre pırlanta fiyatı"}</span></span>
+<span id="cb24-60"><a href="#cb24-60" aria-hidden="true" tabindex="-1"></a><span class="in">ggplot(diamonds, aes(x = clarity, y = price)) +</span></span>
+<span id="cb24-61"><a href="#cb24-61" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_boxplot() </span></span>
 <span id="cb24-62"><a href="#cb24-62" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb24-63"><a href="#cb24-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-64"><a href="#cb24-64" aria-hidden="true" tabindex="-1"></a><span class="fu">### Sonuclar {#sonuclar}</span></span>
+<span id="cb24-64"><a href="#cb24-64" aria-hidden="true" tabindex="-1"></a><span class="fu">### Karat</span></span>
 <span id="cb24-65"><a href="#cb24-65" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-66"><a href="#cb24-66" aria-hidden="true" tabindex="-1"></a>"Kodlar haricinde pırlantalarla ilgilenmiyorum :) "</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb24-66"><a href="#cb24-66" aria-hidden="true" tabindex="-1"></a><span class="in">```{r karat, fig.cap = "Karata göre pırlanta fiyatı"}</span></span>
+<span id="cb24-67"><a href="#cb24-67" aria-hidden="true" tabindex="-1"></a><span class="in">ggplot(diamonds, aes(x = carat, y = price)) +</span></span>
+<span id="cb24-68"><a href="#cb24-68" aria-hidden="true" tabindex="-1"></a><span class="in">  stat_smooth()</span></span>
+<span id="cb24-69"><a href="#cb24-69" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb24-70"><a href="#cb24-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-71"><a href="#cb24-71" aria-hidden="true" tabindex="-1"></a><span class="fu">### Sonuclar {#sonuclar}</span></span>
+<span id="cb24-72"><a href="#cb24-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-73"><a href="#cb24-73" aria-hidden="true" tabindex="-1"></a>"Kodlar haricinde pırlantalarla ilgilenmiyorum :) "</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Bu format varsayılan olarak numaralandırılmış bölümler bulunuyor, numaralandırma bunu istemiyorsanız <code>YAML</code> bölümünde <code>number_sections: false</code> ayarını yapın. Numaralandırılmış bölümleri kaldırırsanız, <code>\@ref(sonuclar)</code> gibi bağlantılar “??” gösterecektir, bu nedenle bunun yerine aşağıdaki gibi URL bağlantı adresi kullanmanız gerekir:</p>
-<p>Son açıklamalar için <a href="#sonuclar">son bölüme</a> bakınız.</p>
+<p>Son açıklamalar için <a href="#Kaynakça">Kaynakça</a> bakınız.</p>
 </section>
 </section>
-<section id="kaynakça" class="level2">
-<h2 class="anchored" data-anchor-id="kaynakça">Kaynakça</h2>
-<p>R Markdown’da metin içi referanslar yapmanın ve otomatik olarak bir kaynakça oluşturmanın birkaç yolu vardır. Markdown dosyalarının, atıfta bulunmanız gereken referansları içeren bir BibTex veya JSON dosyasına (referansları belirli bir formatta içeren düz bir metin dosyası) bağlanması gerekir. Bu dosyanın adını bibliography: refs.bib gibi YAML başlığında belirtirsiniz ve <span class="citation" data-cites="tidyverse">[@tidyverse]</span> gibi bir @ sembolü ve kısa ad kullanarak metin içinde referanslara atıfta bulunursunuz. Referanslarınızı örneğin APA stilinde biçimlendirmek için bir <a href="https://github.com/citation-style-language/styles/blob/master/apa.csl">Citation Style Language (.csl) dosyası da ekleyebilirsiniz.</a></p>
+<section id="Kaynakça" class="level2">
+<h2 class="anchored" data-anchor-id="Kaynakça">Kaynakça</h2>
+<p>R Markdown’da metin içi referanslar yapmanın ve otomatik olarak bir kaynakça oluşturmanın birkaç yolu vardır. Markdown dosyalarının, atıfta bulunmanız gereken referansları içeren bir BibTex veya JSON dosyasına (referansları belirli bir formatta içeren düz bir metin dosyası) bağlanması gerekir. Bu dosyanın adını bibliography: refs.bib gibi YAML başlığında belirtirsiniz ve <span class="citation" data-cites="tidyverse">[@tidyverse]</span> gibi bir @ sembolü ve kısa ad kullanarak metin içinde referanslara atıfta bulunursunuz. Referanslarınızı örneğin APA stilinde biçimlendirmek için bir <a href="https://github.com/citation-style-language/styles/blob/master/apa.csl">Citation Style Language (.csl) dosyası da ekleyebilirsiniz.</a> apa-tr.csl ise türkçe referans göstermek için kullanılabilir.</p>
 <p>a <a href="https://bookdown.org/yihui/rmarkdown-cookbook/bibliography.html" target="_blank">bibliography</a></p>
 <pre><code>---
 title: "My Paper"
@@ -1509,8 +1567,18 @@ csl: apa.csl
 <section id="referans-yazılımdan-dönüştürme" class="level3">
 <h3 class="anchored" data-anchor-id="referans-yazılımdan-dönüştürme">Referans yazılımdan dönüştürme</h3>
 <p>EndNote veya Zotero gibi çoğu referans yazılımı BibTeX formatına aktarabilen dışa aktarma seçeneklerine sahiptir. Ortaya çıkan dosyadaki kısa adları kontrol etmeniz yeterlidir.</p>
-<div class="warning">
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+!!!
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Bir referans programı kullanmak hayatınızı çok daha kolaylaştıracaktır. Zotero muhtemelen en iyisidir.</p>
+</div>
 </div>
 <p>Dışa aktarılan dosya şu şekilde görünmelidir:</p>
 <div class="sourceCode" id="cb26"><pre class="sourceCode bib code-with-copy"><code class="sourceCode bibtex"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a></span>
@@ -1641,7 +1709,7 @@ csl: apa.csl
 <li><p>rpubs sayfalarını oluşturup, bu bilgiyi bana ulaştırınız.</p></li>
 <li><p>rpubs sayfasında ilk dört haftada öğrendiklerinizin kısa bir özetini paylaşınız.</p></li>
 <li><p>Ayrıca <a href="REGRESYONODEVI.html">linkte</a> yer alan çoklu regresyon ile ilgili dökümanı repores paketinin Report şablonu ile oluşturmanızı bekliyorum. Bu dökümana eklenmiş ayrıca bir adet görsel bulunmaktadır. Görsele buradan <a href="images/LS.png">ulaşabilirsiniz</a>. Bu ödeviniz gönderdiğim dosyaya benzerliğine göre puanlanacaktır.</p></li>
-<li><p>not: şanlonda (templatede) alan YMAL header css: extras/style.css # path to css file kısmını siliniz.</p></li>
+<li><p>not: Şablonda (templatede) alan YMAL header css: extras/style.css # path to css file kısmını siliniz.</p></li>
 </ul>
 </section>
 <section id="diğer-kaynaklar" class="level2">
