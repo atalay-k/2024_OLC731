@@ -160,18 +160,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#for" id="toc-for" class="nav-link" data-scroll-target="#for"><code>for</code></a>
   <ul class="collapse">
-  <li><a href="#for-döngüsü-ve-kontrol" id="toc-for-döngüsü-ve-kontrol" class="nav-link" data-scroll-target="#for-döngüsü-ve-kontrol"><strong>for()</strong> Döngüsü ve Kontrol</a></li>
-  <li><a href="#next-ve-break" id="toc-next-ve-break" class="nav-link" data-scroll-target="#next-ve-break"><code>next()</code> ve <code>break()</code></a></li>
-  <li><a href="#içiçe-for-döngüleri" id="toc-içiçe-for-döngüleri" class="nav-link" data-scroll-target="#içiçe-for-döngüleri">İçiçe <code>for</code> döngüleri</a></li>
-  <li><a href="#ödev-1" id="toc-ödev-1" class="nav-link" data-scroll-target="#ödev-1">Ödev-1</a></li>
-  </ul></li>
-  <li><a href="#while-döngüsü" id="toc-while-döngüsü" class="nav-link" data-scroll-target="#while-döngüsü"><code>while</code> döngüsü</a>
+  <li><a href="#sıra-sizde-2" id="toc-sıra-sizde-2" class="nav-link" data-scroll-target="#sıra-sizde-2">Sıra Sizde</a></li>
+  <li><a href="#for-döngüsü-ve-kontrol" id="toc-for-döngüsü-ve-kontrol" class="nav-link" data-scroll-target="#for-döngüsü-ve-kontrol"><strong>for()</strong> Döngüsü ve Kontrol</a>
   <ul class="collapse">
-  <li><a href="#repeat-döngüler" id="toc-repeat-döngüler" class="nav-link" data-scroll-target="#repeat-döngüler"><code>repeat</code> Döngüler</a></li>
+  <li><a href="#sıra-sizde-3" id="toc-sıra-sizde-3" class="nav-link" data-scroll-target="#sıra-sizde-3">Sıra Sizde</a></li>
+  </ul></li>
+  <li><a href="#next-ve-break" id="toc-next-ve-break" class="nav-link" data-scroll-target="#next-ve-break"><code>next()</code> ve <code>break()</code></a></li>
+  <li><a href="#içiçe-for-döngüleri" id="toc-içiçe-for-döngüleri" class="nav-link" data-scroll-target="#içiçe-for-döngüleri">İçiçe <code>for</code> döngüleri</a>
+  <ul class="collapse">
+  <li><a href="#sıra-sizde-4" id="toc-sıra-sizde-4" class="nav-link" data-scroll-target="#sıra-sizde-4">sıra sizde</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#while-döngüsü" id="toc-while-döngüsü" class="nav-link" data-scroll-target="#while-döngüsü"><code>while</code> döngüsü</a></li>
+  <li><a href="#repeat-döngüler" id="toc-repeat-döngüler" class="nav-link" data-scroll-target="#repeat-döngüler"><code>repeat</code> Döngüler</a>
+  <ul class="collapse">
   <li><a href="#özet" id="toc-özet" class="nav-link" data-scroll-target="#özet">Özet</a></li>
-  <li><a href="#ödev-1-1" id="toc-ödev-1-1" class="nav-link" data-scroll-target="#ödev-1-1">Ödev-1</a></li>
-  <li><a href="#ödev-2" id="toc-ödev-2" class="nav-link" data-scroll-target="#ödev-2">Ödev-2</a></li>
-  <li><a href="#ödev-3" id="toc-ödev-3" class="nav-link" data-scroll-target="#ödev-3">Ödev 3</a></li>
+  <li><a href="#ödevler" id="toc-ödevler" class="nav-link" data-scroll-target="#ödevler">Ödevler</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -228,10 +232,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Yukarıdaki kod, koşul yanlışsa hiçbir şey yapmaz. Koşul yanlış olduğunda yürütmek istediğiniz bir eyleminiz varsa, o zaman bir <code>else</code> cümlesine ihtiyacınız vardır.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">&lt;</span>koşul<span class="sc">&gt;</span>) {</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>        <span class="do">## kodlar</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>} </span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span> {</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>        <span class="do">## kodlar</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>}<span class="cf">else</span> {</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>        <span class="do">## kodlar</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><code>if</code>i herhangi bir <code>if</code> ile takip ederek bir dizi test yapabilirsiniz. <code>else if</code> kullanabilirsiniz.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">&lt;</span>kosul1<span class="sc">&gt;</span>) {</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>        <span class="do">## kodlar</span></span>
@@ -266,8 +269,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>        <span class="dv">0</span></span>
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Bu ifadeyi yazmanın hiçbir yolu diğerinden daha doğru değildir. Hangisini kullanacağınız sizin tercihlerinize bağlıdır</p>
-<p>Elbette <code>else</code> cümlesi gerekli değildir. Kendi koşulları doğruysa her zaman çalıştırılan bir dizi if cümlesine sahip olabilirsiniz.</p>
+<p>Bu ifadeyi yazmanın hiçbir yolu diğerinden daha doğru değildir. Hangisini kullanacağınız sizin tercihlerinize bağlıdır.</p>
+<p>Elbette <code>else</code> cümlesi gerekli değildir. Kendi koşulları doğruysa her zaman çalıştırılan bir dizi if cümlesi de oluşturabilirsiniz.</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">&lt;</span>kosul1<span class="sc">&gt;</span>) {</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>}</span>
@@ -299,8 +302,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>else kullanımı ile çıktı alabiliriz</li>
 </ul>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span><span class="dv">60</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Başarılı Durum</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(x<span class="sc">&gt;=</span><span class="dv">65</span>){</span>
@@ -308,7 +309,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>}<span class="cf">else</span>{</span>
 <span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"Basarisiz"</span>)</span>
 <span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Basarisiz"</code></pre>
 </div>
@@ -348,7 +348,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>[1] "5'in carpmaya gore tersi 1/5"</code></pre>
 </div>
 </div>
-<p><code>x &lt;- 0</code>için test ediniz.</p>
+<p><code>x &lt;- 0</code> için test ediniz.</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "1/0 tanımsızdır."</code></pre>
@@ -489,7 +489,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <ol start="2" type="1">
-<li>Elimizdeki bir nesnede yer alan sayıların 0, pozitif ya negatif oldugu belirleme</li>
+<li>Elimizdeki bir nesnede yer alan sayıların 0, pozitif veya negatif oldugu belirleme</li>
 </ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">987</span>)</span>
@@ -512,14 +512,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Finalden 50 ve üzeri alan ve en az 11 derse devam edem öğrencilerin geçme notları finalin %60 ve vizenin %40 alınarak hesaplansın, 11’den az derse devam eden öğrencilerin geçme notu final notunun %60’ olarak alınsın.</li>
 </ol>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: false</span></span>
-<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>vize <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">60</span>,<span class="dv">70</span>,<span class="dv">80</span>,<span class="dv">90</span>,<span class="dv">55</span>)</span>
-<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>final <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">45</span>,<span class="dv">65</span>,<span class="dv">70</span>,<span class="dv">50</span>,<span class="dv">80</span>)</span>
-<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a>devam <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">14</span>,<span class="dv">10</span>,<span class="dv">13</span>,<span class="dv">12</span>,<span class="dv">11</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>vize <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">60</span>,<span class="dv">70</span>,<span class="dv">80</span>,<span class="dv">90</span>,<span class="dv">55</span>)</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>final <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">45</span>,<span class="dv">65</span>,<span class="dv">70</span>,<span class="dv">50</span>,<span class="dv">80</span>)</span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>devam <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">14</span>,<span class="dv">10</span>,<span class="dv">13</span>,<span class="dv">12</span>,<span class="dv">11</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
@@ -594,7 +589,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 [1] "d"</code></pre>
 </div>
 </div>
-<p>Bununla birlikte, tek satırlık döngüler için bile küme parantezleri kullanmayı seviyorum, çünkü bu şekilde döngüyü birden fazla satıra genişletmeye karar verirseniz, küme parantezleri eklemeyi unuttuğunuz için hata alamazsınız.</p>
+<p>Bununla birlikte, tek satırlık döngüler için bile küme parantezleri kullanmayı seviyorum, çünkü bu şekilde döngüyü birden fazla satıra genişletmeye karar verirseniz, küme parantezleri eklemeyi unuttuğunuz için hata almazsınız.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>) {</span>
 <span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a> <span class="fu">print</span>(i)</span>
@@ -642,6 +637,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 [1] "Merhaba"</code></pre>
 </div>
 </div>
+<section id="sıra-sizde-2" class="level3">
+<h3 class="anchored" data-anchor-id="sıra-sizde-2">Sıra Sizde</h3>
 <ul>
 <li>Aşağıdaki çıktıyı sağlayacak kodu yazınız.</li>
 </ul>
@@ -716,6 +713,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>[1] 46</code></pre>
 </div>
 </div>
+</section>
 <section id="for-döngüsü-ve-kontrol" class="level2">
 <h2 class="anchored" data-anchor-id="for-döngüsü-ve-kontrol"><strong>for()</strong> Döngüsü ve Kontrol</h2>
 <p>Her zaman işlemi tüm elemanlara uygulamak istemeyebiliriz. Bunu önlemek icin akış kontrolü yapmak gerekir.</p>
@@ -778,6 +776,8 @@ sutun toplamlari: 20 </code></pre>
 [5,]    5   25</code></pre>
 </div>
 </div>
+<section id="sıra-sizde-3" class="level3">
+<h3 class="anchored" data-anchor-id="sıra-sizde-3">Sıra Sizde</h3>
 <p>Aşağıdaki çıktıyı elde etmek için gerekli kodu yazınız.</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -788,6 +788,7 @@ sutun toplamlari: 20 </code></pre>
 5 satirdaki degerlerin carpimi 125 olarak hesaplanmistir. </code></pre>
 </div>
 </div>
+</section>
 </section>
 <section id="next-ve-break" class="level2">
 <h2 class="anchored" data-anchor-id="next-ve-break"><code>next()</code> ve <code>break()</code></h2>
@@ -872,9 +873,10 @@ sutun toplamlari: 20 </code></pre>
 <span id="cb90-6"><a href="#cb90-6" aria-hidden="true" tabindex="-1"></a>        }   </span>
 <span id="cb90-7"><a href="#cb90-7" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>İç içe döngüler genellikle çok boyutlu veya hiyerarşik veri yapıları (örn. matrisler, listeler) için gereklidir. Yine de iç içe geçme konusunda dikkatli olun. 2-3 seviyeden fazla iç içe geçme genellikle kodun okunmasını/anlaşılmasını zorlaştırır. Çok sayıda iç içe döngüye ihtiyaç duyuyorsanız, fonksiyonları kullanarak döngüleri parçalamak isteyebilirsiniz (daha sonra tartışılacaktır).</p>
+<section id="sıra-sizde-4" class="level3">
+<h3 class="anchored" data-anchor-id="sıra-sizde-4">sıra sizde</h3>
 <ul>
-<li><p>sıra sizde</p></li>
-<li><p>Bazen döngüler iç içe kullanılabilir 5X5 bir matrisin her bir elemanı satır ve sütun indeksleri çarpımı olsun orneğin 2. satır 5. sütun elemanı 2*5=10 olsun. Bu işlemi yapmak için öncelikle boş bir matris oluştumak lazım.</p></li>
+<li>Bazen döngüler iç içe kullanılabilir 5X5 bir matrisin her bir elemanı satır ve sütun indeksleri çarpımı olsun orneğin 2. satır 5. sütun elemanı 2*5=10 olsun. Bu işlemi yapmak için öncelikle boş bir matris oluştumak lazım.</li>
 </ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb91"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb91-1"><a href="#cb91-1" aria-hidden="true" tabindex="-1"></a>m2 <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">0</span>,<span class="at">nrow=</span><span class="dv">5</span>,<span class="at">ncol=</span><span class="dv">5</span>)</span>
@@ -902,32 +904,17 @@ sutun toplamlari: 20 </code></pre>
 </div>
 </div>
 </section>
-<section id="ödev-1" class="level2">
-<h2 class="anchored" data-anchor-id="ödev-1">Ödev-1</h2>
-<ul>
-<li><p>Kullanıcı tarafından belirlenen <strong>nxn</strong> boyutunda bir matris oluşturulsun. <strong>nxn</strong> bir matrisin her bir elemanı satır ve sütun indeksleri çarpımı olsun. orneğin 2. satır 5. sütun elemanı 2*5=10 olsun</p></li>
-<li><p>Eger matrisin boyutları 10x10’dan büyükse sadece 10 satırını yazsın eğer matrisi boyutları 10x10’dan küçükse hepsini yazsın.</p></li>
-<li><p>Kullancı üç girdiğinde oluşacak çıktı:</p></li>
-</ul>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>     [,1] [,2] [,3]
-[1,]    1    2    3
-[2,]    2    4    6
-[3,]    3    6    9</code></pre>
-</div>
-</div>
 </section>
 </section>
 <section id="while-döngüsü" class="level1">
 <h1><code>while</code> döngüsü</h1>
 <p>While döngüleri bir koşulu test ederek başlar. Koşul doğruysa, döngü gövdesini çalıştırır. Döngü gövdesi yürütüldükten sonra, koşul tekrar test edilir ve koşul yanlış olana kadar bu şekilde devam eder, ardından döngüden çıkılır.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb95"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb95-1"><a href="#cb95-1" aria-hidden="true" tabindex="-1"></a>count <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb95-2"><a href="#cb95-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span>(count <span class="sc">&lt;</span> <span class="dv">10</span>) {</span>
-<span id="cb95-3"><a href="#cb95-3" aria-hidden="true" tabindex="-1"></a>        <span class="fu">print</span>(count)</span>
-<span id="cb95-4"><a href="#cb95-4" aria-hidden="true" tabindex="-1"></a>        count <span class="ot">&lt;-</span> count <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb95-5"><a href="#cb95-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb94"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb94-1"><a href="#cb94-1" aria-hidden="true" tabindex="-1"></a>count <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb94-2"><a href="#cb94-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span>(count <span class="sc">&lt;</span> <span class="dv">10</span>) {</span>
+<span id="cb94-3"><a href="#cb94-3" aria-hidden="true" tabindex="-1"></a>        <span class="fu">print</span>(count)</span>
+<span id="cb94-4"><a href="#cb94-4" aria-hidden="true" tabindex="-1"></a>        count <span class="ot">&lt;-</span> count <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb94-5"><a href="#cb94-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0
 [1] 1
@@ -944,45 +931,45 @@ sutun toplamlari: 20 </code></pre>
 <p>While döngüleri düzgün yazılmazsa sonsuz döngülere neden olabilir. Dikkatli kullanın!</p>
 <p>Bazen testte birden fazla koşul olabilir.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb97"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb97-1"><a href="#cb97-1" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> <span class="dv">5</span></span>
-<span id="cb97-2"><a href="#cb97-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1</span>)</span>
-<span id="cb97-3"><a href="#cb97-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb97-4"><a href="#cb97-4" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span>(z <span class="sc">&gt;=</span> <span class="dv">3</span> <span class="sc">&amp;&amp;</span> z <span class="sc">&lt;=</span> <span class="dv">10</span>) {</span>
-<span id="cb97-5"><a href="#cb97-5" aria-hidden="true" tabindex="-1"></a>        coin <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="fl">0.5</span>)</span>
-<span id="cb97-6"><a href="#cb97-6" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb97-7"><a href="#cb97-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span>(coin <span class="sc">==</span> <span class="dv">1</span>) {  <span class="do">## rastgele çalışır</span></span>
-<span id="cb97-8"><a href="#cb97-8" aria-hidden="true" tabindex="-1"></a>                z <span class="ot">&lt;-</span> z <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb97-9"><a href="#cb97-9" aria-hidden="true" tabindex="-1"></a>        } <span class="cf">else</span> {</span>
-<span id="cb97-10"><a href="#cb97-10" aria-hidden="true" tabindex="-1"></a>                z <span class="ot">&lt;-</span> z <span class="sc">-</span> <span class="dv">1</span></span>
-<span id="cb97-11"><a href="#cb97-11" aria-hidden="true" tabindex="-1"></a>        } </span>
-<span id="cb97-12"><a href="#cb97-12" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb97-13"><a href="#cb97-13" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(z)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb96"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb96-1"><a href="#cb96-1" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb96-2"><a href="#cb96-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1</span>)</span>
+<span id="cb96-3"><a href="#cb96-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb96-4"><a href="#cb96-4" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span>(z <span class="sc">&gt;=</span> <span class="dv">3</span> <span class="sc">&amp;&amp;</span> z <span class="sc">&lt;=</span> <span class="dv">10</span>) {</span>
+<span id="cb96-5"><a href="#cb96-5" aria-hidden="true" tabindex="-1"></a>        coin <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="fl">0.5</span>)</span>
+<span id="cb96-6"><a href="#cb96-6" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb96-7"><a href="#cb96-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span>(coin <span class="sc">==</span> <span class="dv">1</span>) {  <span class="do">## rastgele çalışır</span></span>
+<span id="cb96-8"><a href="#cb96-8" aria-hidden="true" tabindex="-1"></a>                z <span class="ot">&lt;-</span> z <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb96-9"><a href="#cb96-9" aria-hidden="true" tabindex="-1"></a>        } <span class="cf">else</span> {</span>
+<span id="cb96-10"><a href="#cb96-10" aria-hidden="true" tabindex="-1"></a>                z <span class="ot">&lt;-</span> z <span class="sc">-</span> <span class="dv">1</span></span>
+<span id="cb96-11"><a href="#cb96-11" aria-hidden="true" tabindex="-1"></a>        } </span>
+<span id="cb96-12"><a href="#cb96-12" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb96-13"><a href="#cb96-13" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(z)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 2</code></pre>
 </div>
 </div>
 <p>Koşullar her zaman soldan sağa doğru değerlendirilir. Örneğin, yukarıdaki kodda <code>z</code> 3’ten küçük olsaydı, ikinci test değerlendirilmezdi.</p>
-<section id="repeat-döngüler" class="level2">
-<h2 class="anchored" data-anchor-id="repeat-döngüler"><code>repeat</code> Döngüler</h2>
+</section>
+<section id="repeat-döngüler" class="level1">
+<h1><code>repeat</code> Döngüler</h1>
 <p><code>repeat</code> başlangıçtan itibaren sonsuz bir döngü başlatır. Bunlar istatistiksel veya veri analizi uygulamalarında yaygın olarak kullanılmaz, ancak kullanım alanları vardır. Bir <code>repeat</code> döngüsünden çıkmanın tek yolu <code>break</code> çağrısı yapmaktır.</p>
 <p>Olası bir paradigma, bir çözüm arıyor olabileceğiniz ve çözüme ulaşana kadar durmak istemediğiniz yinelemeli bir algoritmada olabilir.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb99"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb99-1"><a href="#cb99-1" aria-hidden="true" tabindex="-1"></a>x0 <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb99-2"><a href="#cb99-2" aria-hidden="true" tabindex="-1"></a>tol <span class="ot">&lt;-</span> <span class="fl">1e-8</span></span>
-<span id="cb99-3"><a href="#cb99-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb99-4"><a href="#cb99-4" aria-hidden="true" tabindex="-1"></a><span class="cf">repeat</span> {</span>
-<span id="cb99-5"><a href="#cb99-5" aria-hidden="true" tabindex="-1"></a>        x1 <span class="ot">&lt;-</span> <span class="fu">computeEstimate</span>()</span>
-<span id="cb99-6"><a href="#cb99-6" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb99-7"><a href="#cb99-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span>(<span class="fu">abs</span>(x1 <span class="sc">-</span> x0) <span class="sc">&lt;</span> tol) {  <span class="do">## Yeterince yakın mı?</span></span>
-<span id="cb99-8"><a href="#cb99-8" aria-hidden="true" tabindex="-1"></a>                <span class="cf">break</span></span>
-<span id="cb99-9"><a href="#cb99-9" aria-hidden="true" tabindex="-1"></a>        } <span class="cf">else</span> {</span>
-<span id="cb99-10"><a href="#cb99-10" aria-hidden="true" tabindex="-1"></a>                x0 <span class="ot">&lt;-</span> x1</span>
-<span id="cb99-11"><a href="#cb99-11" aria-hidden="true" tabindex="-1"></a>        } </span>
-<span id="cb99-12"><a href="#cb99-12" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb98"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb98-1"><a href="#cb98-1" aria-hidden="true" tabindex="-1"></a>x0 <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb98-2"><a href="#cb98-2" aria-hidden="true" tabindex="-1"></a>tol <span class="ot">&lt;-</span> <span class="fl">1e-8</span></span>
+<span id="cb98-3"><a href="#cb98-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb98-4"><a href="#cb98-4" aria-hidden="true" tabindex="-1"></a><span class="cf">repeat</span> {</span>
+<span id="cb98-5"><a href="#cb98-5" aria-hidden="true" tabindex="-1"></a>        x1 <span class="ot">&lt;-</span> <span class="fu">computeEstimate</span>()</span>
+<span id="cb98-6"><a href="#cb98-6" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb98-7"><a href="#cb98-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span>(<span class="fu">abs</span>(x1 <span class="sc">-</span> x0) <span class="sc">&lt;</span> tol) {  <span class="do">## Yeterince yakın mı?</span></span>
+<span id="cb98-8"><a href="#cb98-8" aria-hidden="true" tabindex="-1"></a>                <span class="cf">break</span></span>
+<span id="cb98-9"><a href="#cb98-9" aria-hidden="true" tabindex="-1"></a>        } <span class="cf">else</span> {</span>
+<span id="cb98-10"><a href="#cb98-10" aria-hidden="true" tabindex="-1"></a>                x0 <span class="ot">&lt;-</span> x1</span>
+<span id="cb98-11"><a href="#cb98-11" aria-hidden="true" tabindex="-1"></a>        } </span>
+<span id="cb98-12"><a href="#cb98-12" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Yukarıdaki kodun <code>computeEstimate()</code> fonksiyonu tanımlanmamışsa çalışmayacağını unutmayın (bunu sadece bu gösterimin amaçları için uydurdum).</p>
 <p>Yukarıdaki döngü biraz tehlikelidir çünkü duracağının garantisi yoktur. <code>x0</code> ve<code>x1</code> değerlerinin ileri geri salındığı ve asla yakınsamadığı bir duruma girebilirsiniz. Bir <code>for</code> döngüsü kullanarak iterasyon sayısına sabit bir sınır koymak ve ardından yakınsamanın sağlanıp sağlanmadığını rapor etmek daha iyidir.</p>
-</section>
 <section id="özet" class="level2">
 <h2 class="anchored" data-anchor-id="özet">Özet</h2>
 <ul>
@@ -991,13 +978,23 @@ sutun toplamlari: 20 </code></pre>
 <li><p>Burada bahsedilen kontrol yapıları öncelikle program yazmak için kullanışlıdır; komut satırı etkileşimli çalışmalar için “apply” fonksiyonları daha kullanışlıdır.</p></li>
 </ul>
 </section>
-<section id="ödev-1-1" class="level2">
-<h2 class="anchored" data-anchor-id="ödev-1-1">Ödev-1</h2>
-<p>Fibonacci dizisinin elemanlari <strong>1 1 2 3 5 8 13 21 34 55 89 …</strong> dizinin elemanlarını <code>for()</code> ve/ve ya <code>while()</code> döngüsü ile oluşturmaya çalışınız.</p>
-</section>
-<section id="ödev-2" class="level2">
-<h2 class="anchored" data-anchor-id="ödev-2">Ödev-2</h2>
-<p>Aşağıda ornek veri setini oluşturma kodları yer almaktadır</p>
+<section id="ödevler" class="level2">
+<h2 class="anchored" data-anchor-id="ödevler">Ödevler</h2>
+<p><strong>S1.</strong> Kullanıcı tarafından belirlenen <strong>nxn</strong> boyutunda bir matris oluşturulsun. <strong>nxn</strong> bir matrisin her bir elemanı satır ve sütun indeksleri çarpımı olsun. orneğin 2. satır 5. sütun elemanı 2*5=10 olsun</p>
+<ul>
+<li><p>Eger matrisin boyutları 10x10’dan büyükse sadece 10 satırını yazsın eğer matrisi boyutları 10x10’dan küçükse hepsini yazsın.</p></li>
+<li><p>Kullancı üç girdiğinde oluşacak çıktı:</p></li>
+</ul>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>     [,1] [,2] [,3]
+[1,]    1    2    3
+[2,]    2    4    6
+[3,]    3    6    9</code></pre>
+</div>
+</div>
+<p><strong>S2.</strong> Fibonacci dizisinin elemanlari <strong>1 1 2 3 5 8 13 21 34 55 89 …</strong> dizinin elemanlarını <code>for()</code> ve/ve ya <code>while()</code> döngüsü ile oluşturmaya çalışınız.</p>
+<p><strong>S3.</strong> Aşağıda ornek veri setini oluşturma kodları yer almaktadır</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb100"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb100-1"><a href="#cb100-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1786</span>)</span>
 <span id="cb100-2"><a href="#cb100-2" aria-hidden="true" tabindex="-1"></a>ornek<span class="ot">&lt;-</span><span class="fu">exp</span>(<span class="fu">matrix</span>(<span class="fu">rnorm</span>(<span class="dv">2000</span>),<span class="at">nrow=</span><span class="dv">100</span>))</span>
@@ -1140,29 +1137,27 @@ sutun toplamlari: 20 </code></pre>
 [1] "Satir 100 ortalamasi 1.5918224514213"</code></pre>
 </div>
 </div>
-<p>Matris yazdırma</p>
+<!-- Matris yazdırma -->
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb103"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb103-1"><a href="#cb103-1" aria-hidden="true" tabindex="-1"></a>n<span class="ot">&lt;-</span><span class="fu">as.numeric</span>(<span class="fu">readline</span>(<span class="at">prompt =</span> <span class="st">"Kare matriste satir/sutun sayisi olarak kullanilmak uzere bir sayi yaziniz: "</span>))</span>
-<span id="cb103-2"><a href="#cb103-2" aria-hidden="true" tabindex="-1"></a>matris<span class="ot">&lt;-</span><span class="fu">matrix</span>(<span class="dv">0</span>,n,n)</span>
-<span id="cb103-3"><a href="#cb103-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(satir <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n){</span>
-<span id="cb103-4"><a href="#cb103-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(sutun <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n){</span>
-<span id="cb103-5"><a href="#cb103-5" aria-hidden="true" tabindex="-1"></a>    matris[satir,sutun]<span class="ot">&lt;-</span> satir<span class="sc">*</span>sutun</span>
-<span id="cb103-6"><a href="#cb103-6" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb103-7"><a href="#cb103-7" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb103-8"><a href="#cb103-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-9"><a href="#cb103-9" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="fu">nrow</span>(matris)<span class="sc">&lt;=</span><span class="dv">10</span>){</span>
-<span id="cb103-10"><a href="#cb103-10" aria-hidden="true" tabindex="-1"></a>  matris</span>
-<span id="cb103-11"><a href="#cb103-11" aria-hidden="true" tabindex="-1"></a>}<span class="cf">else</span>{</span>
-<span id="cb103-12"><a href="#cb103-12" aria-hidden="true" tabindex="-1"></a>  matris[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>,<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>]</span>
-<span id="cb103-13"><a href="#cb103-13" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb103"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb103-1"><a href="#cb103-1" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb103-2"><a href="#cb103-2" aria-hidden="true" tabindex="-1"></a><span class="co"># n&lt;-as.numeric(readline(prompt = "Kare matriste satir/sutun sayisi olarak kullanilmak uzere bir sayi yaziniz: "))</span></span>
+<span id="cb103-3"><a href="#cb103-3" aria-hidden="true" tabindex="-1"></a><span class="co"># matris&lt;-matrix(0,n,n)</span></span>
+<span id="cb103-4"><a href="#cb103-4" aria-hidden="true" tabindex="-1"></a><span class="co"># for(satir in 1:n){</span></span>
+<span id="cb103-5"><a href="#cb103-5" aria-hidden="true" tabindex="-1"></a><span class="co">#   for(sutun in 1:n){</span></span>
+<span id="cb103-6"><a href="#cb103-6" aria-hidden="true" tabindex="-1"></a><span class="co">#     matris[satir,sutun]&lt;- satir*sutun</span></span>
+<span id="cb103-7"><a href="#cb103-7" aria-hidden="true" tabindex="-1"></a><span class="co">#   }</span></span>
+<span id="cb103-8"><a href="#cb103-8" aria-hidden="true" tabindex="-1"></a><span class="co"># }</span></span>
+<span id="cb103-9"><a href="#cb103-9" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb103-10"><a href="#cb103-10" aria-hidden="true" tabindex="-1"></a><span class="co"># if(nrow(matris)&lt;=10){</span></span>
+<span id="cb103-11"><a href="#cb103-11" aria-hidden="true" tabindex="-1"></a><span class="co">#   matris</span></span>
+<span id="cb103-12"><a href="#cb103-12" aria-hidden="true" tabindex="-1"></a><span class="co"># }else{</span></span>
+<span id="cb103-13"><a href="#cb103-13" aria-hidden="true" tabindex="-1"></a><span class="co">#   matris[1:10,1:10]</span></span>
+<span id="cb103-14"><a href="#cb103-14" aria-hidden="true" tabindex="-1"></a><span class="co"># }</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-</section>
-<section id="ödev-3" class="level2">
-<h2 class="anchored" data-anchor-id="ödev-3">Ödev 3</h2>
-<p>aşağıdaki geometrik şekilleri farklı kodlamalar ile oluşturunuz</p>
+<p><strong>s4</strong> aşağıdaki geometrik şekilleri farklı kodlamalar ile oluşturunuz</p>
 <ul>
 <li>İçi dolu kare</li>
 </ul>
@@ -1181,9 +1176,9 @@ sutun toplamlari: 20 </code></pre>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>* * * * * 
-*   *
-*   *
-*   *
+*      *
+*      *
+*      *
 * * * * * </code></pre>
 </div>
 </div>
@@ -1196,18 +1191,6 @@ sutun toplamlari: 20 </code></pre>
 * * 
 * * * 
 * * * * 
-* * * * * </code></pre>
-</div>
-</div>
-<ul>
-<li>İçi Boş Üçgen</li>
-</ul>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>* 
-**
-* *
-*  *
 * * * * * </code></pre>
 </div>
 </div>
