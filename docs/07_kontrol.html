@@ -101,35 +101,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="slides-style.css">
 </head>
@@ -200,6 +171,7 @@ window.Quarto = {
   <li><a href="#özet" id="toc-özet" class="nav-link" data-scroll-target="#özet">Özet</a></li>
   <li><a href="#ödev-1-1" id="toc-ödev-1-1" class="nav-link" data-scroll-target="#ödev-1-1">Ödev-1</a></li>
   <li><a href="#ödev-2" id="toc-ödev-2" class="nav-link" data-scroll-target="#ödev-2">Ödev-2</a></li>
+  <li><a href="#ödev-3" id="toc-ödev-3" class="nav-link" data-scroll-target="#ödev-3">Ödev 3</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -270,199 +242,204 @@ window.Quarto = {
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>İşte geçerli bir if/else yapısına bir örnek.</p>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="do">##  bir rastgele sayı oluşturun</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">10</span>)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">3</span>) {</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>        y <span class="ot">&lt;-</span> <span class="dv">10</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>        y <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>x;y</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 5.160784</span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 10</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">41</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">10</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">3</span>) {</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>        y <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>        y <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>x;y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2.134905</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0</code></pre>
+</div>
 </div>
 <p><code>y</code> değeri <code>x &gt; 3</code> olup olmamasına bağlı olarak ayarlanır. Bu ifade eşdeğer bir şekilde de yazılabilir.</p>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">3</span>) {</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>        <span class="dv">10</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> { </span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>        <span class="dv">0</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">3</span>) {</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>        <span class="dv">10</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> { </span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>        <span class="dv">0</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Bu ifadeyi yazmanın hiçbir yolu diğerinden daha doğru değildir. Hangisini kullanacağınız sizin tercihlerinize bağlıdır</p>
 <p>Elbette <code>else</code> cümlesi gerekli değildir. Kendi koşulları doğruysa her zaman çalıştırılan bir dizi if cümlesine sahip olabilirsiniz.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">&lt;</span>kosul1<span class="sc">&gt;</span>) {</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">&lt;</span>kosul2<span class="sc">&gt;</span>) {</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">&lt;</span>kosul1<span class="sc">&gt;</span>) {</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">&lt;</span>kosul2<span class="sc">&gt;</span>) {</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <section id="örnekler" class="level3">
 <h3 class="anchored" data-anchor-id="örnekler">Örnekler</h3>
 <p>Ölçme açısından bakılacak olursa koşul bir ölçütü, durum cümlesi ise değerlendirmeyi gösterilebilir. Örneğin, yapılan bir sınavda geçme notu 60 olarak belirlendiğinde, 75 alan bir öğrencinin durumu aşağıdaki <code>if()</code> durum cümlesiyle belirlenebilmektedir.</p>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span><span class="dv">75</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(x<span class="sc">&gt;=</span><span class="dv">65</span>){</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"Basarılı"</span>)</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] "Basarılı"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span><span class="dv">75</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(x<span class="sc">&gt;=</span><span class="dv">65</span>){</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"Basarılı"</span>)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Basarılı"</code></pre>
 </div>
-<p>Ancak kontrol durumu çoğunlukla tek önermeye bağlı değildir. - Aşağıdaki kod çıktı vermeyecektir</p>
-<div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span><span class="dv">60</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(x<span class="sc">&gt;=</span><span class="dv">65</span>){</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"Basarılı"</span>)</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
+<p>Ancak kontrol durumu çoğunlukla tek önermeye bağlı değildir.</p>
+<ul>
+<li>Aşağıdaki kod çıktı vermeyecektir</li>
+</ul>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span><span class="dv">60</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(x<span class="sc">&gt;=</span><span class="dv">65</span>){</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"Basarılı"</span>)</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>else kullanımı ile çıktı alabiliriz</li>
 </ul>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span><span class="dv">60</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Başarılı Durum</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(x<span class="sc">&gt;=</span><span class="dv">65</span>){</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"Basarılı"</span>)</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>}<span class="cf">else</span>{</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"Basarisiz"</span>)</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] "Basarisiz"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span><span class="dv">60</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Başarılı Durum</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(x<span class="sc">&gt;=</span><span class="dv">65</span>){</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"Basarılı"</span>)</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>}<span class="cf">else</span>{</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"Basarisiz"</span>)</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Basarisiz"</code></pre>
+</div>
 </div>
 <p>Koşul her zaman iki kategori ile tanımlanamayabilir. Bu durumda kullanımı <code>else if()</code> ile destekleyebiliriz</p>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">75</span> <span class="co"># Başarılı Durum</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(x<span class="sc">&gt;=</span><span class="dv">90</span>){</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"AA"</span>)</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>}<span class="cf">else</span> <span class="cf">if</span>(x<span class="sc">&gt;=</span><span class="dv">80</span>){</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"BA"</span>)</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>}<span class="cf">else</span> <span class="cf">if</span>(x<span class="sc">&gt;=</span><span class="dv">70</span>){</span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"BB"</span>)</span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>}<span class="cf">else</span> <span class="cf">if</span>(x<span class="sc">&gt;=</span><span class="dv">65</span>){</span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"CB"</span>)</span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>}<span class="cf">else</span> <span class="cf">if</span>(x<span class="sc">&gt;=</span><span class="dv">60</span>){</span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"CC"</span>)</span>
-<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>}<span class="cf">else</span> <span class="cf">if</span>(x<span class="sc">&gt;=</span><span class="dv">50</span>){</span>
-<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"DD"</span>)</span>
-<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>}<span class="cf">else</span> <span class="cf">if</span>(x<span class="sc">&gt;=</span><span class="dv">30</span>){</span>
-<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"FD"</span>)</span>
-<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>}<span class="cf">else</span>{</span>
-<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"FF"</span>)</span>
-<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] "BB"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">75</span> <span class="co"># Başarılı Durum</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(x<span class="sc">&gt;=</span><span class="dv">90</span>){</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"AA"</span>)</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>}<span class="cf">else</span> <span class="cf">if</span>(x<span class="sc">&gt;=</span><span class="dv">80</span>){</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"BA"</span>)</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>}<span class="cf">else</span> <span class="cf">if</span>(x<span class="sc">&gt;=</span><span class="dv">70</span>){</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"BB"</span>)</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>}<span class="cf">else</span> <span class="cf">if</span>(x<span class="sc">&gt;=</span><span class="dv">65</span>){</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"CB"</span>)</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>}<span class="cf">else</span> <span class="cf">if</span>(x<span class="sc">&gt;=</span><span class="dv">60</span>){</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"CC"</span>)</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>}<span class="cf">else</span> <span class="cf">if</span>(x<span class="sc">&gt;=</span><span class="dv">50</span>){</span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"DD"</span>)</span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>}<span class="cf">else</span> <span class="cf">if</span>(x<span class="sc">&gt;=</span><span class="dv">30</span>){</span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"FD"</span>)</span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>}<span class="cf">else</span>{</span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"FF"</span>)</span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "BB"</code></pre>
+</div>
 </div>
 </section>
 <section id="sıra-sizde" class="level3">
 <h3 class="anchored" data-anchor-id="sıra-sizde">Sıra sizde</h3>
 <ol type="1">
-<li>a sayısının çarpmaya göre tersi 1/a’dir. Ancak bu durum 0 için tanımsızdır. <code>if()</code> durum cümlesi kullanarak bu durumu kodlayınız. x &lt;- 5ve x&lt;-0 için için test ediniz.</li>
+<li>a sayısının çarpmaya göre tersi 1/a’dir. Ancak bu durum 0 için tanımsızdır. <code>if()</code> durum cümlesi kullanarak bu durumu kodlayınız. x &lt;- 5 ve x&lt;-0 için için test ediniz.</li>
 </ol>
 <div class="cell">
-<pre><code>## [1] "5'in carpmaya gore tersi 1/5"</code></pre>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "5'in carpmaya gore tersi 1/5"</code></pre>
+</div>
 </div>
 <p><code>x &lt;- 0</code>için test ediniz.</p>
 <div class="cell">
-<pre><code>## [1] "1/0 tanımsızdır."</code></pre>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "1/0 tanımsızdır."</code></pre>
+</div>
 </div>
 <ol start="2" type="1">
-<li>-2 ile 2 arasinda sayilar üretip, bunu x değişkenine atayalım.</li>
+<li>-2 ile 2 arasında sayılar üretip, bunu x değişkenine atayalım.</li>
 </ol>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">1</span>)</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>x</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] -0.8258282</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">1</span>)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.899161</code></pre>
+</div>
 </div>
 <p>Random olarak üretilen sayının 1’den büyük olması durumunda çıktı “1’den büyük” -1 ile 1 arasında olması durumunda “-1 ile +1 arasında” -1’den küçük olması durumunda ise “-1’den küçük” çıktısı versin.</p>
 <div class="cell">
-<pre><code>## [1] -2.049731
-## [1] "sayı -1'den küçük"</code></pre>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -1.071021</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "sayı -1'den küçük"</code></pre>
+</div>
 </div>
 </section>
 </section>
 <section id="if-all" class="level2">
 <h2 class="anchored" data-anchor-id="if-all">if() &amp; all()</h2>
-<p>Her ne kadar <code>if()</code> önermesi bir elemanlı vektörlerde çıktı verirken <code>if()</code> önermesi içinde kullanılabilen <code>all</code> fonkisyonu ile vektörün tüm elemanları için kosul test edilebilir.</p>
+<p>Her ne kadar <code>if()</code> önermesi bir elemanlı vektörlerde çıktı verse de <code>if()</code> önermesi içinde kullanılabilen <code>all</code> fonkisyonu ile vektörün tüm elemanları için koşul testi yapabilir.</p>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="sc">-</span><span class="dv">3</span>,<span class="dv">4</span>)</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="fu">all</span>(x<span class="sc">&gt;</span><span class="dv">0</span>)){</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"tum sayilar 0'dan buyuktur"</span>)</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span>{</span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"tum sayilar 0'dan buyuk degildir"</span>)</span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] "tum sayilar 0'dan buyuk degildir"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="sc">-</span><span class="dv">3</span>,<span class="dv">4</span>)</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="fu">all</span>(x<span class="sc">&gt;</span><span class="dv">0</span>)){</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"tum sayilar 0'dan buyuktur"</span>)</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span>{</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"tum sayilar 0'dan buyuk degildir"</span>)</span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "tum sayilar 0'dan buyuk degildir"</code></pre>
+</div>
 </div>
 </section>
 <section id="if-any" class="level2">
 <h2 class="anchored" data-anchor-id="if-any">if() &amp; any()</h2>
-<p>Bir vektörde icinde yer alan her hangi bir elemana dair test ise <code>if()</code> fonksiyonu içinde <code>any()</code> fonksiyonu ile sağlanabilir.</p>
+<p>Bir vektörde içinde yer alan her hangi bir elemana dair test ise <code>if()</code> fonksiyonu içinde <code>any()</code> fonksiyonu ile sağlanabilir.</p>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="sc">-</span><span class="dv">3</span>,<span class="dv">4</span>)</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="fu">any</span>(x<span class="sc">&lt;</span><span class="dv">0</span>)){</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"nesne en az bir negatif sayi icerir"</span>)</span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span>{</span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"nesne negatif sayi icermez"</span>)</span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] "nesne en az bir negatif sayi icerir"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="sc">-</span><span class="dv">3</span>,<span class="dv">4</span>)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="fu">any</span>(x<span class="sc">&lt;</span><span class="dv">0</span>)){</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"nesne en az bir negatif sayi icerir"</span>)</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span>{</span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"nesne negatif sayi icermez"</span>)</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "nesne en az bir negatif sayi icerir"</code></pre>
+</div>
 </div>
 </section>
 <section id="if-çoklu-islem" class="level2">
 <h2 class="anchored" data-anchor-id="if-çoklu-islem">if() çoklu islem</h2>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">2</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(x <span class="sc">==</span> <span class="dv">2</span>) {</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  goster3 <span class="ot">&lt;-</span> <span class="st">"Dogru"</span>  </span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>  goster3b <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>  goster3c <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">1000</span>,<span class="dv">4</span>)</span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span>  {</span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>  goster3 <span class="ot">&lt;-</span> <span class="st">"Yanlis"</span>  </span>
-<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>  goster3b <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">1</span>)</span>
-<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>  goster3c <span class="ot">&lt;-</span> <span class="dv">10000</span> <span class="sc">+</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">1000</span>,<span class="dv">4</span>)</span>
-<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>goster3</span>
-<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] "Dogru"</span></span>
-<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a>goster3b</span>
-<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 1 2 3</span></span>
-<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a>goster3c</span>
-<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 970 354 218 241</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(x <span class="sc">==</span> <span class="dv">2</span>) {</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>  goster3 <span class="ot">&lt;-</span> <span class="st">"Dogru"</span>  </span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>  goster3b <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>  goster3c <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">1000</span>,<span class="dv">4</span>)</span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span>  {</span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>  goster3 <span class="ot">&lt;-</span> <span class="st">"Yanlis"</span>  </span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>  goster3b <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">1</span>)</span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>  goster3c <span class="ot">&lt;-</span> <span class="dv">10000</span> <span class="sc">+</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">1000</span>,<span class="dv">4</span>)</span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a>goster3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Dogru"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>goster3b</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1 2 3</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>goster3c</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 584 698 413 326</code></pre>
+</div>
 </div>
 </section>
 <section id="ifelse" class="level2">
@@ -471,22 +448,22 @@ window.Quarto = {
 <p><code>ifelse()</code> durum cümlesinin genel kullanımı aşağıdaki gibidir.</p>
 <p><strong><code>ifelse(koşul, Doğru İfade, Yanlış İfade)</code></strong></p>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">20</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ifelse</span>(x<span class="sc">&gt;=</span> <span class="dv">65</span>, <span class="st">"Başarılı"</span> ,<span class="st">"Başarısız"</span>)</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] "Başarısız"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">20</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ifelse</span>(x<span class="sc">&gt;=</span> <span class="dv">65</span>, <span class="st">"Başarılı"</span> ,<span class="st">"Başarısız"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Başarısız"</code></pre>
 </div>
-<p><code>ifelse()</code> eksik veri atamakiçin de kullanılabilir. Eksik verinin 99 ile gösterildiği bir vektörde eksik veri yerine NA atama örneği</p>
+</div>
+<p><code>ifelse()</code> eksik veri atamak için de kullanılabilir. Eksik verinin 99 ile gösterildiği bir vektörde eksik veri yerine NA atama örneği</p>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>(x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">99</span>,<span class="dv">5</span>))</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="do">## [1]  1  2  3  4 99  5</span></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ifelse</span>(x<span class="sc">==</span><span class="dv">99</span>, <span class="cn">NA</span>, x)</span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [1]  1  2  3  4 NA  5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>(x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">99</span>,<span class="dv">5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1]  1  2  3  4 99  5</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ifelse</span>(x<span class="sc">==</span><span class="dv">99</span>, <span class="cn">NA</span>, x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1]  1  2  3  4 NA  5</code></pre>
+</div>
 </div>
 <section id="sıra-sizde-1" class="level3">
 <h3 class="anchored" data-anchor-id="sıra-sizde-1">Sıra Sizde</h3>
@@ -494,40 +471,42 @@ window.Quarto = {
 <li>Elimizdeki bir nesnede yer alan sayıların tek ya da çift olduğunu yazdırma</li>
 </ol>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">41</span>)</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>sayilar <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">50</span><span class="sc">:</span><span class="dv">90</span>,<span class="dv">27</span>)</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>sayilar</span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="do">##  [1] 89 84 54 81 57 78 55 71 80 62 87 67 70 83 82 61 66 53 50 69 79 64 85 51 73</span></span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [26] 74 88</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">41</span>)</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>sayilar <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">50</span><span class="sc">:</span><span class="dv">90</span>,<span class="dv">27</span>)</span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>sayilar</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] 89 84 54 81 57 78 55 71 80 62 87 67 70 83 82 61 66 53 50 69 79 64 85 51 73
+[26] 74 88</code></pre>
+</div>
 </div>
 <div class="cell">
-<pre><code>##  [1] "Tek Sayi"  "Cift Sayi" "Cift Sayi" "Tek Sayi"  "Tek Sayi"  "Cift Sayi"
-##  [7] "Tek Sayi"  "Tek Sayi"  "Cift Sayi" "Cift Sayi" "Tek Sayi"  "Tek Sayi" 
-## [13] "Cift Sayi" "Tek Sayi"  "Cift Sayi" "Tek Sayi"  "Cift Sayi" "Tek Sayi" 
-## [19] "Cift Sayi" "Tek Sayi"  "Tek Sayi"  "Cift Sayi" "Tek Sayi"  "Tek Sayi" 
-## [25] "Tek Sayi"  "Cift Sayi" "Cift Sayi"</code></pre>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "Tek Sayi"  "Cift Sayi" "Cift Sayi" "Tek Sayi"  "Tek Sayi"  "Cift Sayi"
+ [7] "Tek Sayi"  "Tek Sayi"  "Cift Sayi" "Cift Sayi" "Tek Sayi"  "Tek Sayi" 
+[13] "Cift Sayi" "Tek Sayi"  "Cift Sayi" "Tek Sayi"  "Cift Sayi" "Tek Sayi" 
+[19] "Cift Sayi" "Tek Sayi"  "Tek Sayi"  "Cift Sayi" "Tek Sayi"  "Tek Sayi" 
+[25] "Tek Sayi"  "Cift Sayi" "Cift Sayi"</code></pre>
+</div>
 </div>
 <ol start="2" type="1">
 <li>Elimizdeki bir nesnede yer alan sayıların 0, pozitif ya negatif oldugu belirleme</li>
 </ol>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">987</span>)</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>sayilar <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="sc">-</span><span class="dv">10</span><span class="sc">:</span><span class="dv">10</span>,<span class="dv">27</span>,<span class="at">replace=</span><span class="cn">TRUE</span>)</span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>sayilar</span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="do">##  [1]   4   3   4   2   1   7 -10   5   6  -8   7  -3   9   7  -9  10   4  -1  -8</span></span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [20]   8  -3   0   4   5   8   1   3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">987</span>)</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>sayilar <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="sc">-</span><span class="dv">10</span><span class="sc">:</span><span class="dv">10</span>,<span class="dv">27</span>,<span class="at">replace=</span><span class="cn">TRUE</span>)</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>sayilar</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1]   4   3   4   2   1   7 -10   5   6  -8   7  -3   9   7  -9  10   4  -1  -8
+[20]   8  -3   0   4   5   8   1   3</code></pre>
+</div>
 </div>
 <div class="cell">
-<pre><code>##  [1] "Pozitif" "Pozitif" "Pozitif" "Pozitif" "Pozitif" "Pozitif" "Negatif"
-##  [8] "Pozitif" "Pozitif" "Negatif" "Pozitif" "Negatif" "Pozitif" "Pozitif"
-## [15] "Negatif" "Pozitif" "Pozitif" "Negatif" "Negatif" "Pozitif" "Negatif"
-## [22] "Sıfır"   "Pozitif" "Pozitif" "Pozitif" "Pozitif" "Pozitif"</code></pre>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "Pozitif" "Pozitif" "Pozitif" "Pozitif" "Pozitif" "Pozitif" "Negatif"
+ [8] "Pozitif" "Pozitif" "Negatif" "Pozitif" "Negatif" "Pozitif" "Pozitif"
+[15] "Negatif" "Pozitif" "Pozitif" "Negatif" "Negatif" "Pozitif" "Negatif"
+[22] "Sıfır"   "Pozitif" "Pozitif" "Pozitif" "Pozitif" "Pozitif"</code></pre>
+</div>
 </div>
 <ol start="3" type="1">
 <li>Finalden 50 ve üzeri alan ve en az 11 derse devam edem öğrencilerin geçme notları finalin %60 ve vizenin %40 alınarak hesaplansın, 11’den az derse devam eden öğrencilerin geçme notu final notunun %60’ olarak alınsın.</li>
@@ -535,9 +514,11 @@ window.Quarto = {
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>vize <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">60</span>,<span class="dv">70</span>,<span class="dv">80</span>,<span class="dv">90</span>,<span class="dv">55</span>)</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>final <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">45</span>,<span class="dv">65</span>,<span class="dv">70</span>,<span class="dv">50</span>,<span class="dv">80</span>)</span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>devam <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">14</span>,<span class="dv">10</span>,<span class="dv">13</span>,<span class="dv">12</span>,<span class="dv">11</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: false</span></span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>vize <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">60</span>,<span class="dv">70</span>,<span class="dv">80</span>,<span class="dv">90</span>,<span class="dv">55</span>)</span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>final <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">45</span>,<span class="dv">65</span>,<span class="dv">70</span>,<span class="dv">50</span>,<span class="dv">80</span>)</span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a>devam <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">14</span>,<span class="dv">10</span>,<span class="dv">13</span>,<span class="dv">12</span>,<span class="dv">11</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
@@ -546,273 +527,266 @@ window.Quarto = {
 <h1><code>for</code></h1>
 <p>Zaman zaman diğer döngü türlerine ihtiyaç duysanız da, for döngüsünün yeterli olmadığı nadir durum vardır. R’de for döngüleri bir ara değişken alır ve ona bir dizi ya da vektörden ardışık değerler atar. For döngüleri en yaygın olarak bir nesnenin (liste, vektör, vb.) elemanları üzerinde yineleme yapmak için kullanılır.</p>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>) {</span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>        <span class="fu">print</span>(i)</span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 1</span></span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 2</span></span>
-<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 3</span></span>
-<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 4</span></span>
-<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 5</span></span>
-<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 6</span></span>
-<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 7</span></span>
-<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 8</span></span>
-<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 9</span></span>
-<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 10</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>) {</span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>        <span class="fu">print</span>(i)</span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1
+[1] 2
+[1] 3
+[1] 4
+[1] 5
+[1] 6
+[1] 7
+[1] 8
+[1] 9
+[1] 10</code></pre>
+</div>
 </div>
 <p>Bu döngü <code>i</code> değişkenini alır ve döngünün her iterasyonunda ona 1, 2, 3, …, 10 değerlerini verir, küme parantezleri içindeki kodu çalıştırır ve ardından döngüden çıkar.</p>
 <p>Aşağıdaki üç döngünün hepsi aynı davranışa sahiptir.</p>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>, <span class="st">"d"</span>)</span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>) {</span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>        <span class="do">## 'x'in her bir öğesini yazdırır</span></span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>        <span class="fu">print</span>(x[i])  </span>
-<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] "a"</span></span>
-<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] "b"</span></span>
-<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] "c"</span></span>
-<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] "d"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>, <span class="st">"d"</span>)</span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>) {</span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>        <span class="do">## 'x'in her bir öğesini yazdırır</span></span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a>        <span class="fu">print</span>(x[i])  </span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "a"
+[1] "b"
+[1] "c"
+[1] "d"</code></pre>
+</div>
 </div>
 <p><code>seq_along()</code> fonksiyonu genellikle bir nesnenin (bu durumda <code>x</code> nesnesi) uzunluğuna bağlı olarak bir tamsayı dizisi oluşturmak için for döngüleriyle birlikte kullanılır.</p>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="do">## 'x' uzunluğuna göre bir dizi oluşturun</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="fu">seq_along</span>(x)) {   </span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>        <span class="fu">print</span>(x[i])</span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] "a"</span></span>
-<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] "b"</span></span>
-<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] "c"</span></span>
-<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] "d"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="do">## 'x' uzunluğuna göre bir dizi oluşturun</span></span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="fu">seq_along</span>(x)) {   </span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>        <span class="fu">print</span>(x[i])</span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "a"
+[1] "b"
+[1] "c"
+[1] "d"</code></pre>
+</div>
 </div>
 <p>İndeks değişken kullanmak gerekli değildir.</p>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(letter <span class="cf">in</span> x) {</span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>        <span class="fu">print</span>(letter)</span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] "a"</span></span>
-<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] "b"</span></span>
-<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] "c"</span></span>
-<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] "d"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(letter <span class="cf">in</span> x) {</span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>        <span class="fu">print</span>(letter)</span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "a"
+[1] "b"
+[1] "c"
+[1] "d"</code></pre>
+</div>
 </div>
 <p>Bir satırlık döngüler için, küme parantezleri kesinlikle gerekli değildir.</p>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>) <span class="fu">print</span>(x[i])</span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] "a"</span></span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] "b"</span></span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] "c"</span></span>
-<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] "d"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>) <span class="fu">print</span>(x[i])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "a"
+[1] "b"
+[1] "c"
+[1] "d"</code></pre>
+</div>
 </div>
 <p>Bununla birlikte, tek satırlık döngüler için bile küme parantezleri kullanmayı seviyorum, çünkü bu şekilde döngüyü birden fazla satıra genişletmeye karar verirseniz, küme parantezleri eklemeyi unuttuğunuz için hata alamazsınız.</p>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>) {</span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a> <span class="fu">print</span>(i)</span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 1</span></span>
-<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 2</span></span>
-<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 3</span></span>
-<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 4</span></span>
-<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 5</span></span>
-<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 6</span></span>
-<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 7</span></span>
-<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 8</span></span>
-<span id="cb30-12"><a href="#cb30-12" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 9</span></span>
-<span id="cb30-13"><a href="#cb30-13" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 10</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>) {</span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a> <span class="fu">print</span>(i)</span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1
+[1] 2
+[1] 3
+[1] 4
+[1] 5
+[1] 6
+[1] 7
+[1] 8
+[1] 9
+[1] 10</code></pre>
+</div>
 </div>
 <ul>
 <li>Döngüde indeks değişkeni herhangi bir nesne ile tanımlanabilir. Örneğin <strong>i</strong>, ayrıca indeks değerinin başlangıcı 1 olmak zorunda <strong>değildir.</strong></li>
 </ul>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">5</span><span class="sc">:</span><span class="dv">8</span>) {</span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a> <span class="fu">print</span>(i)</span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 5</span></span>
-<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 6</span></span>
-<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 7</span></span>
-<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 8</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">5</span><span class="sc">:</span><span class="dv">8</span>) {</span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a> <span class="fu">print</span>(i)</span>
+<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5
+[1] 6
+[1] 7
+[1] 8</code></pre>
+</div>
 </div>
 <ul>
 <li>karakter yazımında indeks <strong>i</strong> sadece tekrar amaçlı kullanılır.</li>
 </ul>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">5</span><span class="sc">:</span><span class="dv">10</span>){</span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"Merhaba"</span>)</span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] "Merhaba"</span></span>
-<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] "Merhaba"</span></span>
-<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] "Merhaba"</span></span>
-<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] "Merhaba"</span></span>
-<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] "Merhaba"</span></span>
-<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] "Merhaba"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">5</span><span class="sc">:</span><span class="dv">10</span>){</span>
+<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"Merhaba"</span>)</span>
+<span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Merhaba"
+[1] "Merhaba"
+[1] "Merhaba"
+[1] "Merhaba"
+[1] "Merhaba"
+[1] "Merhaba"</code></pre>
+</div>
 </div>
 <ul>
 <li>Aşağıdaki çıktıyı sağlayacak kodu yazınız.</li>
 </ul>
 <div class="cell">
-<pre><code>## 1  +   1  =  2 
-## 2  +   2  =  4 
-## 3  +   3  =  6 
-## 4  +   4  =  8 
-## 5  +   5  =  10 
-## 6  +   6  =  12 
-## 7  +   7  =  14 
-## 8  +   8  =  16 
-## 9  +   9  =  18 
-## 10  +   10  =  20</code></pre>
+<div class="cell-output cell-output-stdout">
+<pre><code>1  +   1  =  2 
+2  +   2  =  4 
+3  +   3  =  6 
+4  +   4  =  8 
+5  +   5  =  10 
+6  +   6  =  12 
+7  +   7  =  14 
+8  +   8  =  16 
+9  +   9  =  18 
+10  +   10  =  20 </code></pre>
+</div>
 </div>
 <ul>
 <li><p>Döngüdelerde bir degişken yeniden tanımlanacak ise mutlaka döngü öncesi o değişken tanımlanmalıdır.</p></li>
 <li><p>Oluşturulan bir matrisin satırlarında yer alan sayıların toplamını başka bir nesneye atama</p></li>
 </ul>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>(X <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="at">a =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">b=</span><span class="dv">2</span><span class="sc">:</span><span class="dv">6</span>))</span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="do">##      a b</span></span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="do">## [1,] 1 2</span></span>
-<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [2,] 2 3</span></span>
-<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [3,] 3 4</span></span>
-<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a><span class="do">## [4,] 4 5</span></span>
-<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a><span class="do">## [5,] 5 6</span></span>
-<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a>Y <span class="ot">&lt;-</span> <span class="fu">array</span>()</span>
-<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(X)) {</span>
-<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a>Y[i] <span class="ot">&lt;-</span> X[i,<span class="dv">1</span>] <span class="sc">+</span> X[i,<span class="dv">2</span>]</span>
-<span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb34-12"><a href="#cb34-12" aria-hidden="true" tabindex="-1"></a>Y</span>
-<span id="cb34-13"><a href="#cb34-13" aria-hidden="true" tabindex="-1"></a><span class="do">## [1]  3  5  7  9 11</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>(X <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="at">a =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">b=</span><span class="dv">2</span><span class="sc">:</span><span class="dv">6</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     a b
+[1,] 1 2
+[2,] 2 3
+[3,] 3 4
+[4,] 4 5
+[5,] 5 6</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a>Y <span class="ot">&lt;-</span> <span class="fu">array</span>()</span>
+<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(X)) {</span>
+<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a>Y[i] <span class="ot">&lt;-</span> X[i,<span class="dv">1</span>] <span class="sc">+</span> X[i,<span class="dv">2</span>]</span>
+<span id="cb64-4"><a href="#cb64-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb64-5"><a href="#cb64-5" aria-hidden="true" tabindex="-1"></a>Y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1]  3  5  7  9 11</code></pre>
+</div>
 </div>
 <ul>
 <li><code>cat()</code>, <code>paste()</code> gibi fonksiyonları uzun bir döngüde, döngünün durumunu görmek için de kullanabilirsiniz .</li>
 </ul>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>islem.kontrol <span class="ot">&lt;-</span> <span class="fu">array</span>()</span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>){</span>
-<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>  islem.kontrol[i] <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="st">"Islem "</span>, i, <span class="st">" tamamlandi"</span>, <span class="at">sep=</span><span class="st">""</span>)</span>
-<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>islem.kontrol</span>
-<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a><span class="do">##  [1] "Islem 1 tamamlandi"  "Islem 2 tamamlandi"  "Islem 3 tamamlandi" </span></span>
-<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a><span class="do">##  [4] "Islem 4 tamamlandi"  "Islem 5 tamamlandi"  "Islem 6 tamamlandi" </span></span>
-<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a><span class="do">##  [7] "Islem 7 tamamlandi"  "Islem 8 tamamlandi"  "Islem 9 tamamlandi" </span></span>
-<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a><span class="do">## [10] "Islem 10 tamamlandi"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a>islem.kontrol <span class="ot">&lt;-</span> <span class="fu">array</span>()</span>
+<span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>){</span>
+<span id="cb66-3"><a href="#cb66-3" aria-hidden="true" tabindex="-1"></a>  islem.kontrol[i] <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="st">"Islem "</span>, i, <span class="st">" tamamlandi"</span>, <span class="at">sep=</span><span class="st">""</span>)</span>
+<span id="cb66-4"><a href="#cb66-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb66-5"><a href="#cb66-5" aria-hidden="true" tabindex="-1"></a>islem.kontrol</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "Islem 1 tamamlandi"  "Islem 2 tamamlandi"  "Islem 3 tamamlandi" 
+ [4] "Islem 4 tamamlandi"  "Islem 5 tamamlandi"  "Islem 6 tamamlandi" 
+ [7] "Islem 7 tamamlandi"  "Islem 8 tamamlandi"  "Islem 9 tamamlandi" 
+[10] "Islem 10 tamamlandi"</code></pre>
+</div>
 </div>
 <ul>
 <li>Döngülerde her zaman <code>i</code> indeksini kullanmak zorunda <strong>değiliz.</strong></li>
 </ul>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">10</span>)</span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10000</span>,<span class="dv">100</span>)</span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>sayac <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (val <span class="cf">in</span> x) {</span>
-<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(val <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">0</span>){</span>
-<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>sayac <span class="ot">=</span> sayac<span class="sc">+</span><span class="dv">1</span></span>
-<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(sayac)</span>
-<span id="cb36-11"><a href="#cb36-11" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 46</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">10</span>)</span>
+<span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10000</span>,<span class="dv">100</span>)</span>
+<span id="cb68-3"><a href="#cb68-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb68-4"><a href="#cb68-4" aria-hidden="true" tabindex="-1"></a>sayac <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb68-5"><a href="#cb68-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (val <span class="cf">in</span> x) {</span>
+<span id="cb68-6"><a href="#cb68-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(val <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">0</span>){</span>
+<span id="cb68-7"><a href="#cb68-7" aria-hidden="true" tabindex="-1"></a>sayac <span class="ot">=</span> sayac<span class="sc">+</span><span class="dv">1</span></span>
+<span id="cb68-8"><a href="#cb68-8" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb68-9"><a href="#cb68-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb68-10"><a href="#cb68-10" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(sayac)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 46</code></pre>
+</div>
 </div>
 <section id="for-döngüsü-ve-kontrol" class="level2">
 <h2 class="anchored" data-anchor-id="for-döngüsü-ve-kontrol"><strong>for()</strong> Döngüsü ve Kontrol</h2>
-<p>Her zaman işlemi tüm elemanlara uygulamak istemeyebiliriz. Bunun önlemek icin akış kontrolü yapmak gerekir.</p>
+<p>Her zaman işlemi tüm elemanlara uygulamak istemeyebiliriz. Bunu önlemek icin akış kontrolü yapmak gerekir.</p>
 <p>Kontrol mantıksal operatörlerle ya da koşul cümleleri ile sağlanabilir.</p>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>){</span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (i<span class="sc">==</span><span class="dv">2</span>) <span class="fu">cat</span>(<span class="st">"indeks cift sayidir:"</span>,<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
-<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span> <span class="fu">cat</span>(i,<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
-<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a><span class="do">## 1 </span></span>
-<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a><span class="do">## indeks cift sayidir: </span></span>
-<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a><span class="do">## 3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>){</span>
+<span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (i<span class="sc">==</span><span class="dv">2</span>) <span class="fu">cat</span>(<span class="st">"indeks cift sayidir:"</span>,<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb70-3"><a href="#cb70-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span> <span class="fu">cat</span>(i,<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb70-4"><a href="#cb70-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>1 
+indeks cift sayidir: 
+3 </code></pre>
+</div>
 </div>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>){</span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (i<span class="sc">==</span><span class="dv">2</span>) {</span>
-<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"indeks degeri ikidir:"</span>,i,<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>) </span>
-<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>  }<span class="cf">else</span>{<span class="fu">cat</span>(<span class="st">"indeks degeri iki degildir"</span>,<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)}</span>
-<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a><span class="do">## indeks degeri iki degildir </span></span>
-<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a><span class="do">## indeks degeri ikidir: 2 </span></span>
-<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a><span class="do">## indeks degeri iki degildir</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>){</span>
+<span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (i<span class="sc">==</span><span class="dv">2</span>) {</span>
+<span id="cb72-3"><a href="#cb72-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"indeks degeri ikidir:"</span>,i,<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>) </span>
+<span id="cb72-4"><a href="#cb72-4" aria-hidden="true" tabindex="-1"></a>  }<span class="cf">else</span>{<span class="fu">cat</span>(<span class="st">"indeks degeri iki degildir"</span>,<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)}</span>
+<span id="cb72-5"><a href="#cb72-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>indeks degeri iki degildir 
+indeks degeri ikidir: 2 
+indeks degeri iki degildir </code></pre>
+</div>
 </div>
 <ul>
 <li><p>Döngünün indeksi her zaman bir tam sayı olmak zorunda değildir. Liste, veri seti, matris de olabilir.</p></li>
 <li><p><strong>if</strong> sadece numerik değer ve vektörlerle çalışmaz. Aynı zamanda veri seti, matris ve listelerle de çalışabilir.</p></li>
 </ul>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">a =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">b=</span><span class="dv">2</span><span class="sc">:</span><span class="dv">6</span>)</span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>d</span>
-<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="do">##   a b</span></span>
-<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a><span class="do">## 1 1 2</span></span>
-<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a><span class="do">## 2 2 3</span></span>
-<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a><span class="do">## 3 3 4</span></span>
-<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a><span class="do">## 4 4 5</span></span>
-<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a><span class="do">## 5 5 6</span></span>
-<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(x <span class="cf">in</span> d) {</span>
-<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">"sutun toplamlari:"</span>, <span class="fu">sum</span>(x), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
-<span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb39-12"><a href="#cb39-12" aria-hidden="true" tabindex="-1"></a><span class="do">## sutun toplamlari: 15 </span></span>
-<span id="cb39-13"><a href="#cb39-13" aria-hidden="true" tabindex="-1"></a><span class="do">## sutun toplamlari: 20</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">a =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">b=</span><span class="dv">2</span><span class="sc">:</span><span class="dv">6</span>)</span>
+<span id="cb74-2"><a href="#cb74-2" aria-hidden="true" tabindex="-1"></a>d</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  a b
+1 1 2
+2 2 3
+3 3 4
+4 4 5
+5 5 6</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(x <span class="cf">in</span> d) {</span>
+<span id="cb76-2"><a href="#cb76-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">"sutun toplamlari:"</span>, <span class="fu">sum</span>(x), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb76-3"><a href="#cb76-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>sutun toplamlari: 15 
+sutun toplamlari: 20 </code></pre>
+</div>
 </div>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>X <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="dv">21</span><span class="sc">:</span><span class="dv">25</span>)</span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>X</span>
-<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="do">##      [,1] [,2]</span></span>
-<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [1,]    1   21</span></span>
-<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [2,]    2   22</span></span>
-<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a><span class="do">## [3,]    3   23</span></span>
-<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a><span class="do">## [4,]    4   24</span></span>
-<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a><span class="do">## [5,]    5   25</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a>X <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="dv">21</span><span class="sc">:</span><span class="dv">25</span>)</span>
+<span id="cb78-2"><a href="#cb78-2" aria-hidden="true" tabindex="-1"></a>X</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     [,1] [,2]
+[1,]    1   21
+[2,]    2   22
+[3,]    3   23
+[4,]    4   24
+[5,]    5   25</code></pre>
+</div>
 </div>
 <p>Aşağıdaki çıktıyı elde etmek için gerekli kodu yazınız.</p>
 <div class="cell">
-<pre><code>## 1 satirdaki degerlerin carpimi 21 olarak hesaplanmistir. 
-## 2 satirdaki degerlerin carpimi 44 olarak hesaplanmistir. 
-## 3 satirdaki degerlerin carpimi 69 olarak hesaplanmistir. 
-## 4 satirdaki degerlerin carpimi 96 olarak hesaplanmistir. 
-## 5 satirdaki degerlerin carpimi 125 olarak hesaplanmistir.</code></pre>
+<div class="cell-output cell-output-stdout">
+<pre><code>1 satirdaki degerlerin carpimi 21 olarak hesaplanmistir. 
+2 satirdaki degerlerin carpimi 44 olarak hesaplanmistir. 
+3 satirdaki degerlerin carpimi 69 olarak hesaplanmistir. 
+4 satirdaki degerlerin carpimi 96 olarak hesaplanmistir. 
+5 satirdaki degerlerin carpimi 125 olarak hesaplanmistir. </code></pre>
+</div>
 </div>
 </section>
 <section id="next-ve-break" class="level2">
@@ -821,132 +795,127 @@ window.Quarto = {
 <li><code>next()</code> ve <code>break()</code> fonksiyonları döngülerde kontrol mekanizmasıdır. Döngüyü sadece belirli bir koşulda çalıştırmak istemezseniz <code>next()</code> fonksiyonunu kullanabilirsiniz.</li>
 </ul>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>){</span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(i<span class="sc">==</span><span class="dv">3</span>){</span>
-<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="cf">next</span></span>
-<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span> (i)}</span>
-<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 1</span></span>
-<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 2</span></span>
-<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 4</span></span>
-<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 5</span></span>
-<span id="cb42-10"><a href="#cb42-10" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 6</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>){</span>
+<span id="cb81-2"><a href="#cb81-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(i<span class="sc">==</span><span class="dv">3</span>){</span>
+<span id="cb81-3"><a href="#cb81-3" aria-hidden="true" tabindex="-1"></a><span class="cf">next</span></span>
+<span id="cb81-4"><a href="#cb81-4" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb81-5"><a href="#cb81-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span> (i)}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1
+[1] 2
+[1] 4
+[1] 5
+[1] 6</code></pre>
+</div>
 </div>
 <ul>
 <li>Döngüyü sadece belirli bir koşulda durdurmak isterseniz <code>break()</code> fonksiyonunu kullanabilirsiniz.</li>
 </ul>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">12</span>){</span>
-<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(i<span class="sc">==</span><span class="dv">3</span>){</span>
-<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="cf">break</span></span>
-<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span> (i)}</span>
-<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 1</span></span>
-<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div class="sourceCode cell-code" id="cb83"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">12</span>){</span>
+<span id="cb83-2"><a href="#cb83-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(i<span class="sc">==</span><span class="dv">3</span>){</span>
+<span id="cb83-3"><a href="#cb83-3" aria-hidden="true" tabindex="-1"></a><span class="cf">break</span></span>
+<span id="cb83-4"><a href="#cb83-4" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb83-5"><a href="#cb83-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span> (i)}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1
+[1] 2</code></pre>
+</div>
 </div>
 <ul>
 <li>Döngüler uzun zamanda çalışır. ilk olarak başlangıç noktasını belirleyelim</li>
 </ul>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">853</span>)</span>
-<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>y<span class="ot">&lt;-</span><span class="fu">matrix</span>(<span class="fu">rnorm</span>(<span class="dv">1000000</span>),<span class="at">nrow=</span><span class="dv">1000</span>)</span>
-<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>z<span class="ot">&lt;-</span><span class="dv">0</span><span class="sc">*</span>y</span>
-<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>time1<span class="ot">&lt;-</span><span class="fu">as.numeric</span>(<span class="fu">Sys.time</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div class="sourceCode cell-code" id="cb85"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">853</span>)</span>
+<span id="cb85-2"><a href="#cb85-2" aria-hidden="true" tabindex="-1"></a>y<span class="ot">&lt;-</span><span class="fu">matrix</span>(<span class="fu">rnorm</span>(<span class="dv">1000000</span>),<span class="at">nrow=</span><span class="dv">1000</span>)</span>
+<span id="cb85-3"><a href="#cb85-3" aria-hidden="true" tabindex="-1"></a>z<span class="ot">&lt;-</span><span class="dv">0</span><span class="sc">*</span>y</span>
+<span id="cb85-4"><a href="#cb85-4" aria-hidden="true" tabindex="-1"></a>time1<span class="ot">&lt;-</span><span class="fu">as.numeric</span>(<span class="fu">Sys.time</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>işlemi döngü ile yapalım.</li>
 </ul>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co">#loop:</span></span>
-<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>time2 <span class="ot">&lt;-</span> <span class="fu">system.time</span>(</span>
-<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">1000</span>){</span>
-<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">1000</span>){</span>
-<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>z[i,j]<span class="ot">&lt;-</span>y[i,j]<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb45-9"><a href="#cb45-9" aria-hidden="true" tabindex="-1"></a>time2</span>
-<span id="cb45-10"><a href="#cb45-10" aria-hidden="true" tabindex="-1"></a><span class="do">##    user  system elapsed </span></span>
-<span id="cb45-11"><a href="#cb45-11" aria-hidden="true" tabindex="-1"></a><span class="do">##    0.07    0.00    0.08</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="co">#loop:</span></span>
+<span id="cb86-2"><a href="#cb86-2" aria-hidden="true" tabindex="-1"></a>time2 <span class="ot">&lt;-</span> <span class="fu">system.time</span>(</span>
+<span id="cb86-3"><a href="#cb86-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">1000</span>){</span>
+<span id="cb86-4"><a href="#cb86-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">1000</span>){</span>
+<span id="cb86-5"><a href="#cb86-5" aria-hidden="true" tabindex="-1"></a>z[i,j]<span class="ot">&lt;-</span>y[i,j]<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb86-6"><a href="#cb86-6" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb86-7"><a href="#cb86-7" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb86-8"><a href="#cb86-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb86-9"><a href="#cb86-9" aria-hidden="true" tabindex="-1"></a>time2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   user  system elapsed 
+   0.07    0.00    0.08 </code></pre>
+</div>
 </div>
 <ul>
 <li>ayni islemi dongusuz yapma</li>
 </ul>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>time3 <span class="ot">&lt;-</span> <span class="fu">system.time</span>(z<span class="ot">&lt;-</span>y<span class="sc">^</span><span class="dv">2</span>)</span>
-<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>time3</span>
-<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a><span class="do">##    user  system elapsed </span></span>
-<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a><span class="do">##       0       0       0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div class="sourceCode cell-code" id="cb88"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a>time3 <span class="ot">&lt;-</span> <span class="fu">system.time</span>(z<span class="ot">&lt;-</span>y<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb88-2"><a href="#cb88-2" aria-hidden="true" tabindex="-1"></a>time3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   user  system elapsed 
+      0       0       0 </code></pre>
+</div>
 </div>
 </section>
 <section id="içiçe-for-döngüleri" class="level2">
 <h2 class="anchored" data-anchor-id="içiçe-for-döngüleri">İçiçe <code>for</code> döngüleri</h2>
 <p><code>for</code> döngüler birbirinin içinde yuvalanabilir.</p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
-<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="fu">seq_len</span>(<span class="fu">nrow</span>(x))) {</span>
-<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span>(j <span class="cf">in</span> <span class="fu">seq_len</span>(<span class="fu">ncol</span>(x))) {</span>
-<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a>                <span class="fu">print</span>(x[i, j])</span>
-<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a>        }   </span>
-<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb90-1"><a href="#cb90-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb90-2"><a href="#cb90-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb90-3"><a href="#cb90-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="fu">seq_len</span>(<span class="fu">nrow</span>(x))) {</span>
+<span id="cb90-4"><a href="#cb90-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span>(j <span class="cf">in</span> <span class="fu">seq_len</span>(<span class="fu">ncol</span>(x))) {</span>
+<span id="cb90-5"><a href="#cb90-5" aria-hidden="true" tabindex="-1"></a>                <span class="fu">print</span>(x[i, j])</span>
+<span id="cb90-6"><a href="#cb90-6" aria-hidden="true" tabindex="-1"></a>        }   </span>
+<span id="cb90-7"><a href="#cb90-7" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>İç içe döngüler genellikle çok boyutlu veya hiyerarşik veri yapıları (örn. matrisler, listeler) için gereklidir. Yine de iç içe geçme konusunda dikkatli olun. 2-3 seviyeden fazla iç içe geçme genellikle kodun okunmasını/anlaşılmasını zorlaştırır. Çok sayıda iç içe döngüye ihtiyaç duyuyorsanız, fonksiyonları kullanarak döngüleri parçalamak isteyebilirsiniz (daha sonra tartışılacaktır).</p>
 <ul>
 <li><p>sıra sizde</p></li>
-<li><p>Bazen döngüler iç içe kullanılabilir 5X5 bir matrisin her bir elemanı satır ve sütun indeksleri çarpımı olsun orneğin m<span class="math display">\[2,5\]</span>=10 olsun. Bu işlemi yapmak için öncelikle boş bir matris oluştumak lazım.</p></li>
+<li><p>Bazen döngüler iç içe kullanılabilir 5X5 bir matrisin her bir elemanı satır ve sütun indeksleri çarpımı olsun orneğin 2. satır 5. sütun elemanı 2*5=10 olsun. Bu işlemi yapmak için öncelikle boş bir matris oluştumak lazım.</p></li>
 </ul>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>m2 <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">0</span>,<span class="at">nrow=</span><span class="dv">5</span>,<span class="at">ncol=</span><span class="dv">5</span>)</span>
-<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>m2</span>
-<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a><span class="do">##      [,1] [,2] [,3] [,4] [,5]</span></span>
-<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [1,]    0    0    0    0    0</span></span>
-<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [2,]    0    0    0    0    0</span></span>
-<span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a><span class="do">## [3,]    0    0    0    0    0</span></span>
-<span id="cb48-7"><a href="#cb48-7" aria-hidden="true" tabindex="-1"></a><span class="do">## [4,]    0    0    0    0    0</span></span>
-<span id="cb48-8"><a href="#cb48-8" aria-hidden="true" tabindex="-1"></a><span class="do">## [5,]    0    0    0    0    0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div class="sourceCode cell-code" id="cb91"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb91-1"><a href="#cb91-1" aria-hidden="true" tabindex="-1"></a>m2 <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">0</span>,<span class="at">nrow=</span><span class="dv">5</span>,<span class="at">ncol=</span><span class="dv">5</span>)</span>
+<span id="cb91-2"><a href="#cb91-2" aria-hidden="true" tabindex="-1"></a>m2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     [,1] [,2] [,3] [,4] [,5]
+[1,]    0    0    0    0    0
+[2,]    0    0    0    0    0
+[3,]    0    0    0    0    0
+[4,]    0    0    0    0    0
+[5,]    0    0    0    0    0</code></pre>
+</div>
 </div>
 <ul>
 <li>Aşağıdaki çıktıyı elde edecek kodu oluşturmaya çalışın</li>
 </ul>
 <div class="cell">
-<pre><code>##      [,1] [,2] [,3] [,4] [,5]
-## [1,]    1    2    3    4    5
-## [2,]    2    4    6    8   10
-## [3,]    3    6    9   12   15
-## [4,]    4    8   12   16   20
-## [5,]    5   10   15   20   25</code></pre>
+<div class="cell-output cell-output-stdout">
+<pre><code>     [,1] [,2] [,3] [,4] [,5]
+[1,]    1    2    3    4    5
+[2,]    2    4    6    8   10
+[3,]    3    6    9   12   15
+[4,]    4    8   12   16   20
+[5,]    5   10   15   20   25</code></pre>
+</div>
 </div>
 </section>
 <section id="ödev-1" class="level2">
 <h2 class="anchored" data-anchor-id="ödev-1">Ödev-1</h2>
 <ul>
-<li><p>Kullanıcı tarafından belirlenen <strong>nxn</strong> boyutunda bir matris oluşturulsun. <strong>nxn</strong> bir matrisin her bir elemanı satır ve sütun indeksleri çarpımı olsun. örneğin m<span class="math display">\[2,5\]</span>=10 olsun.</p></li>
+<li><p>Kullanıcı tarafından belirlenen <strong>nxn</strong> boyutunda bir matris oluşturulsun. <strong>nxn</strong> bir matrisin her bir elemanı satır ve sütun indeksleri çarpımı olsun. orneğin 2. satır 5. sütun elemanı 2*5=10 olsun</p></li>
 <li><p>Eger matrisin boyutları 10x10’dan büyükse sadece 10 satırını yazsın eğer matrisi boyutları 10x10’dan küçükse hepsini yazsın.</p></li>
 <li><p>Kullancı üç girdiğinde oluşacak çıktı:</p></li>
 </ul>
 <div class="cell">
-<pre><code>##      [,1] [,2] [,3]
-## [1,]    1    2    3
-## [2,]    2    4    6
-## [3,]    3    6    9</code></pre>
+<div class="cell-output cell-output-stdout">
+<pre><code>     [,1] [,2] [,3]
+[1,]    1    2    3
+[2,]    2    4    6
+[3,]    3    6    9</code></pre>
+</div>
 </div>
 </section>
 </section>
@@ -954,45 +923,43 @@ window.Quarto = {
 <h1><code>while</code> döngüsü</h1>
 <p>While döngüleri bir koşulu test ederek başlar. Koşul doğruysa, döngü gövdesini çalıştırır. Döngü gövdesi yürütüldükten sonra, koşul tekrar test edilir ve koşul yanlış olana kadar bu şekilde devam eder, ardından döngüden çıkılır.</p>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>count <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span>(count <span class="sc">&lt;</span> <span class="dv">10</span>) {</span>
-<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>        <span class="fu">print</span>(count)</span>
-<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a>        count <span class="ot">&lt;-</span> count <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 0</span></span>
-<span id="cb51-7"><a href="#cb51-7" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 1</span></span>
-<span id="cb51-8"><a href="#cb51-8" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 2</span></span>
-<span id="cb51-9"><a href="#cb51-9" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 3</span></span>
-<span id="cb51-10"><a href="#cb51-10" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 4</span></span>
-<span id="cb51-11"><a href="#cb51-11" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 5</span></span>
-<span id="cb51-12"><a href="#cb51-12" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 6</span></span>
-<span id="cb51-13"><a href="#cb51-13" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 7</span></span>
-<span id="cb51-14"><a href="#cb51-14" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 8</span></span>
-<span id="cb51-15"><a href="#cb51-15" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 9</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div class="sourceCode cell-code" id="cb95"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb95-1"><a href="#cb95-1" aria-hidden="true" tabindex="-1"></a>count <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb95-2"><a href="#cb95-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span>(count <span class="sc">&lt;</span> <span class="dv">10</span>) {</span>
+<span id="cb95-3"><a href="#cb95-3" aria-hidden="true" tabindex="-1"></a>        <span class="fu">print</span>(count)</span>
+<span id="cb95-4"><a href="#cb95-4" aria-hidden="true" tabindex="-1"></a>        count <span class="ot">&lt;-</span> count <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb95-5"><a href="#cb95-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0
+[1] 1
+[1] 2
+[1] 3
+[1] 4
+[1] 5
+[1] 6
+[1] 7
+[1] 8
+[1] 9</code></pre>
+</div>
 </div>
 <p>While döngüleri düzgün yazılmazsa sonsuz döngülere neden olabilir. Dikkatli kullanın!</p>
 <p>Bazen testte birden fazla koşul olabilir.</p>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> <span class="dv">5</span></span>
-<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1</span>)</span>
-<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span>(z <span class="sc">&gt;=</span> <span class="dv">3</span> <span class="sc">&amp;&amp;</span> z <span class="sc">&lt;=</span> <span class="dv">10</span>) {</span>
-<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a>        coin <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="fl">0.5</span>)</span>
-<span id="cb52-6"><a href="#cb52-6" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb52-7"><a href="#cb52-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span>(coin <span class="sc">==</span> <span class="dv">1</span>) {  <span class="do">## rastgele çalışır</span></span>
-<span id="cb52-8"><a href="#cb52-8" aria-hidden="true" tabindex="-1"></a>                z <span class="ot">&lt;-</span> z <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb52-9"><a href="#cb52-9" aria-hidden="true" tabindex="-1"></a>        } <span class="cf">else</span> {</span>
-<span id="cb52-10"><a href="#cb52-10" aria-hidden="true" tabindex="-1"></a>                z <span class="ot">&lt;-</span> z <span class="sc">-</span> <span class="dv">1</span></span>
-<span id="cb52-11"><a href="#cb52-11" aria-hidden="true" tabindex="-1"></a>        } </span>
-<span id="cb52-12"><a href="#cb52-12" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb52-13"><a href="#cb52-13" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(z)</span>
-<span id="cb52-14"><a href="#cb52-14" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div class="sourceCode cell-code" id="cb97"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb97-1"><a href="#cb97-1" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb97-2"><a href="#cb97-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1</span>)</span>
+<span id="cb97-3"><a href="#cb97-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb97-4"><a href="#cb97-4" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span>(z <span class="sc">&gt;=</span> <span class="dv">3</span> <span class="sc">&amp;&amp;</span> z <span class="sc">&lt;=</span> <span class="dv">10</span>) {</span>
+<span id="cb97-5"><a href="#cb97-5" aria-hidden="true" tabindex="-1"></a>        coin <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="fl">0.5</span>)</span>
+<span id="cb97-6"><a href="#cb97-6" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb97-7"><a href="#cb97-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span>(coin <span class="sc">==</span> <span class="dv">1</span>) {  <span class="do">## rastgele çalışır</span></span>
+<span id="cb97-8"><a href="#cb97-8" aria-hidden="true" tabindex="-1"></a>                z <span class="ot">&lt;-</span> z <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb97-9"><a href="#cb97-9" aria-hidden="true" tabindex="-1"></a>        } <span class="cf">else</span> {</span>
+<span id="cb97-10"><a href="#cb97-10" aria-hidden="true" tabindex="-1"></a>                z <span class="ot">&lt;-</span> z <span class="sc">-</span> <span class="dv">1</span></span>
+<span id="cb97-11"><a href="#cb97-11" aria-hidden="true" tabindex="-1"></a>        } </span>
+<span id="cb97-12"><a href="#cb97-12" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb97-13"><a href="#cb97-13" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(z)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2</code></pre>
+</div>
 </div>
 <p>Koşullar her zaman soldan sağa doğru değerlendirilir. Örneğin, yukarıdaki kodda <code>z</code> 3’ten küçük olsaydı, ikinci test değerlendirilmezdi.</p>
 <section id="repeat-döngüler" class="level2">
@@ -1000,21 +967,18 @@ window.Quarto = {
 <p><code>repeat</code> başlangıçtan itibaren sonsuz bir döngü başlatır. Bunlar istatistiksel veya veri analizi uygulamalarında yaygın olarak kullanılmaz, ancak kullanım alanları vardır. Bir <code>repeat</code> döngüsünden çıkmanın tek yolu <code>break</code> çağrısı yapmaktır.</p>
 <p>Olası bir paradigma, bir çözüm arıyor olabileceğiniz ve çözüme ulaşana kadar durmak istemediğiniz yinelemeli bir algoritmada olabilir.</p>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>x0 <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>tol <span class="ot">&lt;-</span> <span class="fl">1e-8</span></span>
-<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a><span class="cf">repeat</span> {</span>
-<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a>        x1 <span class="ot">&lt;-</span> <span class="fu">computeEstimate</span>()</span>
-<span id="cb53-6"><a href="#cb53-6" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb53-7"><a href="#cb53-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span>(<span class="fu">abs</span>(x1 <span class="sc">-</span> x0) <span class="sc">&lt;</span> tol) {  <span class="do">## Yeterince yakın mı?</span></span>
-<span id="cb53-8"><a href="#cb53-8" aria-hidden="true" tabindex="-1"></a>                <span class="cf">break</span></span>
-<span id="cb53-9"><a href="#cb53-9" aria-hidden="true" tabindex="-1"></a>        } <span class="cf">else</span> {</span>
-<span id="cb53-10"><a href="#cb53-10" aria-hidden="true" tabindex="-1"></a>                x0 <span class="ot">&lt;-</span> x1</span>
-<span id="cb53-11"><a href="#cb53-11" aria-hidden="true" tabindex="-1"></a>        } </span>
-<span id="cb53-12"><a href="#cb53-12" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div class="sourceCode cell-code" id="cb99"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb99-1"><a href="#cb99-1" aria-hidden="true" tabindex="-1"></a>x0 <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb99-2"><a href="#cb99-2" aria-hidden="true" tabindex="-1"></a>tol <span class="ot">&lt;-</span> <span class="fl">1e-8</span></span>
+<span id="cb99-3"><a href="#cb99-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb99-4"><a href="#cb99-4" aria-hidden="true" tabindex="-1"></a><span class="cf">repeat</span> {</span>
+<span id="cb99-5"><a href="#cb99-5" aria-hidden="true" tabindex="-1"></a>        x1 <span class="ot">&lt;-</span> <span class="fu">computeEstimate</span>()</span>
+<span id="cb99-6"><a href="#cb99-6" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb99-7"><a href="#cb99-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span>(<span class="fu">abs</span>(x1 <span class="sc">-</span> x0) <span class="sc">&lt;</span> tol) {  <span class="do">## Yeterince yakın mı?</span></span>
+<span id="cb99-8"><a href="#cb99-8" aria-hidden="true" tabindex="-1"></a>                <span class="cf">break</span></span>
+<span id="cb99-9"><a href="#cb99-9" aria-hidden="true" tabindex="-1"></a>        } <span class="cf">else</span> {</span>
+<span id="cb99-10"><a href="#cb99-10" aria-hidden="true" tabindex="-1"></a>                x0 <span class="ot">&lt;-</span> x1</span>
+<span id="cb99-11"><a href="#cb99-11" aria-hidden="true" tabindex="-1"></a>        } </span>
+<span id="cb99-12"><a href="#cb99-12" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Yukarıdaki kodun <code>computeEstimate()</code> fonksiyonu tanımlanmamışsa çalışmayacağını unutmayın (bunu sadece bu gösterimin amaçları için uydurdum).</p>
 <p>Yukarıdaki döngü biraz tehlikelidir çünkü duracağının garantisi yoktur. <code>x0</code> ve<code>x1</code> değerlerinin ileri geri salındığı ve asla yakınsamadığı bir duruma girebilirsiniz. Bir <code>for</code> döngüsü kullanarak iterasyon sayısına sabit bir sınır koymak ve ardından yakınsamanın sağlanıp sağlanmadığını rapor etmek daha iyidir.</p>
@@ -1033,39 +997,39 @@ window.Quarto = {
 </section>
 <section id="ödev-2" class="level2">
 <h2 class="anchored" data-anchor-id="ödev-2">Ödev-2</h2>
+<p>Aşağıda ornek veri setini oluşturma kodları yer almaktadır</p>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1786</span>)</span>
-<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>ornek<span class="ot">&lt;-</span><span class="fu">exp</span>(<span class="fu">matrix</span>(<span class="fu">rnorm</span>(<span class="dv">2000</span>),<span class="at">nrow=</span><span class="dv">100</span>))</span>
-<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a>index1.temp<span class="ot">&lt;-</span><span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>,<span class="dv">10</span>)</span>
-<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a>index2.temp<span class="ot">&lt;-</span><span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>,<span class="dv">10</span>)</span>
-<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>){</span>
-<span id="cb54-6"><a href="#cb54-6" aria-hidden="true" tabindex="-1"></a>  ornek[index1.temp[i],index2.temp[i]]<span class="ot">&lt;-</span><span class="sc">-</span><span class="dv">1</span></span>
-<span id="cb54-7"><a href="#cb54-7" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb54-8"><a href="#cb54-8" aria-hidden="true" tabindex="-1"></a> <span class="fu">head</span>(ornek,<span class="dv">6</span>)</span>
-<span id="cb54-9"><a href="#cb54-9" aria-hidden="true" tabindex="-1"></a><span class="do">##           [,1]      [,2]      [,3]      [,4]      [,5]      [,6]     [,7]</span></span>
-<span id="cb54-10"><a href="#cb54-10" aria-hidden="true" tabindex="-1"></a><span class="do">## [1,] 0.5549525 0.3247338 0.5236032 0.3821027 0.4187483 0.1588847 5.226161</span></span>
-<span id="cb54-11"><a href="#cb54-11" aria-hidden="true" tabindex="-1"></a><span class="do">## [2,] 0.5671734 1.2431592 0.8812069 2.6695443 0.6984453 1.0838792 1.079946</span></span>
-<span id="cb54-12"><a href="#cb54-12" aria-hidden="true" tabindex="-1"></a><span class="do">## [3,] 4.8068457 0.3449856 0.6079096 0.9194116 1.5361330 1.9082522 0.671977</span></span>
-<span id="cb54-13"><a href="#cb54-13" aria-hidden="true" tabindex="-1"></a><span class="do">## [4,] 1.3509234 2.3569582 0.1931423 4.0707377 0.3527276 2.3498825 1.198514</span></span>
-<span id="cb54-14"><a href="#cb54-14" aria-hidden="true" tabindex="-1"></a><span class="do">## [5,] 0.9012032 0.2310683 0.2317487 1.3809955 0.9168741 0.6237213 1.609403</span></span>
-<span id="cb54-15"><a href="#cb54-15" aria-hidden="true" tabindex="-1"></a><span class="do">## [6,] 1.2331483 1.1066056 0.3546027 0.3705946 0.9002303 0.2528151 3.337512</span></span>
-<span id="cb54-16"><a href="#cb54-16" aria-hidden="true" tabindex="-1"></a><span class="do">##           [,8]      [,9]     [,10]     [,11]     [,12]     [,13]     [,14]</span></span>
-<span id="cb54-17"><a href="#cb54-17" aria-hidden="true" tabindex="-1"></a><span class="do">## [1,] 2.6280057 1.2251526 0.4760966 5.2379018 1.4782655 1.3761338 1.0202608</span></span>
-<span id="cb54-18"><a href="#cb54-18" aria-hidden="true" tabindex="-1"></a><span class="do">## [2,] 2.2087385 0.5195551 0.3757409 0.9004808 0.7409205 2.0543842 0.3668661</span></span>
-<span id="cb54-19"><a href="#cb54-19" aria-hidden="true" tabindex="-1"></a><span class="do">## [3,] 1.5310016 0.6735007 2.2069776 0.5060078 0.7171477 1.2378655 0.3651527</span></span>
-<span id="cb54-20"><a href="#cb54-20" aria-hidden="true" tabindex="-1"></a><span class="do">## [4,] 2.5592899 1.8205257 1.2624052 0.1524106 0.3828322 1.2406799 0.7954326</span></span>
-<span id="cb54-21"><a href="#cb54-21" aria-hidden="true" tabindex="-1"></a><span class="do">## [5,] 1.1005990 1.0619758 2.1047783 2.7816902 1.4010878 0.6140937 0.5136842</span></span>
-<span id="cb54-22"><a href="#cb54-22" aria-hidden="true" tabindex="-1"></a><span class="do">## [6,] 0.9799103 2.7520425 2.5407624 1.3889136 0.4346808 1.0637950 0.1859157</span></span>
-<span id="cb54-23"><a href="#cb54-23" aria-hidden="true" tabindex="-1"></a><span class="do">##          [,15]     [,16]      [,17]     [,18]    [,19]     [,20]</span></span>
-<span id="cb54-24"><a href="#cb54-24" aria-hidden="true" tabindex="-1"></a><span class="do">## [1,] 0.1437680 4.1807643  1.7389423 3.0760640 1.550557 4.4838291</span></span>
-<span id="cb54-25"><a href="#cb54-25" aria-hidden="true" tabindex="-1"></a><span class="do">## [2,] 3.8674407 1.9349214  0.6333922 0.4862532 5.275571 0.1161029</span></span>
-<span id="cb54-26"><a href="#cb54-26" aria-hidden="true" tabindex="-1"></a><span class="do">## [3,] 1.4724240 0.5971116 11.5869157 0.7580736 4.755297 1.0583051</span></span>
-<span id="cb54-27"><a href="#cb54-27" aria-hidden="true" tabindex="-1"></a><span class="do">## [4,] 0.1243085 0.8376231  1.3723291 2.0884571 2.506128 1.2094517</span></span>
-<span id="cb54-28"><a href="#cb54-28" aria-hidden="true" tabindex="-1"></a><span class="do">## [5,] 6.2971803 0.8422164  1.5335222 0.3079718 2.729447 1.7164885</span></span>
-<span id="cb54-29"><a href="#cb54-29" aria-hidden="true" tabindex="-1"></a><span class="do">## [6,] 3.8052219 2.1611055  0.3280288 2.7773368 1.726558 1.3193446</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div class="sourceCode cell-code" id="cb100"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb100-1"><a href="#cb100-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1786</span>)</span>
+<span id="cb100-2"><a href="#cb100-2" aria-hidden="true" tabindex="-1"></a>ornek<span class="ot">&lt;-</span><span class="fu">exp</span>(<span class="fu">matrix</span>(<span class="fu">rnorm</span>(<span class="dv">2000</span>),<span class="at">nrow=</span><span class="dv">100</span>))</span>
+<span id="cb100-3"><a href="#cb100-3" aria-hidden="true" tabindex="-1"></a>index1.temp<span class="ot">&lt;-</span><span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>,<span class="dv">10</span>)</span>
+<span id="cb100-4"><a href="#cb100-4" aria-hidden="true" tabindex="-1"></a>index2.temp<span class="ot">&lt;-</span><span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>,<span class="dv">10</span>)</span>
+<span id="cb100-5"><a href="#cb100-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>){</span>
+<span id="cb100-6"><a href="#cb100-6" aria-hidden="true" tabindex="-1"></a>  ornek[index1.temp[i],index2.temp[i]]<span class="ot">&lt;-</span><span class="sc">-</span><span class="dv">1</span></span>
+<span id="cb100-7"><a href="#cb100-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb100-8"><a href="#cb100-8" aria-hidden="true" tabindex="-1"></a> <span class="fu">head</span>(ornek,<span class="dv">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>          [,1]      [,2]      [,3]      [,4]      [,5]      [,6]     [,7]
+[1,] 0.5549525 0.3247338 0.5236032 0.3821027 0.4187483 0.1588847 5.226161
+[2,] 0.5671734 1.2431592 0.8812069 2.6695443 0.6984453 1.0838792 1.079946
+[3,] 4.8068457 0.3449856 0.6079096 0.9194116 1.5361330 1.9082522 0.671977
+[4,] 1.3509234 2.3569582 0.1931423 4.0707377 0.3527276 2.3498825 1.198514
+[5,] 0.9012032 0.2310683 0.2317487 1.3809955 0.9168741 0.6237213 1.609403
+[6,] 1.2331483 1.1066056 0.3546027 0.3705946 0.9002303 0.2528151 3.337512
+          [,8]      [,9]     [,10]     [,11]     [,12]     [,13]     [,14]
+[1,] 2.6280057 1.2251526 0.4760966 5.2379018 1.4782655 1.3761338 1.0202608
+[2,] 2.2087385 0.5195551 0.3757409 0.9004808 0.7409205 2.0543842 0.3668661
+[3,] 1.5310016 0.6735007 2.2069776 0.5060078 0.7171477 1.2378655 0.3651527
+[4,] 2.5592899 1.8205257 1.2624052 0.1524106 0.3828322 1.2406799 0.7954326
+[5,] 1.1005990 1.0619758 2.1047783 2.7816902 1.4010878 0.6140937 0.5136842
+[6,] 0.9799103 2.7520425 2.5407624 1.3889136 0.4346808 1.0637950 0.1859157
+         [,15]     [,16]      [,17]     [,18]    [,19]     [,20]
+[1,] 0.1437680 4.1807643  1.7389423 3.0760640 1.550557 4.4838291
+[2,] 3.8674407 1.9349214  0.6333922 0.4862532 5.275571 0.1161029
+[3,] 1.4724240 0.5971116 11.5869157 0.7580736 4.755297 1.0583051
+[4,] 0.1243085 0.8376231  1.3723291 2.0884571 2.506128 1.2094517
+[5,] 6.2971803 0.8422164  1.5335222 0.3079718 2.729447 1.7164885
+[6,] 3.8052219 2.1611055  0.3280288 2.7773368 1.726558 1.3193446</code></pre>
+</div>
 </div>
 <ul>
 <li><p><strong>ornek</strong> veri setinde i. satırda negatif sayı yok ise çıktıda <strong>i. satırın ortalaması….dir</strong> yazsin.</p></li>
@@ -1073,126 +1037,227 @@ window.Quarto = {
 <li><p>veri setindeki satırlardaki toplam negatif sayı toplamı üçü geçerse çktıda <strong>cok sayıda negatif sayı</strong> yazsın ve döngü çalışmayı durdursun.</p></li>
 </ul>
 <div class="cell">
-<pre><code>## [1] "Satir 1 ortalamasi 0.986111423178787"
-## [1] "Satir 2 ortalamasi 1.66440473890558"
-## [1] "Satir 3 ortalamasi 1.86445460243509"
-## [1] "Satir 4 negatif sayi icermektedir."
-## [1] "Satir 5 negatif sayi icermektedir."
-## [1] "Satir 6 ortalamasi 2.18755744815693"
-## [1] "Satir 7 ortalamasi 2.42896783600747"
-## [1] "Satir 8 ortalamasi 1.11152186047931"
-## [1] "Satir 9 ortalamasi 1.28348082027049"
-## [1] "Satir 10 ortalamasi 1.49790135754768"
-## [1] "Satir 11 ortalamasi 1.00823845594998"
-## [1] "Satir 12 ortalamasi 1.84432161490249"
-## [1] "Satir 13 ortalamasi 2.30730516248531"
-## [1] "Satir 14 ortalamasi 1.32997520232501"
-## [1] "Satir 15 ortalamasi 1.40736423997693"
-## [1] "Satir 16 ortalamasi 0.930694377568197"
-## [1] "Satir 17 ortalamasi 1.09683802891735"
-## [1] "Satir 18 ortalamasi 1.34543057465283"
-## [1] "Satir 19 ortalamasi 1.91931890408157"
-## [1] "Satir 20 ortalamasi 1.46149447129439"
-## [1] "Satir 21 ortalamasi 1.48698773010654"
-## [1] "Satir 22 ortalamasi 2.50083591324982"
-## [1] "Satir 23 ortalamasi 2.49403230671112"
-## [1] "Satir 24 ortalamasi 2.03307899444367"
-## [1] "Satir 25 ortalamasi 1.47358418101605"
-## [1] "Satir 26 ortalamasi 1.77152589640626"
-## [1] "Satir 27 ortalamasi 1.25135003349089"
-## [1] "Satir 28 ortalamasi 1.33894076274636"
-## [1] "Satir 29 ortalamasi 1.82874224246664"
-## [1] "Satir 30 ortalamasi 1.23831471787453"
-## [1] "Satir 31 ortalamasi 1.82082600141082"
-## [1] "Satir 32 ortalamasi 1.12466160143214"
-## [1] "Satir 33 ortalamasi 1.32597664522914"
-## [1] "Satir 34 negatif sayi icermektedir."
-## [1] "Satir 35 ortalamasi 2.32162456679167"
-## [1] "Satir 36 ortalamasi 2.23274928866424"
-## [1] "Satir 37 negatif sayi icermektedir."
-## [1] "Satir 38 ortalamasi 2.275511227626"
-## [1] "Satir 39 ortalamasi 1.7921160361432"
-## [1] "Satir 40 ortalamasi 0.970509167208986"
-## [1] "Satir 41 ortalamasi 1.24765799189581"
-## [1] "Satir 42 ortalamasi 2.51234120817512"
-## [1] "Satir 43 ortalamasi 2.31828043397862"
-## [1] "Satir 44 negatif sayi icermektedir."
-## [1] "Satir 45 ortalamasi 1.95647545685842"
-## [1] "Satir 46 negatif sayi icermektedir."
-## [1] "Satir 47 ortalamasi 2.36551615481398"
-## [1] "Satir 48 ortalamasi 1.97786024664016"
-## [1] "Satir 49 ortalamasi 1.6393028512105"
-## [1] "Satir 50 ortalamasi 3.73629039983628"
-## [1] "Satir 51 ortalamasi 1.82116726064836"
-## [1] "Satir 52 ortalamasi 1.87732770333814"
-## [1] "Satir 53 ortalamasi 2.7020031804201"
-## [1] "Satir 54 ortalamasi 1.05164097984234"
-## [1] "Satir 55 ortalamasi 1.88981004324099"
-## [1] "Satir 56 ortalamasi 1.54248819505925"
-## [1] "Satir 57 ortalamasi 1.65731581957976"
-## [1] "Satir 58 ortalamasi 1.36890435340706"
-## [1] "Satir 59 negatif sayi icermektedir."
-## [1] "Satir 60 ortalamasi 2.22046851034413"
-## [1] "Satir 61 ortalamasi 1.0408644748318"
-## [1] "Satir 62 ortalamasi 1.72072095294252"
-## [1] "Satir 63 ortalamasi 1.53167534425738"
-## [1] "Satir 64 ortalamasi 1.72856879470484"
-## [1] "Satir 65 ortalamasi 1.37607074870477"
-## [1] "Satir 66 ortalamasi 1.42295571491744"
-## [1] "Satir 67 ortalamasi 0.88385039568476"
-## [1] "Satir 68 ortalamasi 2.35701379888311"
-## [1] "Satir 69 ortalamasi 1.35179926755423"
-## [1] "Satir 70 ortalamasi 1.28012686374286"
-## [1] "Satir 71 negatif sayi icermektedir."
-## [1] "Satir 72 ortalamasi 1.67406636870506"
-## [1] "Satir 73 ortalamasi 1.37691945587952"
-## [1] "Satir 74 ortalamasi 2.00099153014073"
-## [1] "Satir 75 negatif sayi icermektedir."
-## [1] "Satir 76 ortalamasi 1.60454610453076"
-## [1] "Satir 77 ortalamasi 2.0804975152321"
-## [1] "Satir 78 ortalamasi 1.67436426400702"
-## [1] "Satir 79 ortalamasi 2.04712004349156"
-## [1] "Satir 80 ortalamasi 1.2963699279751"
-## [1] "Satir 81 ortalamasi 2.06864424004881"
-## [1] "Satir 82 ortalamasi 2.18401195176334"
-## [1] "Satir 83 ortalamasi 2.38233635418165"
-## [1] "Satir 84 ortalamasi 1.65733160944781"
-## [1] "Satir 85 ortalamasi 1.53913327407787"
-## [1] "Satir 86 ortalamasi 1.5977866331596"
-## [1] "Satir 87 ortalamasi 1.53640423869466"
-## [1] "Satir 88 ortalamasi 1.4151688443321"
-## [1] "Satir 89 ortalamasi 1.65657353958559"
-## [1] "Satir 90 ortalamasi 1.09930366562984"
-## [1] "Satir 91 ortalamasi 2.04289262764082"
-## [1] "Satir 92 ortalamasi 1.49359077505866"
-## [1] "Satir 93 ortalamasi 1.59542242961016"
-## [1] "Satir 94 negatif sayi icermektedir."
-## [1] "Satir 95 ortalamasi 1.63562964801907"
-## [1] "Satir 96 ortalamasi 1.25826462716513"
-## [1] "Satir 97 ortalamasi 3.88578289773781"
-## [1] "Satir 98 ortalamasi 2.05151453891869"
-## [1] "Satir 99 ortalamasi 1.96874159472044"
-## [1] "Satir 100 ortalamasi 1.5918224514213"</code></pre>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Satir 1 ortalamasi 0.986111423178787"
+[1] "Satir 2 ortalamasi 1.66440473890558"
+[1] "Satir 3 ortalamasi 1.86445460243509"
+[1] "Satir 4 negatif sayi icermektedir."
+[1] "Satir 5 negatif sayi icermektedir."
+[1] "Satir 6 ortalamasi 2.18755744815693"
+[1] "Satir 7 ortalamasi 2.42896783600747"
+[1] "Satir 8 ortalamasi 1.11152186047931"
+[1] "Satir 9 ortalamasi 1.28348082027049"
+[1] "Satir 10 ortalamasi 1.49790135754768"
+[1] "Satir 11 ortalamasi 1.00823845594998"
+[1] "Satir 12 ortalamasi 1.84432161490249"
+[1] "Satir 13 ortalamasi 2.30730516248531"
+[1] "Satir 14 ortalamasi 1.32997520232501"
+[1] "Satir 15 ortalamasi 1.40736423997693"
+[1] "Satir 16 ortalamasi 0.930694377568197"
+[1] "Satir 17 ortalamasi 1.09683802891735"
+[1] "Satir 18 ortalamasi 1.34543057465283"
+[1] "Satir 19 ortalamasi 1.91931890408157"
+[1] "Satir 20 ortalamasi 1.46149447129439"
+[1] "Satir 21 ortalamasi 1.48698773010654"
+[1] "Satir 22 ortalamasi 2.50083591324982"
+[1] "Satir 23 ortalamasi 2.49403230671112"
+[1] "Satir 24 ortalamasi 2.03307899444367"
+[1] "Satir 25 ortalamasi 1.47358418101605"
+[1] "Satir 26 ortalamasi 1.77152589640626"
+[1] "Satir 27 ortalamasi 1.25135003349089"
+[1] "Satir 28 ortalamasi 1.33894076274636"
+[1] "Satir 29 ortalamasi 1.82874224246664"
+[1] "Satir 30 ortalamasi 1.23831471787453"
+[1] "Satir 31 ortalamasi 1.82082600141082"
+[1] "Satir 32 ortalamasi 1.12466160143214"
+[1] "Satir 33 ortalamasi 1.32597664522914"
+[1] "Satir 34 negatif sayi icermektedir."
+[1] "Satir 35 ortalamasi 2.32162456679167"
+[1] "Satir 36 ortalamasi 2.23274928866424"
+[1] "Satir 37 negatif sayi icermektedir."
+[1] "Satir 38 ortalamasi 2.275511227626"
+[1] "Satir 39 ortalamasi 1.7921160361432"
+[1] "Satir 40 ortalamasi 0.970509167208986"
+[1] "Satir 41 ortalamasi 1.24765799189581"
+[1] "Satir 42 ortalamasi 2.51234120817512"
+[1] "Satir 43 ortalamasi 2.31828043397862"
+[1] "Satir 44 negatif sayi icermektedir."
+[1] "Satir 45 ortalamasi 1.95647545685842"
+[1] "Satir 46 negatif sayi icermektedir."
+[1] "Satir 47 ortalamasi 2.36551615481398"
+[1] "Satir 48 ortalamasi 1.97786024664016"
+[1] "Satir 49 ortalamasi 1.6393028512105"
+[1] "Satir 50 ortalamasi 3.73629039983628"
+[1] "Satir 51 ortalamasi 1.82116726064836"
+[1] "Satir 52 ortalamasi 1.87732770333814"
+[1] "Satir 53 ortalamasi 2.7020031804201"
+[1] "Satir 54 ortalamasi 1.05164097984234"
+[1] "Satir 55 ortalamasi 1.88981004324099"
+[1] "Satir 56 ortalamasi 1.54248819505925"
+[1] "Satir 57 ortalamasi 1.65731581957976"
+[1] "Satir 58 ortalamasi 1.36890435340706"
+[1] "Satir 59 negatif sayi icermektedir."
+[1] "Satir 60 ortalamasi 2.22046851034413"
+[1] "Satir 61 ortalamasi 1.0408644748318"
+[1] "Satir 62 ortalamasi 1.72072095294252"
+[1] "Satir 63 ortalamasi 1.53167534425738"
+[1] "Satir 64 ortalamasi 1.72856879470484"
+[1] "Satir 65 ortalamasi 1.37607074870477"
+[1] "Satir 66 ortalamasi 1.42295571491744"
+[1] "Satir 67 ortalamasi 0.88385039568476"
+[1] "Satir 68 ortalamasi 2.35701379888311"
+[1] "Satir 69 ortalamasi 1.35179926755423"
+[1] "Satir 70 ortalamasi 1.28012686374286"
+[1] "Satir 71 negatif sayi icermektedir."
+[1] "Satir 72 ortalamasi 1.67406636870506"
+[1] "Satir 73 ortalamasi 1.37691945587952"
+[1] "Satir 74 ortalamasi 2.00099153014073"
+[1] "Satir 75 negatif sayi icermektedir."
+[1] "Satir 76 ortalamasi 1.60454610453076"
+[1] "Satir 77 ortalamasi 2.0804975152321"
+[1] "Satir 78 ortalamasi 1.67436426400702"
+[1] "Satir 79 ortalamasi 2.04712004349156"
+[1] "Satir 80 ortalamasi 1.2963699279751"
+[1] "Satir 81 ortalamasi 2.06864424004881"
+[1] "Satir 82 ortalamasi 2.18401195176334"
+[1] "Satir 83 ortalamasi 2.38233635418165"
+[1] "Satir 84 ortalamasi 1.65733160944781"
+[1] "Satir 85 ortalamasi 1.53913327407787"
+[1] "Satir 86 ortalamasi 1.5977866331596"
+[1] "Satir 87 ortalamasi 1.53640423869466"
+[1] "Satir 88 ortalamasi 1.4151688443321"
+[1] "Satir 89 ortalamasi 1.65657353958559"
+[1] "Satir 90 ortalamasi 1.09930366562984"
+[1] "Satir 91 ortalamasi 2.04289262764082"
+[1] "Satir 92 ortalamasi 1.49359077505866"
+[1] "Satir 93 ortalamasi 1.59542242961016"
+[1] "Satir 94 negatif sayi icermektedir."
+[1] "Satir 95 ortalamasi 1.63562964801907"
+[1] "Satir 96 ortalamasi 1.25826462716513"
+[1] "Satir 97 ortalamasi 3.88578289773781"
+[1] "Satir 98 ortalamasi 2.05151453891869"
+[1] "Satir 99 ortalamasi 1.96874159472044"
+[1] "Satir 100 ortalamasi 1.5918224514213"</code></pre>
+</div>
 </div>
 <p>Matris yazdırma</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>n<span class="ot">&lt;-</span><span class="fu">as.numeric</span>(<span class="fu">readline</span>(<span class="at">prompt =</span> <span class="st">"Kare matriste satir/sutun sayisi olarak kullanilmak uzere bir sayi yaziniz: "</span>))</span>
-<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>matris<span class="ot">&lt;-</span><span class="fu">matrix</span>(<span class="dv">0</span>,n,n)</span>
-<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(satir <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n){</span>
-<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(sutun <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n){</span>
-<span id="cb56-6"><a href="#cb56-6" aria-hidden="true" tabindex="-1"></a>    matris[satir,sutun]<span class="ot">&lt;-</span> satir<span class="sc">*</span>sutun</span>
-<span id="cb56-7"><a href="#cb56-7" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb56-8"><a href="#cb56-8" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb56-9"><a href="#cb56-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-10"><a href="#cb56-10" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="fu">nrow</span>(matris)<span class="sc">&lt;=</span><span class="dv">10</span>){</span>
-<span id="cb56-11"><a href="#cb56-11" aria-hidden="true" tabindex="-1"></a>  matris</span>
-<span id="cb56-12"><a href="#cb56-12" aria-hidden="true" tabindex="-1"></a>}<span class="cf">else</span>{</span>
-<span id="cb56-13"><a href="#cb56-13" aria-hidden="true" tabindex="-1"></a>  matris[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>,<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>]</span>
-<span id="cb56-14"><a href="#cb56-14" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb103"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb103-1"><a href="#cb103-1" aria-hidden="true" tabindex="-1"></a>n<span class="ot">&lt;-</span><span class="fu">as.numeric</span>(<span class="fu">readline</span>(<span class="at">prompt =</span> <span class="st">"Kare matriste satir/sutun sayisi olarak kullanilmak uzere bir sayi yaziniz: "</span>))</span>
+<span id="cb103-2"><a href="#cb103-2" aria-hidden="true" tabindex="-1"></a>matris<span class="ot">&lt;-</span><span class="fu">matrix</span>(<span class="dv">0</span>,n,n)</span>
+<span id="cb103-3"><a href="#cb103-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(satir <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n){</span>
+<span id="cb103-4"><a href="#cb103-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(sutun <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n){</span>
+<span id="cb103-5"><a href="#cb103-5" aria-hidden="true" tabindex="-1"></a>    matris[satir,sutun]<span class="ot">&lt;-</span> satir<span class="sc">*</span>sutun</span>
+<span id="cb103-6"><a href="#cb103-6" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb103-7"><a href="#cb103-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb103-8"><a href="#cb103-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-9"><a href="#cb103-9" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="fu">nrow</span>(matris)<span class="sc">&lt;=</span><span class="dv">10</span>){</span>
+<span id="cb103-10"><a href="#cb103-10" aria-hidden="true" tabindex="-1"></a>  matris</span>
+<span id="cb103-11"><a href="#cb103-11" aria-hidden="true" tabindex="-1"></a>}<span class="cf">else</span>{</span>
+<span id="cb103-12"><a href="#cb103-12" aria-hidden="true" tabindex="-1"></a>  matris[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>,<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>]</span>
+<span id="cb103-13"><a href="#cb103-13" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
+</div>
+</section>
+<section id="ödev-3" class="level2">
+<h2 class="anchored" data-anchor-id="ödev-3">Ödev 3</h2>
+<p>aşağıdaki geometrik şekilleri farklı kodlamalar ile oluşturunuz</p>
+<ul>
+<li>İçi dolu kare</li>
+</ul>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>* * * * * 
+* * * * * 
+* * * * * 
+* * * * * 
+* * * * * </code></pre>
+</div>
+</div>
+<ul>
+<li>İçi boş kare</li>
+</ul>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>* * * * * 
+*   *
+*   *
+*   *
+* * * * * </code></pre>
+</div>
+</div>
+<ul>
+<li>Dolu Üçgen</li>
+</ul>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>* 
+* * 
+* * * 
+* * * * 
+* * * * * </code></pre>
+</div>
+</div>
+<ul>
+<li>İçi Boş Üçgen</li>
+</ul>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>* 
+**
+* *
+*  *
+* * * * * </code></pre>
+</div>
+</div>
+<ul>
+<li>Eşkenar üçgen</li>
+</ul>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>    *
+   ***
+  *****
+ *******
+*********</code></pre>
+</div>
+</div>
+<ul>
+<li>İçi boş eşkenar üçgen</li>
+</ul>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>    *
+   * *
+  *   *
+ *     *
+*********</code></pre>
+</div>
+</div>
+<ul>
+<li>Dik Üçgen</li>
+</ul>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>    *
+   **
+  ***
+ ****
+*****</code></pre>
+</div>
+</div>
+<ul>
+<li>Diyagonal Çizgi</li>
+</ul>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>*
+ *
+  *
+   *
+    *</code></pre>
+</div>
 </div>
 
 
