@@ -249,50 +249,38 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Fonksiyonlar <code>function()</code> kullanılarak tanımlanır ve diğer her şey gibi R nesneleri olarak saklanır. Özellikle, “function” sınıfının R nesneleridirler.</p>
 <p>İşte hiçbir argüman almayan ve hiçbir şey yapmayan basit bir fonksiyon.</p>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>        <span class="do">## Bu boş bir fonksiyondur</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Fonksiyonların kendi sınıfları vardır</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(f)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "function"</code></pre>
 </div>
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Bu işlevi çalıştırın</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">f</span>()       </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>NULL</code></pre>
 </div>
 </div>
 <p>Çok ilginç değil ama bu da bir başlangıç. Yapabileceğimiz bir sonraki şey, aslında önemsiz olmayan bir <em>fonksiyon gövdesine</em> sahip bir fonksiyon oluşturmaktır.</p>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>        <span class="fu">cat</span>(<span class="st">"Merhaba!</span><span class="sc">\n</span><span class="st">"</span>)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">f</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Merhaba!</code></pre>
 </div>
 </div>
 <p>Temel bir fonksiyonun son unsuru <em>fonksiyon argümanlarıdır</em>. Bunlar, kullanıcıya belirtebileceğiniz ve kullanıcının açıkça ayarlayabileceği seçeneklerdir. Bu temel fonksiyon için, konsola kaç kez “Merhaba!” yazdırılacağını belirleyen bir argüman ekleyebiliriz.</p>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># f &lt;- function(num) {</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">#         for(i in seq_len(num)) {</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co">#                 cat("Merhaba!\n")</span></span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co">#         }</span></span>
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co"># }</span></span>
 <span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co"># f(3)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 <p>Açıkçası, aynı etki için sadece <code>cat("Merhaba!\n")</code> üç kere kesip yapıştırabilirdik. Ama o zaman programlama yapmıyor olurduk. Ayrıca, kodunuzu bir başkasına vermeniz ve onu kodu istediği kadar kesip yapıştırmaya zorlamanız da iyi olmayacaktır:) “Merhaba!”.</p>
 <blockquote class="blockquote">
@@ -306,8 +294,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Son olarak, yukarıdaki fonksiyon <em>hiçbir şey döndürmez</em>. Sadece konsola <code>tekrar</code> sayıda “Merhaba!” yazdırır ve sonra çıkar. Ancak bir fonksiyonun, belki de kodun başka bir bölümüne beslenebilecek bir şey döndürmesi genellikle yararlıdır.</p>
 <p>Sıradaki fonksiyon konsola yazdırılan toplam karakter sayısını döndürür.</p>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># f &lt;- function(tekrar) {</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">#         Merhaba &lt;- "Merhaba!\n"</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co">#         for(i in seq_len(tekrar)) {</span></span>
@@ -317,16 +303,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co">#         chars</span></span>
 <span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="co"># }</span></span>
 <span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="co"># f(3)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 <p>Yukarıdaki fonksiyonda, fonksiyonun karakter sayısını döndürmesi için özel bir şey belirtmemiz gerekmedi. R’de, bir fonksiyonun geri dönüş değeri her zaman değerlendirilen en son ifadedir. Bu fonksiyonda değerlendirilen son ifade <code>chars</code> değişkeni olduğu için, fonksiyonun dönüş değeri de bu olur.</p>
 <p>Bir fonksiyondan açık bir değer döndürmek için kullanılabilecek bir <code>return()</code> fonksiyonu olduğunu unutmayın, ancak nadiren kullanılır.</p>
 <p>Son olarak, yukarıdaki fonksiyonda, kullanıcı <code>tekrar</code> argümanının değerini belirtmelidir. Eğer kullanıcı tarafından belirtilmezse, R bir hata verecektir.</p>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">f</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Merhaba!</code></pre>
 </div>
@@ -334,8 +316,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Bu davranışı <code>tekrar</code> argümanı için bir <em>varsayılan değer</em> belirleyerek değiştirebiliriz. Belirtmek isterseniz, herhangi bir fonksiyon argümanının varsayılan bir değeri olabilir. Bazen, argüman değerleri nadiren değiştirilir (özel durumlar hariç) ve bu argüman için bir varsayılan değer ayarlamak mantıklıdır. Bu, kullanıcıyı fonksiyon her çağrıldığında bu argümanın değerini belirtme zorunluluğundan kurtarır.</p>
 <p>Örneğin, burada <code>tekrar</code> için varsayılan değeri 1 olarak ayarlayabiliriz, böylece fonksiyon <code>tekrar</code> argümanı açıkça belirtilmeden çağrılırsa, konsola bir kez “Merhaba!” yazdırır.</p>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># f &lt;- function(tekrar = 1) {</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co">#         Merhaba &lt;- "Merhaba!\n"</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co">#         for(i in seq_len(tekrar)) {</span></span>
@@ -346,7 +326,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="co"># }</span></span>
 <span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="co"># f()    ## 'tekrar' için varsayılan değeri kullan</span></span>
 <span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="co"># f(2)   ## Kullanıcı tarafından belirtilen değeri kullan</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 <p>Fonksiyonun hala konsola yazdırılan karakter sayısını döndürdüğünü unutmayın.</p>
 <p>Bu noktada, bir fonksiyon yazdık</p>
@@ -357,10 +336,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <p>Fonksiyonlar, isteğe bağlı olarak varsayılan değerlere sahip olabilen <em>isimli argümanlara</em> sahiptir. Tüm fonksiyon argümanlarının adları olduğundan, bunlar adları kullanılarak belirtilebilir.</p>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># f(tekrar = 2)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 <p>Bir fonksiyonun çok sayıda argümanı varsa ve hangi argümanın belirtildiği her zaman net olmayabilirse, bir argümanı adıyla belirtmek bazen yararlıdır. Burada, fonksiyonumuzun yalnızca bir argümanı vardır, bu nedenle herhangi bir karışıklık olmaz.</p>
 </section>
@@ -368,74 +344,50 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="argüman-eşleştirme">Argüman Eşleştirme</h2>
 <p>Bir R fonksiyonunu argümanlarla çağırmak çeşitli şekillerde yapılabilir. Bu ilk başta kafa karıştırıcı olabilir, ancak komut satırında etkileşimli çalışma yaparken gerçekten kullanışlıdır. R fonksiyonları argümanları <em>konumsal olarak</em> veya isme göre eşleştirilebilir. Konumsal eşleştirme, R’nin ilk değeri ilk argümana, ikinci değeri ikinci argümana vb. atadığı anlamına gelir. Yani aşağıdaki <code>rnorm()</code> çağrısında</p>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(rnorm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>function (n, mean = 0, sd = 1)  </code></pre>
 </div>
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>mydata <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="dv">2</span>, <span class="dv">1</span>)              <span class="do">## Bazı veriler oluşturun</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 <p>100, <code>n</code> argümanına, 2 <code>ortalama</code> argümanına ve 1 <code>sd</code> argümanına atanır, hepsi de konum eşleştirmesi ile yapılır.</p>
 <p>Aşağıdaki <code>sd()</code> fonksiyonu (bir sayı vektörünün ampirik standart sapmasını hesaplar) çağrılarının tümü eşdeğerdir. sd()<code>fonksiyonunun iki argümanı olduğunu unutmayın: x</code> sayı vektörünü gösterir ve <code>na.rm</code> eksik değerlerin kaldırılıp kaldırılmayacağını belirten bir mantıksaldır.</p>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Konumsal eşleşme ilk argüman, na.rm için varsayılan</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(mydata)                     </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.9878214</code></pre>
+<pre><code>[1] 1.028712</code></pre>
 </div>
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="do">## 'x' argümanını isimle belirtin, varsayılan 'na.rm'</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(<span class="at">x =</span> mydata)                 </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.9878214</code></pre>
+<pre><code>[1] 1.028712</code></pre>
 </div>
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Her iki argümanı da adla belirtin</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(<span class="at">x =</span> mydata, <span class="at">na.rm =</span> <span class="cn">FALSE</span>)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.9878214</code></pre>
+<pre><code>[1] 1.028712</code></pre>
 </div>
 </div>
 <p>Fonksiyon argümanlarını isimle belirtirken, bunları hangi sırada belirttiğiniz önemli değildir. Aşağıdaki örnekte, fonksiyon tanımında tanımlanan ilk argüman <code>x</code> olmasına rağmen, önce <code>na.rm</code> argümanını, ardından <code>x</code> argümanını belirtiyoruz.</p>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Her iki argümanı da adla belirtin</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(<span class="at">na.rm =</span> <span class="cn">FALSE</span>, <span class="at">x =</span> mydata)     </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.9878214</code></pre>
+<pre><code>[1] 1.028712</code></pre>
 </div>
 </div>
 <p>Konumsal eşleştirme ile ada göre eşleştirmeyi karıştırabilirsiniz. Bir argüman isme göre eşleştirildiğinde, argüman listesinden “çıkarılır” ve kalan isimsiz argümanlar fonksiyon tanımında listelendikleri sırayla eşleştirilir.</p>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(<span class="at">na.rm =</span> <span class="cn">FALSE</span>, mydata)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.9878214</code></pre>
+<pre><code>[1] 1.028712</code></pre>
 </div>
 </div>
 <p>Burada, <code>mydata</code> nesnesi <code>x</code> argümanına atanır, çünkü henüz belirtilmemiş tek argüman budur.</p>
 <p>Aşağıda, bir veri kümesine doğrusal modeller uyduran <code>lm()</code> fonksiyonunun argüman listesi yer almaktadır.</p>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">args</span>(lm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>function (formula, data, subset, weights, na.action, method = "qr", 
     model = TRUE, x = FALSE, y = FALSE, qr = TRUE, singular.ok = TRUE, 
@@ -464,31 +416,22 @@ NULL</code></pre>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Jenerik fonksiyonlar, metotlara ekstra argümanlar aktarılabilmesi için <code>...</code> kullanır.</p>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>mean</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>function (x, ...) 
 UseMethod("mean")
-&lt;bytecode: 0x00000256dcf29610&gt;
+&lt;bytecode: 0x00000182edb2d610&gt;
 &lt;environment: namespace:base&gt;</code></pre>
 </div>
 </div>
 <p>Fonksiyona aktarılan argüman sayısı önceden bilinemediğinde <code>...</code> argümanı gereklidir. Bu durum <code>paste()</code> ve <code>cat()</code> gibi fonksiyonlarda açıkça görülmektedir.</p>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">args</span>(paste)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>function (..., sep = " ", collapse = NULL, recycle0 = FALSE) 
 NULL</code></pre>
 </div>
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">args</span>(cat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>function (..., file = "", sep = " ", fill = FALSE, labels = NULL, 
     append = FALSE) 
@@ -502,10 +445,7 @@ NULL</code></pre>
 <p><code>...</code> ile ilgili bir sorun, argüman listesinde <em>after</em><code>...</code> olarak görünen herhangi bir argümanın açıkça adlandırılması gerektiği ve kısmen eşleştirilemeyeceği veya konum olarak eşleştirilemeyeceğidir.</p>
 <p><code>paste()</code> fonksiyonunun argümanlarına bir göz atın.</p>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">args</span>(paste)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>function (..., sep = " ", collapse = NULL, recycle0 = FALSE) 
 NULL</code></pre>
@@ -514,20 +454,14 @@ NULL</code></pre>
 <p><code>paste()</code> fonksiyonu ile,<code>sep</code>ve<code>collapse</code> argümanları, varsayılan değerler kullanılmayacaksa, açıkça ve tam olarak adlandırılmalıdır.</p>
 <p>Burada “a” ve “b”nin birlikte yapıştırılmasını ve iki nokta üst üste ile ayrılmasını istediğimi belirtiyorum.</p>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="at">sep =</span> <span class="st">":"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "a:b"</code></pre>
 </div>
 </div>
 <p>Eğer <code>sep</code> argümanını tam olarak belirtmezsem ve kısmi eşleştirmeye güvenmeye çalışırsam, beklenen sonucu alamıyorum.</p>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="at">se =</span> <span class="st">":"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "a b :"</code></pre>
 </div>
@@ -563,22 +497,17 @@ NULL</code></pre>
 <li>Oluşturacak olan her bir veri setinin her bir sütunu standart normal dağılıma uygun olacak şekilde üretilsin. Oluşturulan veri setlerinden ilki “veri_1.xlsx” şeklinde çalışma alanına yazdırılsın</li>
 </ul>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>fonksiyon_adi <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">sayi=</span><span class="dv">1</span>,<span class="at">satir=</span><span class="fu">c</span>(<span class="dv">5</span>),<span class="at">sutun=</span><span class="fu">c</span>(<span class="dv">10</span>)){</span>
 <span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>    df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="fu">matrix</span>(<span class="dv">0</span>,<span class="at">nrow=</span>satir, <span class="at">ncol=</span>sutun))</span>
 <span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>     writexl<span class="sc">::</span><span class="fu">write_xlsx</span>(df,<span class="st">"veri_1.xlsx"</span>)</span>
 <span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a><span class="fu">fonksiyon_adi</span>(<span class="at">sayi=</span><span class="dv">1</span>,<span class="at">satir=</span><span class="fu">c</span>(<span class="dv">5</span>),<span class="at">sutun=</span><span class="fu">c</span>(<span class="dv">10</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 <ul>
 <li>Şimdi ise bu fonksiyonu çoklu dosya yazımına uygun hale getirelim</li>
 </ul>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>fonksiyon_adi <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">sayi=</span><span class="dv">3</span>,<span class="at">satir=</span><span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">5</span>),<span class="at">sutun=</span><span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">10</span>,<span class="dv">10</span>)){</span>
 <span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>  df_list <span class="ot">&lt;-</span> <span class="fu">list</span>() <span class="do">## her bir veri setinin atanacağı yeni nesne</span></span>
@@ -594,7 +523,6 @@ NULL</code></pre>
 <span id="cb46-13"><a href="#cb46-13" aria-hidden="true" tabindex="-1"></a>      writexl<span class="sc">::</span><span class="fu">write_xlsx</span>(df_list[[i]],<span class="fu">paste</span>(<span class="st">"veri"</span>,i,<span class="st">".xlsx"</span>, <span class="at">sep=</span><span class="st">""</span>))</span>
 <span id="cb46-14"><a href="#cb46-14" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb46-15"><a href="#cb46-15" aria-hidden="true" tabindex="-1"></a><span class="fu">fonksiyon_adi</span>(<span class="at">sayi=</span><span class="dv">3</span>,<span class="at">satir=</span><span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">4</span>,<span class="dv">3</span>),<span class="at">sutun=</span><span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">5</span>,<span class="dv">4</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 <section id="sıra-sizde" class="level3">
 <h3 class="anchored" data-anchor-id="sıra-sizde">Sıra Sizde</h3>
