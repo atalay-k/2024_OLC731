@@ -101,6 +101,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="slides-style.css">
 </head>
@@ -521,25 +550,46 @@ NULL</code></pre>
 <li>Şimdi ise bu fonksiyonu çoklu dosya yazımına uygun hale getirelim</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>fonksiyon_adi <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">sayi=</span><span class="dv">3</span>,<span class="at">satir=</span><span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">5</span>),<span class="at">sutun=</span><span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">10</span>,<span class="dv">10</span>)){</span>
-<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>    </span>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>fonksiyon_adi <span class="ot">&lt;-</span><span class="cf">function</span>(<span class="at">sayi=</span><span class="dv">3</span>,<span class="at">satir=</span><span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">5</span>),<span class="at">sutun=</span><span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">10</span>,<span class="dv">10</span>)){</span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>   </span>
 <span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>  df_list <span class="ot">&lt;-</span> <span class="fu">list</span>() <span class="do">## her bir veri setinin atanacağı yeni nesne</span></span>
 <span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span>( i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>sayi){</span>
-<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a>    df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="fu">matrix</span>(<span class="dv">0</span>,<span class="at">nrow=</span>satir[i], <span class="at">ncol=</span>sutun[i])) <span class="co"># veri seti istenilen ozelliklerde olusturulur</span></span>
-<span id="cb49-7"><a href="#cb49-7" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb49-8"><a href="#cb49-8" aria-hidden="true" tabindex="-1"></a>     <span class="cf">for</span>(j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>sutun[i]){</span>
-<span id="cb49-9"><a href="#cb49-9" aria-hidden="true" tabindex="-1"></a>     df[,j] <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">rnorm</span>(satir[i],<span class="dv">0</span>,<span class="dv">1</span>),<span class="dv">2</span>) <span class="co">#  her bir veri setinin her bir sütunu standart normal dağılıma uygun uretilir</span></span>
-<span id="cb49-10"><a href="#cb49-10" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb49-11"><a href="#cb49-11" aria-hidden="true" tabindex="-1"></a>     df_list[[i]] <span class="ot">&lt;-</span> df</span>
-<span id="cb49-12"><a href="#cb49-12" aria-hidden="true" tabindex="-1"></a>      df_list</span>
-<span id="cb49-13"><a href="#cb49-13" aria-hidden="true" tabindex="-1"></a>      writexl<span class="sc">::</span><span class="fu">write_xlsx</span>(df_list[[i]],<span class="fu">paste</span>(<span class="st">"veri"</span>,i,<span class="st">".xlsx"</span>, <span class="at">sep=</span><span class="st">""</span>))</span>
-<span id="cb49-14"><a href="#cb49-14" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb49-15"><a href="#cb49-15" aria-hidden="true" tabindex="-1"></a><span class="fu">fonksiyon_adi</span>(<span class="at">sayi=</span><span class="dv">3</span>,<span class="at">satir=</span><span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">4</span>,<span class="dv">3</span>),<span class="at">sutun=</span><span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">5</span>,<span class="dv">4</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a>    df_list[[i]] <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="fu">matrix</span>(<span class="dv">0</span>,<span class="at">nrow=</span>satir[i], <span class="at">ncol=</span>sutun[i])) <span class="co"># veri seti istenilen ozelliklerde olusturulur</span></span>
+<span id="cb49-7"><a href="#cb49-7" aria-hidden="true" tabindex="-1"></a>     <span class="cf">for</span>(j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>sutun[i]){</span>
+<span id="cb49-8"><a href="#cb49-8" aria-hidden="true" tabindex="-1"></a>     df_list[[i]][,j] <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">rnorm</span>(satir[i],<span class="dv">0</span>,<span class="dv">1</span>),<span class="dv">2</span>) <span class="co">#  her bir veri setinin her bir sütunu standart normal dağılıma uygun uretilir</span></span>
+<span id="cb49-9"><a href="#cb49-9" aria-hidden="true" tabindex="-1"></a>           writexl<span class="sc">::</span><span class="fu">write_xlsx</span>(df_list[[i]],<span class="fu">paste</span>(<span class="st">"veri"</span>,i,<span class="st">".xlsx"</span>, <span class="at">sep=</span><span class="st">""</span>))</span>
+<span id="cb49-10"><a href="#cb49-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-11"><a href="#cb49-11" aria-hidden="true" tabindex="-1"></a>     }}</span>
+<span id="cb49-12"><a href="#cb49-12" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb49-13"><a href="#cb49-13" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb49-14"><a href="#cb49-14" aria-hidden="true" tabindex="-1"></a><span class="fu">fonksiyon_adi</span>(<span class="at">sayi=</span><span class="dv">5</span>,<span class="at">satir=</span><span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">5</span>),</span>
+<span id="cb49-15"><a href="#cb49-15" aria-hidden="true" tabindex="-1"></a>              <span class="at">sutun=</span><span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">5</span>,<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">4</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="sıra-sizde" class="level3">
 <h3 class="anchored" data-anchor-id="sıra-sizde">Sıra Sizde</h3>
-<p>Geometrik ortalamanın farklı hesaplama yolları bulunmaktadır. Logaritma değerlerine dayalı olarak hesaplandığında, geometrik ortalama,gözlem değerlerinin logaritmalarının aritmetik ortalamasıdır. Bir x vektorunun geometrik ortalamaasını logartimalara dayalı olarakhesaplayan bir fonsiyon yazıp, <code>x &lt;- 1:100</code> için çalıştırınız.</p>
+<ol type="1">
+<li>Geometrik ortalamanın farklı hesaplama yolları bulunmaktadır.</li>
+</ol>
+<p>Geometrik ortalama, bir veri setindeki sayıların çarpımlarının, sayıların toplam sayısı kadar kökünün alınmasıyla hesaplanan bir ortalamadır. Genellikle büyüme oranlarının veya orantılı verilerin ortalamasını hesaplamak için kullanılır.</p>
+<p>Matematiksel formül: <span class="math display">\[
+\text{Geometrik Ortalama} = \sqrt[n]{x_1 \cdot x_2 \cdot \dots \cdot x_n}
+\]</span></p>
+<p>Değerlerinin çarpımı çok büyük olduğunda taşma hatalarını önlemek için logaritma değerlerine dayalı olarak hesaplanır. Logaritma değerlerine dayalı olarak hesaplandığında, geometrik ortalama,gözlem değerlerinin logaritmalarının aritmetik ortalamasıdır. Logaritmik yöntemin matematiksel formülü:</p>
+<p><span class="math display">\[
+\text{Geometrik Ortalama} = \exp\left(\frac{1}{n} \sum_{i=1}^n \ln(x_i)\right)
+\]</span></p>
+<p>Bir x vektorunun geometrik ortalamaasını her iki formüle göre de hesaplayan bir fonksiyon yazınız, yazdığınız fonksiyon her iki değeri de yazdırısın. Ayrıca psych paketinden <code>geometric.mean()</code> fonksiyonu ile sonuçlarınızı karşılaştırınız. x &lt;- 200:250 gibi bir vektörde deneyebilirsiz.</p>
+<ol start="2" type="1">
+<li>Çoklu dosya yazımı için oluştruduğumuz fonksiyonu, fonksiyon haline getirmeden önce getirmeden önce aşama aşama aşağıdaki işlemleri yapabilirsiniz.</li>
+</ol>
+<ul>
+<li><p>for döngüsü ile boş bir veri setinin sütunlarını farklı şekillerde oluşarabilirsiniz. Örneğin üç sütunu kategorik değişken, dört sütunu sürekli değişken olarak oluşturabilirsiniz.</p></li>
+<li><p>for döngüsü ile liste kullanımı anlamak için tüm verileri 0 olan farklı boyutlarda verisetleri oluşturup bu veri setlerini çalışma alanınız yazdırabilirsiniz.</p></li>
+<li><p>for döngüsü ile liste kullanımı anlamak için PISA veri setinden farklı boyutlarda verisetleri çekip bu veri setlerini çalışma alanınız yazdırabilirsiniz.</p></li>
+<li><p>for döngüsü ile çalışma alanlarınızdaki veri setlerini okuyup, her bir bir seti için özet bilgileri bir listede saklayabilirsiniz.</p></li>
+<li><p>ve daha pek çok şey deneyebilirsiniz. iyi kodlamalar</p></li>
+</ul>
 </section>
 </section>
 <section id="özet" class="level2">
