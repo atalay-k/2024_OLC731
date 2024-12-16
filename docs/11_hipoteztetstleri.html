@@ -185,7 +185,7 @@ window.Quarto = {
   <li><a href="#örnek-1-bebeklerin-ağırlığı" id="toc-örnek-1-bebeklerin-ağırlığı" class="nav-link" data-scroll-target="#örnek-1-bebeklerin-ağırlığı">Örnek 1: Bebeklerin Ağırlığı</a></li>
   <li><a href="#örnek-2-uygulama-etkisi" id="toc-örnek-2-uygulama-etkisi" class="nav-link" data-scroll-target="#örnek-2-uygulama-etkisi">Örnek 2: Uygulama Etkisi</a></li>
   </ul></li>
-  <li><a href="#z-testi-ve-t-testi" id="toc-z-testi-ve-t-testi" class="nav-link" data-scroll-target="#z-testi-ve-t-testi">6. Z Testi ve T Testi</a>
+  <li><a href="#z-testi-ve-t-testi" id="toc-z-testi-ve-t-testi" class="nav-link" data-scroll-target="#z-testi-ve-t-testi">6. z Testi ve t Testi</a>
   <ul class="collapse">
   <li><a href="#görselleştirme" id="toc-görselleştirme" class="nav-link" data-scroll-target="#görselleştirme">Görselleştirme</a></li>
   <li><a href="#t-testleri" id="toc-t-testleri" class="nav-link" data-scroll-target="#t-testleri">t-testleri</a></li>
@@ -226,8 +226,8 @@ window.Quarto = {
 <p>Hipotez testi, belirli bir iddianın (hipotezin) doğru olup olmadığını test etmek için kullanılan bir istatistiksel yöntemdir. Araştırmacılar, hipotez testlerini genellikle anlamlılık düzeyleri (alfa düzeyi) ile değerlendirir.</p>
 <p><strong>Problem:</strong> 2 yaşındaki bebeklerin ağırlığı <span class="math inline">\(\mu=13\)</span> kg ve <span class="math inline">\(\sigma=2\)</span> kg olan normal bir dağılım oluşturmaktadır. Araştırmacılar, <strong>temas yoluyla (dokunma, kucaklama gibi)</strong> bebeklerin gelişiminin hızlanabileceği tezini test etmek istemektedir. Bu amaçla <span class="math inline">\(n=16\)</span> olan yeni doğmuş bebeklerden bir örneklem oluşturulmuş ve aileleri, bebeklerine nasıl temas etmeleri gerektiği konusunda bilgilendirilmiştir. Bebekler 2 yaşına geldiğinde ağırlıkları ölçülmüş ve ortalama hesaplanmıştır. Şu durumlar değerlendirilir:</p>
 <ul>
-<li>Eğer ortalama <span class="math inline">\(\overline{X}=13\)</span> kg’dan oldukça yüksekse, araştırmacılar temasın bebeğin gelişimini hızlandırdığı sonucuna varacaktır.</li>
-<li>Eğer ortalama <span class="math inline">\(\overline{X}13\)</span> kg civarındaysa, temasın bebeklerin gelişimini hızlandırdığına dair bir kanıt olmadığı sonucuna varılacaktır.</li>
+<li>Eğer ortalama <span class="math inline">\(\mu=13\)</span> kg’dan oldukça yüksekse, araştırmacılar temasın bebeğin gelişimini hızlandırdığı sonucuna varacaktır.</li>
+<li>Eğer ortalama <span class="math inline">\(\mu = 13\)</span> kg civarındaysa, temasın bebeklerin gelişimini hızlandırdığına dair bir kanıt olmadığı sonucuna varılacaktır.</li>
 </ul>
 <section id="hipotezler" class="level3">
 <h3 class="anchored" data-anchor-id="hipotezler">Hipotezler</h3>
@@ -335,8 +335,8 @@ window.Quarto = {
 </section>
 </section>
 <section id="z-testi-ve-t-testi" class="level1">
-<h1>6. Z Testi ve T Testi</h1>
-<p>Bir örneklemin, belirli bir popülasyona ait olup olmadığını test etmek için kullanılan bir yöntemdir. Z testi için:</p>
+<h1>6. z Testi ve t Testi</h1>
+<p>Bir örneklemin, belirli bir popülasyona ait olup olmadığını test etmek için kullanılan bir yöntemdir. z testi için:</p>
 <ul>
 <li>Veri en az eşit aralık ölçeğinde olmalıdır.</li>
 <li>Popülasyon normal dağılıma sahip olmalıdır.</li>
@@ -379,9 +379,9 @@ mean in group 1 mean in group 2
 </div>
 <section id="görselleştirme" class="level2">
 <h2 class="anchored" data-anchor-id="görselleştirme">Görselleştirme</h2>
-<p>Kırmızı dağılım, H_o hipotezi doğru olduğunda örneklem ortalamalarının dağılımını ifade eder. Mavi dağılım ise H_o hipotezi doğru olmadığında örneklem ortalamalarının dağılımıdır. Şimdi,H_o nin doğru olduğu durumda, evrenden çok sayıda örneklem seçtiğimizi düşünelim.</p>
-<p>Ortalamaları 80 olan bir evrenden seçilen örneklemleri ele alalım. Seçilen bir örneklem ortalaması 80’e yakın bir değer olabilir, 90 olabilir, hatta nadir de olsa 120 veya 130 gibi bir değere de ulaşabilir. Kırmızı dağılımda, 95. yüzdelik dilime dikey bir çizgi çekelim. Bu çizgi, tek yönlü t testi için sınır değeri temsil eder. Eğer bu çizginin sağında bir değer elde edilirse, H_o reddedilir. Ancak, seçilen örneklemlerin %5’inde, şans eseri bu sınır değerden daha büyük bir değer elde edilebilir. Bu durum, aynı zamanda I. tip hata olarak adlandırılır.</p>
-<p>I. tip hata, doğru olan H_o hipotezini reddetmek anlamına gelir.</p>
+<p>Kırmızı dağılım, <span class="math inline">\(H_0\)</span> hipotezi doğru olduğunda örneklem ortalamalarının dağılımını ifade eder. Mavi dağılım ise <span class="math inline">\(H_0\)</span> hipotezi doğru olmadığında örneklem ortalamalarının dağılımıdır. Şimdi,<span class="math inline">\(H_0\)</span> nin doğru olduğu durumda, evrenden çok sayıda örneklem seçtiğimizi düşünelim.</p>
+<p>Ortalamaları 80 olan bir evrenden seçilen örneklemleri ele alalım. Seçilen bir örneklem ortalaması 80’e yakın bir değer olabilir, 90 olabilir, hatta nadir de olsa 120 veya 130 gibi bir değere de ulaşabilir. Kırmızı dağılımda, 95. yüzdelik dilime dikey bir çizgi çekelim. Bu çizgi, tek yönlü t testi için sınır değeri temsil eder. Eğer bu çizginin sağında bir değer elde edilirse, <span class="math inline">\(H_0\)</span> reddedilir. Ancak, seçilen örneklemlerin %5’inde, şans eseri bu sınır değerden daha büyük bir değer elde edilebilir. Bu durum, aynı zamanda I. tip hata olarak adlandırılır.</p>
+<p>I. tip hata, doğru olan <span class="math inline">\(H_0\)</span> hipotezini reddetmek anlamına gelir.</p>
 <ul>
 <li>Dogru olan Ho hipotezini reddetme</li>
 </ul>

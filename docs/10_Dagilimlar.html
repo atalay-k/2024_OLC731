@@ -177,7 +177,7 @@ window.Quarto = {
   <ul>
   <li><a href="#olasılık-yoğunluk-fonksiyonları" id="toc-olasılık-yoğunluk-fonksiyonları" class="nav-link active" data-scroll-target="#olasılık-yoğunluk-fonksiyonları">Olasılık Yoğunluk Fonksiyonları</a>
   <ul class="collapse">
-  <li><a href="#z-değerleri-ve-kritik-değerler" id="toc-z-değerleri-ve-kritik-değerler" class="nav-link" data-scroll-target="#z-değerleri-ve-kritik-değerler">Z Değerleri ve Kritik Değerler</a></li>
+  <li><a href="#z-değerleri-ve-kritik-değerler" id="toc-z-değerleri-ve-kritik-değerler" class="nav-link" data-scroll-target="#z-değerleri-ve-kritik-değerler">z Değerleri ve Kritik Değerler</a></li>
   </ul></li>
   <li><a href="#binom-dağılımı-dbinom" id="toc-binom-dağılımı-dbinom" class="nav-link" data-scroll-target="#binom-dağılımı-dbinom">Binom Dağılımı: <code>dbinom()</code></a>
   <ul class="collapse">
@@ -189,20 +189,16 @@ window.Quarto = {
   <li><a href="#yoğunluk-dağılımı" id="toc-yoğunluk-dağılımı" class="nav-link" data-scroll-target="#yoğunluk-dağılımı">Yoğunluk Dağılımı</a></li>
   <li><a href="#yığılma-dağılımı" id="toc-yığılma-dağılımı" class="nav-link" data-scroll-target="#yığılma-dağılımı">Yığılma Dağılımı</a></li>
   </ul></li>
-  <li><a href="#örnek-uygulamalar" id="toc-örnek-uygulamalar" class="nav-link" data-scroll-target="#örnek-uygulamalar">Örnek Uygulamalar</a>
+  <li><a href="#merkezi-limit-teoremi" id="toc-merkezi-limit-teoremi" class="nav-link" data-scroll-target="#merkezi-limit-teoremi">Merkezi limit teoremi</a>
   <ul class="collapse">
-  <li><a href="#iq-örneği" id="toc-iq-örneği" class="nav-link" data-scroll-target="#iq-örneği">IQ Örneği</a></li>
-  <li><a href="#merkezi-limit-teoremi" id="toc-merkezi-limit-teoremi" class="nav-link" data-scroll-target="#merkezi-limit-teoremi">Merkezi Limit Teoremi</a></li>
-  <li><a href="#uniform-dağılım-örneği" id="toc-uniform-dağılım-örneği" class="nav-link" data-scroll-target="#uniform-dağılım-örneği">Uniform Dağılım Örneği</a></li>
-  </ul></li>
-  <li><a href="#diğer-dağılımlar" id="toc-diğer-dağılımlar" class="nav-link" data-scroll-target="#diğer-dağılımlar">Diğer Dağılımlar</a>
-  <ul class="collapse">
-  <li><a href="#t-dağılımı-dt" id="toc-t-dağılımı-dt" class="nav-link" data-scroll-target="#t-dağılımı-dt">T Dağılımı: <code>dt()</code></a></li>
-  <li><a href="#poisson-dağılımı-dpois" id="toc-poisson-dağılımı-dpois" class="nav-link" data-scroll-target="#poisson-dağılımı-dpois">Poisson Dağılımı: <code>dpois()</code></a></li>
-  <li><a href="#ki-kare-dağılımı-dchisq" id="toc-ki-kare-dağılımı-dchisq" class="nav-link" data-scroll-target="#ki-kare-dağılımı-dchisq">Ki-Kare Dağılımı: <code>dchisq()</code></a></li>
+  <li><a href="#merkezi-limit-teoremi-1" id="toc-merkezi-limit-teoremi-1" class="nav-link" data-scroll-target="#merkezi-limit-teoremi-1">Merkezi Limit Teoremi</a></li>
   </ul></li>
   <li><a href="#örnekleme-dağılımı" id="toc-örnekleme-dağılımı" class="nav-link" data-scroll-target="#örnekleme-dağılımı">Örnekleme Dağılımı</a></li>
   <li><a href="#küçük-ve-büyük-örneklem-boyutları-için-örnekleme-dağılımları" id="toc-küçük-ve-büyük-örneklem-boyutları-için-örnekleme-dağılımları" class="nav-link" data-scroll-target="#küçük-ve-büyük-örneklem-boyutları-için-örnekleme-dağılımları">Küçük ve Büyük Örneklem Boyutları İçin Örnekleme Dağılımları</a></li>
+  <li><a href="#uniform-dağılım-örneği" id="toc-uniform-dağılım-örneği" class="nav-link" data-scroll-target="#uniform-dağılım-örneği">Uniform Dağılım Örneği</a></li>
+  <li><a href="#t-dağılımı-dt" id="toc-t-dağılımı-dt" class="nav-link" data-scroll-target="#t-dağılımı-dt">T Dağılımı: <code>dt()</code></a></li>
+  <li><a href="#poisson-dağılımı-dpois" id="toc-poisson-dağılımı-dpois" class="nav-link" data-scroll-target="#poisson-dağılımı-dpois">Poisson Dağılımı: <code>dpois()</code></a></li>
+  <li><a href="#ki-kare-dağılımı-dchisq" id="toc-ki-kare-dağılımı-dchisq" class="nav-link" data-scroll-target="#ki-kare-dağılımı-dchisq">Ki-Kare Dağılımı: <code>dchisq()</code></a></li>
   <li><a href="#sonuç" id="toc-sonuç" class="nav-link" data-scroll-target="#sonuç">Sonuç</a></li>
   </ul>
 </nav>
@@ -232,7 +228,7 @@ window.Quarto = {
 <section id="olasılık-yoğunluk-fonksiyonları" class="level2">
 <h2 class="anchored" data-anchor-id="olasılık-yoğunluk-fonksiyonları">Olasılık Yoğunluk Fonksiyonları</h2>
 <section id="bir-z-değeri-için-kümülatif-olasılık-pnorm" class="level4">
-<h4 class="anchored" data-anchor-id="bir-z-değeri-için-kümülatif-olasılık-pnorm">Bir Z Değeri İçin Kümülatif Olasılık: <code>pnorm()</code></h4>
+<h4 class="anchored" data-anchor-id="bir-z-değeri-için-kümülatif-olasılık-pnorm">Bir z Değeri İçin Kümülatif Olasılık: <code>pnorm()</code></h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -241,7 +237,7 @@ window.Quarto = {
 </div>
 </section>
 <section id="z-değerleri-ve-kritik-değerler" class="level3">
-<h3 class="anchored" data-anchor-id="z-değerleri-ve-kritik-değerler">Z Değerleri ve Kritik Değerler</h3>
+<h3 class="anchored" data-anchor-id="z-değerleri-ve-kritik-değerler">z Değerleri ve Kritik Değerler</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qnorm</span>(<span class="fu">c</span>(<span class="fl">0.025</span>, <span class="fl">0.975</span>))  <span class="co"># %95 güven aralığı</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -281,7 +277,11 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="binom-dağılımı-dbinom">Binom Dağılımı: <code>dbinom()</code></h2>
 <p>Bu deneyde, her X = k değeri için olasılık <strong>Binom Dağılımı</strong> kullanılarak hesaplanır:</p>
 <p><span class="math display">\[P(X = k) = \binom{n}{k} \cdot p^k \cdot (1-p)^{n-k}\]</span></p>
-<p>Burada: - n = 2: Deneme sayısı, - k : Başarı sayısı, - p = 0.5 : Başarı olasılığı.</p>
+<p>Burada: - n = 2: Deneme sayısı,</p>
+<ul>
+<li><p>k : Başarı sayısı,</p></li>
+<li><p>p = 0.5 : Başarı olasılığı.</p></li>
+</ul>
 <p>Aşağıda her bir k için olasılık hesaplamaları gösterilmiştir:</p>
 <p><span class="math display">\[
 P(X = 0) = \binom{2}{0} \cdot 0.5^0 \cdot 0.5^2 = 1 \cdot 1 \cdot 0.25 = 0.25
@@ -329,7 +329,8 @@ P(X = 2) = \binom{2}{2} \cdot 0.5^2 \cdot 0.5^0 = 1 \cdot 0.25 \cdot 1 = 0.25
 </div>
 </div>
 </div>
-<p>Deney, birbirinden bağımsız ve iki olasılık durumuna (başarı ya da başarısızlık) sahip denemeler içeriyor. 𝑛=30 𝑝= 0.5 p=0.5: Her bir denemenin başarı olasılığı (örneğin, yazı gelmesi). Bu, bir madeni parayı 30 kez havaya atmak gibi ideal bir durum için geçerlidir; ama sadece madeni para atmayı değil, aşağıdaki gibi başka durumları da temsil edebilir:</p>
+<p>Deney, birbirinden bağımsız ve iki olasılık durumuna (başarı ya da başarısızlık) sahip denemeler içeriyor. 𝑛=30 𝑝= 0.5</p>
+<p>p=0.5: Her bir denemenin başarı olasılığı (örneğin, yazı gelmesi). Bu, bir madeni parayı 30 kez havaya atmak gibi ideal bir durum için geçerlidir; ama sadece madeni para atmayı değil, aşağıdaki gibi başka durumları da temsil edebilir:</p>
 <p>Hastaların iyileşme olasılığı: 30 hasta üzerinde yapılan bir deneyde her hastanın iyileşme olasılığı %50 ise, kaçının iyileşebileceğini modellemek.</p>
 <p>Doğru cevap verme olasılığı: Bir sınavda rastgele şık seçen bir öğrencinin doğru p=0.5 olduğunda, 30 soruda kaç doğru yapabileceği.</p>
 <p>Başarıyı ölçen diğer deneyler: Örneğin, 30 müşteriden kaçının bir ürünü satın almayı tercih edeceği, başarı olasılığının olduğu bir durum.</p>
@@ -368,10 +369,8 @@ P(X = 2) = \binom{2}{2} \cdot 0.5^2 \cdot 0.5^0 = 1 \cdot 0.25 \cdot 1 = 0.25
 </div>
 </section>
 </section>
-<section id="örnek-uygulamalar" class="level2">
-<h2 class="anchored" data-anchor-id="örnek-uygulamalar">Örnek Uygulamalar</h2>
-<section id="iq-örneği" class="level3">
-<h3 class="anchored" data-anchor-id="iq-örneği">IQ Örneği</h3>
+<section id="merkezi-limit-teoremi" class="level2">
+<h2 class="anchored" data-anchor-id="merkezi-limit-teoremi">Merkezi limit teoremi</h2>
 <p>IQ gibi gerçek hayat verilerinde normal dağılımın kullanımı:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>IQ <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">55</span>, <span class="dv">145</span>, <span class="fl">0.1</span>)</span>
@@ -385,9 +384,8 @@ P(X = 2) = \binom{2}{2} \cdot 0.5^2 \cdot 0.5^0 = 1 \cdot 0.25 \cdot 1 = 0.25
 </div>
 </div>
 </div>
-</section>
-<section id="merkezi-limit-teoremi" class="level3">
-<h3 class="anchored" data-anchor-id="merkezi-limit-teoremi">Merkezi Limit Teoremi</h3>
+<section id="merkezi-limit-teoremi-1" class="level3">
+<h3 class="anchored" data-anchor-id="merkezi-limit-teoremi-1">Merkezi Limit Teoremi</h3>
 <p>Örneklem büyüklüğü arttıkça dağılımın nasıl daraldığını inceleyelim.</p>
 <section id="kişilik-örneklem" class="level4">
 <h4 class="anchored" data-anchor-id="kişilik-örneklem">3 Kişilik Örneklem</h4>
@@ -424,67 +422,6 @@ P(X = 2) = \binom{2}{2} \cdot 0.5^2 \cdot 0.5^0 = 1 \cdot 0.25 \cdot 1 = 0.25
 </div>
 </section>
 </section>
-<section id="uniform-dağılım-örneği" class="level3">
-<h3 class="anchored" data-anchor-id="uniform-dağılım-örneği">Uniform Dağılım Örneği</h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>uniform_samples <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">1000</span>, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">10</span>)</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(uniform_samples, </span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Uniform Dağılım"</span>, <span class="at">col =</span> <span class="st">"orange"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="10_Dagilimlar_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-</section>
-<section id="diğer-dağılımlar" class="level2">
-<h2 class="anchored" data-anchor-id="diğer-dağılımlar">Diğer Dağılımlar</h2>
-<section id="t-dağılımı-dt" class="level3">
-<h3 class="anchored" data-anchor-id="t-dağılımı-dt">T Dağılımı: <code>dt()</code></h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">dt</span>(x, <span class="at">df =</span> <span class="dv">10</span>), </span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>      <span class="at">from =</span> <span class="sc">-</span><span class="dv">4</span>, <span class="at">to =</span> <span class="dv">4</span>, <span class="at">main =</span> <span class="st">"t Dağılımı"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="10_Dagilimlar_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="poisson-dağılımı-dpois" class="level3">
-<h3 class="anchored" data-anchor-id="poisson-dağılımı-dpois">Poisson Dağılımı: <code>dpois()</code></h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">10</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x, <span class="fu">dpois</span>(x, <span class="at">lambda =</span> <span class="dv">3</span>), </span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">type =</span> <span class="st">"h"</span>, <span class="at">main =</span> <span class="st">"Poisson Dağılımı"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="10_Dagilimlar_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="ki-kare-dağılımı-dchisq" class="level3">
-<h3 class="anchored" data-anchor-id="ki-kare-dağılımı-dchisq">Ki-Kare Dağılımı: <code>dchisq()</code></h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">dchisq</span>(x, <span class="at">df =</span> <span class="dv">5</span>), <span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> <span class="dv">20</span>, </span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>      <span class="at">main =</span> <span class="st">"Ki-Kare Dağılımı"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="10_Dagilimlar_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
 </section>
 <section id="örnekleme-dağılımı" class="level2">
 <h2 class="anchored" data-anchor-id="örnekleme-dağılımı">Örnekleme Dağılımı</h2>
@@ -497,49 +434,49 @@ P(X = 2) = \binom{2}{2} \cdot 0.5^2 \cdot 0.5^0 = 1 \cdot 0.25 \cdot 1 = 0.25
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: false</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>nreps <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>nsmall <span class="ot">&lt;-</span> <span class="dv">2</span></span>
-<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>nlarge <span class="ot">&lt;-</span> <span class="dv">30</span></span>
-<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>sampdist.mean.small <span class="ot">&lt;-</span> <span class="fu">numeric</span>(nreps)</span>
-<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>sampdist.mean.large <span class="ot">&lt;-</span> <span class="fu">numeric</span>(nreps)</span>
-<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Küçük örneklem büyüklüğü için</span></span>
-<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>))</span>
-<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>nreps) {</span>
-<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a>  sample <span class="ot">&lt;-</span> <span class="fu">runif</span>(nsmall, <span class="dv">0</span>, <span class="dv">100</span>)</span>
-<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a>  sampdist.mean.small[i] <span class="ot">&lt;-</span> <span class="fu">mean</span>(sample)</span>
-<span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb25-16"><a href="#cb25-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-17"><a href="#cb25-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Histogram çizme</span></span>
-<span id="cb25-18"><a href="#cb25-18" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(sampdist.mean.small, </span>
-<span id="cb25-19"><a href="#cb25-19" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Küçük Örneklem Ortalamalarının Dağılımı (n = 2)"</span>,</span>
-<span id="cb25-20"><a href="#cb25-20" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Örneklem Ortalamaları"</span>,</span>
-<span id="cb25-21"><a href="#cb25-21" aria-hidden="true" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">"lightblue"</span>)</span>
-<span id="cb25-22"><a href="#cb25-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-23"><a href="#cb25-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Q-Q grafiği</span></span>
-<span id="cb25-24"><a href="#cb25-24" aria-hidden="true" tabindex="-1"></a><span class="fu">qqnorm</span>(sampdist.mean.small, </span>
-<span id="cb25-25"><a href="#cb25-25" aria-hidden="true" tabindex="-1"></a>       <span class="at">main =</span> <span class="st">"Q-Q Grafiği: Küçük Örneklem (n = 2)"</span>)</span>
-<span id="cb25-26"><a href="#cb25-26" aria-hidden="true" tabindex="-1"></a><span class="fu">qqline</span>(sampdist.mean.small, <span class="at">col =</span> <span class="st">"red"</span>)</span>
-<span id="cb25-27"><a href="#cb25-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-28"><a href="#cb25-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Büyük örneklem büyüklüğü için</span></span>
-<span id="cb25-29"><a href="#cb25-29" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>nreps) {</span>
-<span id="cb25-30"><a href="#cb25-30" aria-hidden="true" tabindex="-1"></a>  sample <span class="ot">&lt;-</span> <span class="fu">runif</span>(nlarge, <span class="dv">0</span>, <span class="dv">100</span>)</span>
-<span id="cb25-31"><a href="#cb25-31" aria-hidden="true" tabindex="-1"></a>  sampdist.mean.large[i] <span class="ot">&lt;-</span> <span class="fu">mean</span>(sample)</span>
-<span id="cb25-32"><a href="#cb25-32" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb25-33"><a href="#cb25-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-34"><a href="#cb25-34" aria-hidden="true" tabindex="-1"></a><span class="co"># Histogram çizme</span></span>
-<span id="cb25-35"><a href="#cb25-35" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(sampdist.mean.large, </span>
-<span id="cb25-36"><a href="#cb25-36" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Büyük Örneklem Ortalamalarının Dağılımı (n = 30)"</span>,</span>
-<span id="cb25-37"><a href="#cb25-37" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Örneklem Ortalamaları"</span>,</span>
-<span id="cb25-38"><a href="#cb25-38" aria-hidden="true" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">"lightgreen"</span>)</span>
-<span id="cb25-39"><a href="#cb25-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-40"><a href="#cb25-40" aria-hidden="true" tabindex="-1"></a><span class="co"># Q-Q grafiği</span></span>
-<span id="cb25-41"><a href="#cb25-41" aria-hidden="true" tabindex="-1"></a><span class="fu">qqnorm</span>(sampdist.mean.large, </span>
-<span id="cb25-42"><a href="#cb25-42" aria-hidden="true" tabindex="-1"></a>       <span class="at">main =</span> <span class="st">"Q-Q Grafiği: Büyük Örneklem (n = 30)"</span>)</span>
-<span id="cb25-43"><a href="#cb25-43" aria-hidden="true" tabindex="-1"></a><span class="fu">qqline</span>(sampdist.mean.large, <span class="at">col =</span> <span class="st">"blue"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: false</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>nreps <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>nsmall <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>nlarge <span class="ot">&lt;-</span> <span class="dv">30</span></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>sampdist.mean.small <span class="ot">&lt;-</span> <span class="fu">numeric</span>(nreps)</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>sampdist.mean.large <span class="ot">&lt;-</span> <span class="fu">numeric</span>(nreps)</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Küçük örneklem büyüklüğü için</span></span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>))</span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>nreps) {</span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>  sample <span class="ot">&lt;-</span> <span class="fu">runif</span>(nsmall, <span class="dv">0</span>, <span class="dv">100</span>)</span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>  sampdist.mean.small[i] <span class="ot">&lt;-</span> <span class="fu">mean</span>(sample)</span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Histogram çizme</span></span>
+<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(sampdist.mean.small, </span>
+<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Küçük Örneklem Ortalamalarının Dağılımı (n = 2)"</span>,</span>
+<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Örneklem Ortalamaları"</span>,</span>
+<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">"lightblue"</span>)</span>
+<span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Q-Q grafiği</span></span>
+<span id="cb21-24"><a href="#cb21-24" aria-hidden="true" tabindex="-1"></a><span class="fu">qqnorm</span>(sampdist.mean.small, </span>
+<span id="cb21-25"><a href="#cb21-25" aria-hidden="true" tabindex="-1"></a>       <span class="at">main =</span> <span class="st">"Q-Q Grafiği: Küçük Örneklem (n = 2)"</span>)</span>
+<span id="cb21-26"><a href="#cb21-26" aria-hidden="true" tabindex="-1"></a><span class="fu">qqline</span>(sampdist.mean.small, <span class="at">col =</span> <span class="st">"red"</span>)</span>
+<span id="cb21-27"><a href="#cb21-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-28"><a href="#cb21-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Büyük örneklem büyüklüğü için</span></span>
+<span id="cb21-29"><a href="#cb21-29" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>nreps) {</span>
+<span id="cb21-30"><a href="#cb21-30" aria-hidden="true" tabindex="-1"></a>  sample <span class="ot">&lt;-</span> <span class="fu">runif</span>(nlarge, <span class="dv">0</span>, <span class="dv">100</span>)</span>
+<span id="cb21-31"><a href="#cb21-31" aria-hidden="true" tabindex="-1"></a>  sampdist.mean.large[i] <span class="ot">&lt;-</span> <span class="fu">mean</span>(sample)</span>
+<span id="cb21-32"><a href="#cb21-32" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb21-33"><a href="#cb21-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-34"><a href="#cb21-34" aria-hidden="true" tabindex="-1"></a><span class="co"># Histogram çizme</span></span>
+<span id="cb21-35"><a href="#cb21-35" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(sampdist.mean.large, </span>
+<span id="cb21-36"><a href="#cb21-36" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Büyük Örneklem Ortalamalarının Dağılımı (n = 30)"</span>,</span>
+<span id="cb21-37"><a href="#cb21-37" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Örneklem Ortalamaları"</span>,</span>
+<span id="cb21-38"><a href="#cb21-38" aria-hidden="true" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">"lightgreen"</span>)</span>
+<span id="cb21-39"><a href="#cb21-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-40"><a href="#cb21-40" aria-hidden="true" tabindex="-1"></a><span class="co"># Q-Q grafiği</span></span>
+<span id="cb21-41"><a href="#cb21-41" aria-hidden="true" tabindex="-1"></a><span class="fu">qqnorm</span>(sampdist.mean.large, </span>
+<span id="cb21-42"><a href="#cb21-42" aria-hidden="true" tabindex="-1"></a>       <span class="at">main =</span> <span class="st">"Q-Q Grafiği: Büyük Örneklem (n = 30)"</span>)</span>
+<span id="cb21-43"><a href="#cb21-43" aria-hidden="true" tabindex="-1"></a><span class="fu">qqline</span>(sampdist.mean.large, <span class="at">col =</span> <span class="st">"blue"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -550,6 +487,64 @@ P(X = 2) = \binom{2}{2} \cdot 0.5^2 \cdot 0.5^0 = 1 \cdot 0.25 \cdot 1 = 0.25
 </div>
 </div>
 <p>Bu grafikler, örneklem boyutunun artmasıyla birlikte dağılımın normal dağılıma daha çok yaklaştığını göstermektedir.</p>
+</section>
+<section id="uniform-dağılım-örneği" class="level2">
+<h2 class="anchored" data-anchor-id="uniform-dağılım-örneği">Uniform Dağılım Örneği</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>uniform_samples <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">1000</span>, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">10</span>)</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(uniform_samples, </span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Uniform Dağılım"</span>, <span class="at">col =</span> <span class="st">"orange"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="10_Dagilimlar_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="t-dağılımı-dt" class="level2">
+<h2 class="anchored" data-anchor-id="t-dağılımı-dt">T Dağılımı: <code>dt()</code></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">dt</span>(x, <span class="at">df =</span> <span class="dv">10</span>), </span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>      <span class="at">from =</span> <span class="sc">-</span><span class="dv">4</span>, <span class="at">to =</span> <span class="dv">4</span>, <span class="at">main =</span> <span class="st">"t Dağılımı"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="10_Dagilimlar_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="poisson-dağılımı-dpois" class="level2">
+<h2 class="anchored" data-anchor-id="poisson-dağılımı-dpois">Poisson Dağılımı: <code>dpois()</code></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">10</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x, <span class="fu">dpois</span>(x, <span class="at">lambda =</span> <span class="dv">3</span>), </span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">type =</span> <span class="st">"h"</span>, <span class="at">main =</span> <span class="st">"Poisson Dağılımı"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="10_Dagilimlar_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="ki-kare-dağılımı-dchisq" class="level2">
+<h2 class="anchored" data-anchor-id="ki-kare-dağılımı-dchisq">Ki-Kare Dağılımı: <code>dchisq()</code></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">dchisq</span>(x, <span class="at">df =</span> <span class="dv">5</span>), <span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> <span class="dv">20</span>, </span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>      <span class="at">main =</span> <span class="st">"Ki-Kare Dağılımı"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="10_Dagilimlar_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
 <section id="sonuç" class="level2">
 <h2 class="anchored" data-anchor-id="sonuç">Sonuç</h2>
