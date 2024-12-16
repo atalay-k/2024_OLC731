@@ -381,11 +381,8 @@ $b
 </ul>
 <p>İşte <code>lapply()</code> çağrısının sonucu.</p>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">a =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="at">b =</span> <span class="fu">rnorm</span>(<span class="dv">10</span>), <span class="at">c =</span> <span class="fu">rnorm</span>(<span class="dv">20</span>, <span class="dv">1</span>), <span class="at">d =</span> <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="dv">5</span>))</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">lapply</span>(x, mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>$a
 [1] 2.5
@@ -400,7 +397,7 @@ $d
 [1] 4.968715</code></pre>
 </div>
 </div>
-<p>lapply()` işlevinin (her zamanki gibi) bir liste döndürdüğüne, ancak listenin her bir öğesinin uzunluğunun 1 olduğuna dikkat edin.</p>
+<p>` lapply()` işlevinin (her zamanki gibi) bir liste döndürdüğüne, ancak listenin her bir öğesinin uzunluğunun 1 olduğuna dikkat edin.</p>
 <p>İşte aynı liste üzerinde <code>sapply()</code> çağrısının sonucu.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sapply</span>(x, mean) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -409,11 +406,11 @@ $d
  2.500000 -0.251483  1.481246  4.968715 </code></pre>
 </div>
 </div>
-<p>lapply()<code>işlevinin sonucu, her öğesinin uzunluğu 1 olan bir liste olduğundan,</code>sapply()` işlevi çıktıyı, genellikle bir listeden daha kullanışlı olan sayısal bir vektöre daraltmıştır.</p>
+<p>`lapply()` <code>işlevinin sonucu, her öğesinin uzunluğu 1 olan bir liste olduğundan,</code>`sapply()` işlevi çıktıyı, genellikle bir listeden daha kullanışlı olan sayısal bir vektöre daraltmıştır.</p>
 </section>
 <section id="split" class="level2">
 <h2 class="anchored" data-anchor-id="split"><code>split()</code></h2>
-<p>split()` fonksiyonu bir vektörü veya diğer nesneleri alır ve bunları bir faktör veya faktörler listesi tarafından belirlenen gruplara böler.</p>
+<p>`split()` fonksiyonu bir vektörü veya diğer nesneleri alır ve bunları bir faktör veya faktörler listesi tarafından belirlenen gruplara böler.</p>
 <p><code>split()</code> fonksiyonunun argümanları şunlardır</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(split)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -579,7 +576,7 @@ Wind     11.62258  10.26667   8.941935   8.793548  10.18000</code></pre>
 <p>Fonksiyonda bulunan x argümanı vektör, veri seti ve liste şeklindeki nesneleri, index argümanı “x” nesnesinin alt boyut, grup veya faktör değişkenini, FUN argümanı ise uygulanacak fonksiyonu belirtir.</p>
 <ul>
 <li><p><span class="math inline">\(tapply(x, Index, FUN, …)\)</span></p></li>
-<li><p><strong>tapply()</strong> liste ve veri seti yapısındaki nesnelere uygulandığında, grup veya faktör değişkenine ilişkin fonksiyon değerlerini fonksiyon türüne gore vektör ya da liste şeklinde verir.</p></li>
+<li><p><strong>tapply()</strong> liste ve veri seti yapısındaki nesnelere uygulandığında, grup veya faktör değişkenine ilişkin fonksiyon değerlerini fonksiyon türüne göre vektör ya da liste şeklinde verir.</p></li>
 <li><p>Eğer <strong>tapply()</strong> içinde kullanılan fonksiyon tek bir değer veriyorsa, çıktı vektör; birden fazla değer veriyorsa, çıktı liste yapısındadır.</p></li>
 </ul>
 <div class="cell">
@@ -588,11 +585,11 @@ Wind     11.62258  10.26667   8.941935   8.793548  10.18000</code></pre>
 <pre><code>function (X, INDEX, FUN = NULL, ..., default = NA, simplify = TRUE)  </code></pre>
 </div>
 </div>
-<p>tapply()` işlevinin argümanları aşağıdaki gibidir:</p>
+<p>` tapply()` işlevinin argümanları aşağıdaki gibidir:</p>
 <ul>
-<li>X` bir vektördür</li>
+<li>` X` bir vektördür</li>
 <li><code>INDEX</code> bir faktör ya da faktörler listesidir (ya da faktörlere zorlanırlar)</li>
-<li>FUN` uygulanacak bir işlevdir</li>
+<li>` FUN` uygulanacak bir işlevdir</li>
 <li>… geçirilecek diğer argümanları içerir <code>FUN</code></li>
 <li><code>basitleştir</code>, sonucu basitleştirmeli miyiz?</li>
 </ul>
@@ -642,8 +639,6 @@ $`3`
 </div>
 </div>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>isim <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Ali"</span>,<span class="st">"Elif"</span>,<span class="st">"Su"</span>,<span class="st">"Deniz"</span>,<span class="st">"Aras"</span>,<span class="st">"Berk"</span>,<span class="st">"Can"</span>,<span class="st">"Ece"</span>,<span class="st">"Efe"</span>,<span class="st">"Arda"</span>)</span>
 <span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>boy <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">160</span>,<span class="dv">165</span>,<span class="dv">170</span>,<span class="dv">155</span>,<span class="dv">167</span>,<span class="dv">162</span>,<span class="dv">169</span>,<span class="dv">158</span>,<span class="dv">160</span>,<span class="dv">164</span>)</span>
 <span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>kilo <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">55</span>,<span class="dv">55</span>,<span class="dv">57</span>,<span class="dv">50</span>,<span class="dv">48</span>,<span class="dv">65</span>,<span class="dv">58</span>,<span class="dv">62</span>,<span class="dv">45</span>,<span class="dv">47</span>)</span>
@@ -656,7 +651,6 @@ $`3`
 <span id="cb47-10"><a href="#cb47-10" aria-hidden="true" tabindex="-1"></a>Liste <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">isim=</span>isim,<span class="at">boy=</span>boy,<span class="at">cinsiyet=</span>cinsiyet,<span class="at">beden=</span>beden,<span class="at">kilo=</span>kilo)</span>
 <span id="cb47-11"><a href="#cb47-11" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">isim=</span>isim,<span class="at">boy=</span>boy,<span class="at">cinsiyet=</span>cinsiyet,<span class="at">beden=</span>beden,<span class="at">kilo=</span>kilo)</span>
 <span id="cb47-12"><a href="#cb47-12" aria-hidden="true" tabindex="-1"></a><span class="fu">tapply</span>(Liste<span class="sc">$</span>boy, Liste<span class="sc">$</span>cinsiyet, sort)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>$erkek
 [1] 160 160 162 164 167 169
@@ -705,6 +699,7 @@ $kadin
 </section>
 <section id="by-fonksiyonu" class="level2">
 <h2 class="anchored" data-anchor-id="by-fonksiyonu">by() Fonksiyonu</h2>
+<p>Bir veri setini gruplara ayırıp, her grup için belirli bir işlemi (ör. ortalama alma, toplam hesaplama) ayrı ayrı uygulamak için <code>by()</code> fonksiyonu kullanılır.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="fu">by</span>(df<span class="sc">$</span>boy, Liste<span class="sc">$</span>cinsiyet, sort)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -767,12 +762,15 @@ Liste$cinsiyet: kadin
 <pre><code>function (X, MARGIN, FUN, ..., simplify = TRUE)  </code></pre>
 </div>
 </div>
-<p>apply()` işlevinin argümanları şunlardır</p>
 <ul>
-<li>X` bir dizidir</li>
-<li>MARGIN` hangi kenar boşluklarının “tutulması” gerektiğini gösteren bir tamsayı vektörüdür.</li>
-<li>FUN` uygulanacak bir fonksiyondur</li>
-<li>…<code>,</code>FUN`a aktarılacak diğer argümanlar içindir</li>
+<li>`apply()` işlevinin argümanları şunlardır</li>
+</ul>
+<!-- -->
+<ul>
+<li>`X` bir dizidir</li>
+<li>`MARGIN` hangi kenar boşluklarının “tutulması” gerektiğini gösteren bir tamsayı vektörüdür.</li>
+<li>`FUN` uygulanacak bir fonksiyondur</li>
+<li>…<code>,</code>`FUN`a aktarılacak diğer argümanlar içindir</li>
 </ul>
 <p>Burada 20’ye 10’luk bir normal rastgele sayılar matrisi oluşturuyorum. Daha sonra her bir sütunun ortalamasını hesaplıyorum.</p>
 <div class="cell">
@@ -850,10 +848,7 @@ Max.    55.24910 63.33272 58.88203 59.93019 60.51715</code></pre>
 <li><code>summary()</code> fonksiyonunun “Matris1” nesnesinin her bir satırına uygulanması</li>
 </ul>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb82"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span>(Matris1, <span class="dv">1</span>, summary)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>            [,1]     [,2]     [,3]     [,4]     [,5]     [,6]     [,7]     [,8]
 Min.    45.82396 39.16789 51.63544 40.23309 39.04749 44.81304 39.73637 51.11418
@@ -930,12 +925,12 @@ Max.    58.37998 51.83770 52.66500 53.33901</code></pre>
 <pre><code>function (FUN, ..., MoreArgs = NULL, SIMPLIFY = TRUE, USE.NAMES = TRUE)  </code></pre>
 </div>
 </div>
-<p>mapply()` işlevinin argümanları şunlardır</p>
+<p>`mapply()` işlevinin argümanları şunlardır</p>
 <ul>
-<li>FUN` uygulanacak bir işlevdir</li>
-<li>…` üzerine uygulanacak R nesnelerini içerir</li>
+<li>`FUN` uygulanacak bir işlevdir</li>
+<li>`…` üzerine uygulanacak R nesnelerini içerir</li>
 <li><code>MoreArgs</code> <code>FUN</code> için diğer argümanların bir listesidir.</li>
-<li>SIMPLIFY` sonucun basitleştirilip basitleştirilmeyeceğini belirtir</li>
+<li>`SIMPLIFY` sonucun basitleştirilip basitleştirilmeyeceğini belirtir</li>
 </ul>
 <p><code>mapply()</code> fonksiyonu, <code>lapply()</code> fonksiyonundan farklı bir argüman sırasına sahiptir, çünkü üzerinde yinelenecek nesne yerine uygulanacak fonksiyon önce gelir. Fonksiyonu uyguladığımız R nesneleri <code>...</code> argümanında verilir, çünkü keyfi sayıda R nesnesi üzerinde uygulama yapabiliriz.</p>
 <p>Örneğin, aşağıdakileri yazmak sıkıcıdır</p>
@@ -958,7 +953,7 @@ Max.    58.37998 51.83770 52.66500 53.33901</code></pre>
 </div>
 </div>
 <p>Bu, <code>rep()</code>in ilk argümanına <code>1:4</code> dizisini ve ikinci argümanına <code>4:1</code> dizisini geçirir.</p>
-<p>İşte randon Normal değişkenleri simüle etmek için başka bir örnek.</p>
+<p>İşte random sayıları simüle etmek için başka bir örnek.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb92"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb92-1"><a href="#cb92-1" aria-hidden="true" tabindex="-1"></a>noise <span class="ot">&lt;-</span> <span class="cf">function</span>(n, mean, sd) {</span>
 <span id="cb92-2"><a href="#cb92-2" aria-hidden="true" tabindex="-1"></a>      <span class="fu">rnorm</span>(n, mean, sd)</span>
@@ -968,15 +963,10 @@ Max.    58.37998 51.83770 52.66500 53.33901</code></pre>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] -4.327419  1.768021  1.886192  1.184867  3.169347</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb94"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb94-1"><a href="#cb94-1" aria-hidden="true" tabindex="-1"></a><span class="do">##  sadece 1 sayı kümesini simüle ediyor, 5 değil</span></span>
-<span id="cb94-2"><a href="#cb94-2" aria-hidden="true" tabindex="-1"></a><span class="fu">noise</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="dv">2</span>)    </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] -0.7104655  5.0691634  3.3646210  6.2241624  6.4295708</code></pre>
-</div>
 </div>
 <p>Burada <code>mapply()</code> fonksiyonunu kullanarak <code>1:5</code> dizisini ayrı ayrı <code>noise()</code> fonksiyonuna aktarabiliriz, böylece her biri farklı uzunluk ve ortalamaya sahip 5 rastgele sayı kümesi elde edebiliriz.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb96"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb96-1"><a href="#cb96-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mapply</span>(noise, <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb94"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb94-1"><a href="#cb94-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mapply</span>(noise, <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[[1]]
 [1] 3.242948
@@ -996,9 +986,9 @@ Max.    58.37998 51.83770 52.66500 53.33901</code></pre>
 </div>
 <p>Yukarıdaki <code>mapply()</code> çağrısı aşağıdaki ile aynıdır</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb98"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb98-1"><a href="#cb98-1" aria-hidden="true" tabindex="-1"></a><span class="fu">list</span>(<span class="fu">noise</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>), <span class="fu">noise</span>(<span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>),</span>
-<span id="cb98-2"><a href="#cb98-2" aria-hidden="true" tabindex="-1"></a>     <span class="fu">noise</span>(<span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">2</span>), <span class="fu">noise</span>(<span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">2</span>),</span>
-<span id="cb98-3"><a href="#cb98-3" aria-hidden="true" tabindex="-1"></a>     <span class="fu">noise</span>(<span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb96"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb96-1"><a href="#cb96-1" aria-hidden="true" tabindex="-1"></a><span class="fu">list</span>(<span class="fu">noise</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>), <span class="fu">noise</span>(<span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>),</span>
+<span id="cb96-2"><a href="#cb96-2" aria-hidden="true" tabindex="-1"></a>     <span class="fu">noise</span>(<span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">2</span>), <span class="fu">noise</span>(<span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">2</span>),</span>
+<span id="cb96-3"><a href="#cb96-3" aria-hidden="true" tabindex="-1"></a>     <span class="fu">noise</span>(<span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[[1]]
 [1] 0.3604737
@@ -1022,15 +1012,15 @@ Max.    58.37998 51.83770 52.66500 53.33901</code></pre>
 <p><code>mapply()</code> fonksiyonu bir fonksiyonu otomatik olarak “vektörleştirmek” için kullanılabilir. Bunun anlamı, tipik olarak yalnızca tek argüman alan bir fonksiyonu almak ve vektör argümanları alabilen yeni bir fonksiyon oluşturmak için kullanılabileceğidir.</p>
 <p>İşte bazı veriler, bir ortalama ve bir standart sapma verildiğinde kareler toplamını hesaplayan bir fonksiyon örneği. Formül <span class="math inline">\(\sum_{i=1}^n(x_i-\mu)^2/\sigma^2\)</span> şeklindedir.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb100"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb100-1"><a href="#cb100-1" aria-hidden="true" tabindex="-1"></a>sumsq <span class="ot">&lt;-</span> <span class="cf">function</span>(mu, sigma, x) {</span>
-<span id="cb100-2"><a href="#cb100-2" aria-hidden="true" tabindex="-1"></a>        <span class="fu">sum</span>(((x <span class="sc">-</span> mu) <span class="sc">/</span> sigma)<span class="sc">^</span><span class="dv">2</span>)</span>
-<span id="cb100-3"><a href="#cb100-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb98"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb98-1"><a href="#cb98-1" aria-hidden="true" tabindex="-1"></a>sumsq <span class="ot">&lt;-</span> <span class="cf">function</span>(mu, sigma, x) {</span>
+<span id="cb98-2"><a href="#cb98-2" aria-hidden="true" tabindex="-1"></a>        <span class="fu">sum</span>(((x <span class="sc">-</span> mu) <span class="sc">/</span> sigma)<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb98-3"><a href="#cb98-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Bu fonksiyon bir ortalama <code>mu</code>, bir standart sapma <code>sigma</code> ve bir vektör <code>x</code> içinde bazı veriler alır.</p>
 <p>Birçok istatistiksel uygulamada, en uygun <code>mu</code> ve <code>sigma</code> değerlerini bulmak için kareler toplamını minimize etmek isteriz. Bunu yapmadan önce, birçok farklı <code>mu</code> veya <code>sigma</code> değeri için fonksiyonu değerlendirmek veya çizmek isteyebiliriz. Ancak, bir <code>mu</code> veya <code>sigma</code> vektörü geçmek bu fonksiyonla çalışmayacaktır çünkü vektörleştirilmemiştir.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb101"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb101-1"><a href="#cb101-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>)       <span class="do">## veri üret</span></span>
-<span id="cb101-2"><a href="#cb101-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sumsq</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, x)  <span class="do">## İstediğimiz bu değil</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb99"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb99-1"><a href="#cb99-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>)       <span class="do">## veri üret</span></span>
+<span id="cb99-2"><a href="#cb99-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sumsq</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, x)  <span class="do">## İstediğimiz bu değil</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 135.6538</code></pre>
 </div>
@@ -1038,7 +1028,7 @@ Max.    58.37998 51.83770 52.66500 53.33901</code></pre>
 <p><code>sumsq()</code> çağrısının 10 değer yerine yalnızca bir değer ürettiğine dikkat edin.</p>
 <p>Ancak, yapmak istediğimizi <code>mapply()</code> kullanarak yapabiliriz.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb103"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb103-1"><a href="#cb103-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mapply</span>(sumsq, <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">MoreArgs =</span> <span class="fu">list</span>(<span class="at">x =</span> x))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb101"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb101-1"><a href="#cb101-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mapply</span>(sumsq, <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">MoreArgs =</span> <span class="fu">list</span>(<span class="at">x =</span> x))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] 234.7801 142.9820 123.2306 115.3890 111.3348 108.9033 107.2993 106.1690
  [9] 105.3329 104.6911</code></pre>
@@ -1046,8 +1036,8 @@ Max.    58.37998 51.83770 52.66500 53.33901</code></pre>
 </div>
 <p>Hatta R’de <code>Vectorize()</code> adında, fonksiyonunuzun vektörleştirilmiş bir versiyonunu otomatik olarak oluşturabilen bir fonksiyon bile vardır. Böylece aşağıdaki gibi tamamen vektörleştirilmiş bir <code>vsumsq()</code> fonksiyonu oluşturabiliriz.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb105"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb105-1"><a href="#cb105-1" aria-hidden="true" tabindex="-1"></a>vsumsq <span class="ot">&lt;-</span> <span class="fu">Vectorize</span>(sumsq, <span class="fu">c</span>(<span class="st">"mu"</span>, <span class="st">"sigma"</span>))</span>
-<span id="cb105-2"><a href="#cb105-2" aria-hidden="true" tabindex="-1"></a><span class="fu">vsumsq</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb103"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb103-1"><a href="#cb103-1" aria-hidden="true" tabindex="-1"></a>vsumsq <span class="ot">&lt;-</span> <span class="fu">Vectorize</span>(sumsq, <span class="fu">c</span>(<span class="st">"mu"</span>, <span class="st">"sigma"</span>))</span>
+<span id="cb103-2"><a href="#cb103-2" aria-hidden="true" tabindex="-1"></a><span class="fu">vsumsq</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] 234.7801 142.9820 123.2306 115.3890 111.3348 108.9033 107.2993 106.1690
  [9] 105.3329 104.6911</code></pre>
