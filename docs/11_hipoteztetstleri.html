@@ -185,7 +185,7 @@ window.Quarto = {
   <li><a href="#örnek-1-bebeklerin-ağırlığı" id="toc-örnek-1-bebeklerin-ağırlığı" class="nav-link" data-scroll-target="#örnek-1-bebeklerin-ağırlığı">Örnek 1: Bebeklerin Ağırlığı</a></li>
   <li><a href="#örnek-2-uygulama-etkisi" id="toc-örnek-2-uygulama-etkisi" class="nav-link" data-scroll-target="#örnek-2-uygulama-etkisi">Örnek 2: Uygulama Etkisi</a></li>
   </ul></li>
-  <li><a href="#z-testi-ve-t-testi" id="toc-z-testi-ve-t-testi" class="nav-link" data-scroll-target="#z-testi-ve-t-testi">6. z Testi ve t Testi</a>
+  <li><a href="#z-testi-ve-t-testi" id="toc-z-testi-ve-t-testi" class="nav-link" data-scroll-target="#z-testi-ve-t-testi">z Testi ve t Testi</a>
   <ul class="collapse">
   <li><a href="#görselleştirme" id="toc-görselleştirme" class="nav-link" data-scroll-target="#görselleştirme">Görselleştirme</a></li>
   <li><a href="#t-testleri" id="toc-t-testleri" class="nav-link" data-scroll-target="#t-testleri">t-testleri</a></li>
@@ -232,8 +232,8 @@ window.Quarto = {
 <section id="hipotezler" class="level3">
 <h3 class="anchored" data-anchor-id="hipotezler">Hipotezler</h3>
 <ul>
-<li><span class="math inline">\(H_0: \overline{X}_{temas}=13\)</span> kg (Temas edilen bebekler için ağırlık ortalaması 13’tür.)</li>
-<li><span class="math inline">\(H_1: \overline{X}_{temas} \neq 13\)</span> kg (Temas edilen bebekler için ağırlık ortalaması 13 değildir.)</li>
+<li><span class="math inline">\(H_0: \mu_{temas}=13\)</span> kg (Temas edilen bebekler için ağırlık ortalaması 13’tür.)</li>
+<li><span class="math inline">\(H_1: \mu \neq 13\)</span> kg (Temas edilen bebekler için ağırlık ortalaması 13 değildir.)</li>
 </ul>
 <p><strong>Alfa düzeyi (<span class="math inline">\(\alpha\)</span>)</strong>, sıfır hipotezinin doğru olduğu durumlarda düşük olasılıklı örneklemleri belirtmek için kullanılan bir olasılık değeridir. Yaygın olarak kullanılan alfa değerleri şunlardır:</p>
 <ul>
@@ -254,7 +254,7 @@ window.Quarto = {
 <section id="örnek-1-bebeklerin-ağırlığı" class="level3">
 <h3 class="anchored" data-anchor-id="örnek-1-bebeklerin-ağırlığı">Örnek 1: Bebeklerin Ağırlığı</h3>
 <ul>
-<li>2 yaşındaki bebeklerin ağırlıklarının <span class="math inline">\(\mu=13\)</span> kg ve <span class="math inline">\(\sigma=4\)</span> kg olduğu bilinmektedir. Araştırmacılar <span class="math inline">\(n=4\)</span> olan yeni doğmuş bebeklerden bir örneklem seçmiştir. Bebekler 2 yaşına geldiğinde ağırlıkları ölçülmüş ve ortalama <span class="math inline">\(\bar{X}=16.5\)</span> kg bulunmuştur.</li>
+<li>2 yaşındaki bebeklerin ağırlıklarının <span class="math inline">\(\mu=13\)</span> kg ve <span class="math inline">\(\sigma=4\)</span> kg olduğu bilinmektedir. Araştırmacılar <span class="math inline">\(n=16\)</span> olan yeni doğmuş bebeklerden bir örneklem seçmiştir. Bebekler 2 yaşına geldiğinde ağırlıkları ölçülmüş ve ortalama <span class="math inline">\(\bar{X}=16.5\)</span> kg bulunmuştur.</li>
 </ul>
 <section id="hipotezler-1" class="level4">
 <h4 class="anchored" data-anchor-id="hipotezler-1">Hipotezler</h4>
@@ -270,12 +270,12 @@ window.Quarto = {
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>sd <span class="ot">&lt;-</span> <span class="dv">4</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>M <span class="ot">&lt;-</span> <span class="dv">13</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>X <span class="ot">&lt;-</span> <span class="fl">16.5</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">4</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">16</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>sd_hata <span class="ot">&lt;-</span> sd <span class="sc">/</span> <span class="fu">sqrt</span>(n)</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> (X <span class="sc">-</span> M) <span class="sc">/</span> sd_hata</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>z</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 1.75</code></pre>
+<pre><code>[1] 3.5</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qnorm</span>(<span class="fu">c</span>(<span class="fl">0.025</span>, <span class="fl">0.975</span>)) <span class="co"># Kritik değerler</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -335,7 +335,7 @@ window.Quarto = {
 </section>
 </section>
 <section id="z-testi-ve-t-testi" class="level1">
-<h1>6. z Testi ve t Testi</h1>
+<h1>z Testi ve t Testi</h1>
 <p>Bir örneklemin, belirli bir popülasyona ait olup olmadığını test etmek için kullanılan bir yöntemdir. z testi için:</p>
 <ul>
 <li>Veri en az eşit aralık ölçeğinde olmalıdır.</li>
@@ -344,7 +344,7 @@ window.Quarto = {
 </ul>
 <p>t testi, popülasyonun standart sapması bilinmediğinde örneklem standart sapmasının kullanıldığı bir testtir. 1908’de William Gosset tarafından geliştirilmiştir.</p>
 <ul>
-<li>T dağılımının şekli serbestlik derecesine bağlıdır.</li>
+<li>tdağılımının şekli serbestlik derecesine bağlıdır.</li>
 <li>Serbestlik derecesi arttıkça dağılım normalleşir.</li>
 </ul>
 <div class="cell">
@@ -383,7 +383,7 @@ mean in group 1 mean in group 2
 <p>Ortalamaları 80 olan bir evrenden seçilen örneklemleri ele alalım. Seçilen bir örneklem ortalaması 80’e yakın bir değer olabilir, 90 olabilir, hatta nadir de olsa 120 veya 130 gibi bir değere de ulaşabilir. Kırmızı dağılımda, 95. yüzdelik dilime dikey bir çizgi çekelim. Bu çizgi, tek yönlü t testi için sınır değeri temsil eder. Eğer bu çizginin sağında bir değer elde edilirse, <span class="math inline">\(H_0\)</span> reddedilir. Ancak, seçilen örneklemlerin %5’inde, şans eseri bu sınır değerden daha büyük bir değer elde edilebilir. Bu durum, aynı zamanda I. tip hata olarak adlandırılır.</p>
 <p>I. tip hata, doğru olan <span class="math inline">\(H_0\)</span> hipotezini reddetmek anlamına gelir.</p>
 <ul>
-<li>Dogru olan Ho hipotezini reddetme</li>
+<li>Doğru olan <span class="math inline">\(H_0\)</span> hipotezini reddetme</li>
 </ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># TEK KUYRUK </span><span class="al">TEST</span></span>
@@ -400,30 +400,28 @@ mean in group 1 mean in group 2
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># eger testi yonsuz yapacak olursak </span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 2.5 ve 97.5 luk yuzdeliklere cektigim cizgiler</span></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="co"># kritik bolgenin alanini belirleyecektir. </span></span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="co"># yani secilen orneklemlerin %5'i</span></span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 60'dan kucuk ve 100'den buyuk bolgeye duserse</span></span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="co"># ho reddedilecektir. </span></span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="co"># bu bolge ayni zamanda I. tip hata bolgesidir.</span></span>
-<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>x<span class="ot">=</span><span class="fu">seq</span>(<span class="dv">50</span>,<span class="dv">140</span>,<span class="at">length=</span><span class="dv">200</span>)</span>
-<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>y1<span class="ot">=</span><span class="fu">dnorm</span>(x,<span class="dv">80</span>, <span class="dv">10</span>)</span>
-<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,y1,<span class="at">type=</span><span class="st">'l'</span>,<span class="at">lwd=</span><span class="dv">2</span>,<span class="at">col=</span><span class="st">'red'</span>)</span>
-<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>y2<span class="ot">=</span><span class="fu">dnorm</span>(x,<span class="dv">110</span>, <span class="dv">10</span>)</span>
-<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(x,y2,<span class="at">type=</span><span class="st">'l'</span>,<span class="at">lwd=</span><span class="dv">2</span>,<span class="at">col=</span><span class="st">'blue'</span>)</span>
-<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v=</span><span class="fu">qnorm</span>(<span class="fl">0.025</span>,<span class="dv">80</span>,<span class="dv">10</span>))</span>
-<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v=</span><span class="fu">qnorm</span>(<span class="fl">0.975</span>,<span class="dv">80</span>,<span class="dv">10</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Eğer testi yönsüz yapacak olursak, %2.5 ve %97.5 yüzdeliklerine çekilen çizgiler kritik bölgenin alanını belirleyecektir. Yani, seçilen örneklemlerin %5’i 60’tan küçük veya 100’den büyük bölgeye düşerse, <span class="math inline">\(H_0\)</span> reddedilecektir. Bu bölge aynı zamanda I. tip hata bölgesidir.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>x<span class="ot">=</span><span class="fu">seq</span>(<span class="dv">50</span>,<span class="dv">140</span>,<span class="at">length=</span><span class="dv">200</span>)</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>y1<span class="ot">=</span><span class="fu">dnorm</span>(x,<span class="dv">80</span>, <span class="dv">10</span>)</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,y1,<span class="at">type=</span><span class="st">'l'</span>,<span class="at">lwd=</span><span class="dv">2</span>,<span class="at">col=</span><span class="st">'red'</span>)</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>y2<span class="ot">=</span><span class="fu">dnorm</span>(x,<span class="dv">110</span>, <span class="dv">10</span>)</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(x,y2,<span class="at">type=</span><span class="st">'l'</span>,<span class="at">lwd=</span><span class="dv">2</span>,<span class="at">col=</span><span class="st">'blue'</span>)</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v=</span><span class="fu">qnorm</span>(<span class="fl">0.025</span>,<span class="dv">80</span>,<span class="dv">10</span>))</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v=</span><span class="fu">qnorm</span>(<span class="fl">0.975</span>,<span class="dv">80</span>,<span class="dv">10</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="11_hipoteztetstleri_files/figure-html/unnamed-chunk-6-2.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="11_hipoteztetstleri_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
-<p>ALFA bolgesini tarama</p>
-<p>p degeri alfaya esit ya da daha kucuk ise ho reddeilir.</p>
+<p>Alfa bölgesini tarama: Eğer p-değeri, alfa değerine eşit ya da daha küçükse, <span class="math inline">\(H_0\)</span> reddedilir.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>x<span class="ot">=</span><span class="fu">seq</span>(<span class="dv">50</span>,<span class="dv">140</span>,<span class="at">length=</span><span class="dv">200</span>)</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>y1<span class="ot">=</span><span class="fu">dnorm</span>(x,<span class="dv">80</span>, <span class="dv">10</span>)</span>
@@ -439,13 +437,13 @@ mean in group 1 mean in group 2
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="11_hipoteztetstleri_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="11_hipoteztetstleri_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
-<p>mavi dagilim dogru ise ve secilen yuksek ortalamalari dagilimlarla kirmizi ho hipotezi rededilir.</p>
-<p>Alternatif hipotez dogru ise yanlis olan Ho hiptezini red edememe durumu</p>
+<p>Mavi dağılım doğru ise ve seçilen yüksek ortalamalar ile <span class="math inline">\(H_0\)</span> hipotezi rededilir.</p>
+<p>Alternatif hipotez doğru ise yanlış olan <span class="math inline">\(H_0\)</span> hiptezini red edememe durumu</p>
 <ul>
 <li><ol start="2" type="I">
 <li>tip hata (beta)</li>
@@ -466,7 +464,7 @@ mean in group 1 mean in group 2
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="11_hipoteztetstleri_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="11_hipoteztetstleri_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -490,7 +488,7 @@ mean in group 1 mean in group 2
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="11_hipoteztetstleri_files/figure-html/unnamed-chunk-8-2.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="11_hipoteztetstleri_files/figure-html/unnamed-chunk-9-2.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -539,9 +537,18 @@ mean of x
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>t_test_table <span class="ot">&lt;-</span> <span class="fu">data.frame</span>( İ<span class="at">statistik =</span> <span class="fu">c</span>(<span class="st">"t-değeri"</span>, <span class="st">"Serbestlik Derecesi"</span>, <span class="st">"p-değeri"</span>, <span class="st">"Güven Aralığı"</span>, <span class="st">"Örneklem Ortalaması"</span>), <span class="at">Deger =</span> <span class="fu">c</span>( <span class="fu">round</span>(t_test_result<span class="sc">$</span>statistic, <span class="dv">3</span>), t_test_result<span class="sc">$</span>parameter, <span class="fu">round</span>(t_test_result<span class="sc">$</span>p.value, <span class="dv">4</span>), <span class="fu">paste</span>(<span class="fu">round</span>(t_test_result<span class="sc">$</span>conf.int, <span class="dv">2</span>), <span class="at">collapse =</span> <span class="st">" - "</span>), <span class="fu">round</span>(t_test_result<span class="sc">$</span>estimate, <span class="dv">2</span>) ) )</span>
-<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(t_test_table, <span class="at">caption =</span> <span class="st">"Tek Örneklem T-testi Sonuçları"</span>) <span class="sc">%&gt;%</span> <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">"striped"</span>, <span class="st">"hover"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>t_test_table <span class="ot">&lt;-</span> <span class="fu">data.frame</span>( İ<span class="at">statistik =</span> <span class="fu">c</span>(<span class="st">"t-değeri"</span>, </span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>              <span class="st">"Serbestlik Derecesi"</span>, <span class="st">"p-değeri"</span>, <span class="st">"</span></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a><span class="st">              Güven Aralığı"</span>, <span class="st">"Örneklem Ortalaması"</span>), </span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>                <span class="at">Deger =</span> <span class="fu">c</span>( <span class="fu">round</span>(t_test_result<span class="sc">$</span>statistic, <span class="dv">3</span>),</span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>                t_test_result<span class="sc">$</span>parameter, </span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>                <span class="fu">round</span>(t_test_result<span class="sc">$</span>p.value, <span class="dv">4</span>),</span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>                <span class="fu">paste</span>(<span class="fu">round</span>(t_test_result<span class="sc">$</span>conf.int, <span class="dv">2</span>),</span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a>                   <span class="at">collapse =</span> <span class="st">" - "</span>), </span>
+<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">round</span>(t_test_result<span class="sc">$</span>estimate, <span class="dv">2</span>) ) )</span>
+<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(t_test_table, <span class="at">caption =</span> <span class="st">"Tek Örneklem T-testi Sonuçları"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">"striped"</span>, <span class="st">"hover"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <table class="table table-striped table-hover table-sm small" data-quarto-postprocess="true">
@@ -623,17 +630,20 @@ mean of x mean of y
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: false</span></span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>data_long <span class="ot">&lt;-</span> <span class="fu">data.frame</span>( <span class="at">value =</span> <span class="fu">c</span>(group1, group2), <span class="at">group =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Grup 1"</span>, <span class="st">"Grup 2"</span>), <span class="at">each =</span> <span class="dv">50</span>) )</span>
-<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data_long, <span class="fu">aes</span>(<span class="at">x =</span> group, <span class="at">y =</span> value, <span class="at">fill =</span> group)) <span class="sc">+</span> </span>
-<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span> </span>
-<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">width =</span> <span class="fl">0.2</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span> <span class="fu">theme_minimal</span>() <span class="sc">+</span> </span>
-<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Grup 1 ve Grup 2 Karşılaştırması"</span>, <span class="at">x =</span> <span class="st">"Gruplar"</span>, <span class="at">y =</span> <span class="st">"Değerler"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>data_long <span class="ot">&lt;-</span> <span class="fu">data.frame</span>( <span class="at">value =</span> <span class="fu">c</span>(group1, group2), </span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>                         <span class="at">group =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Grup 1"</span>, <span class="st">"Grup 2"</span>), </span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">each =</span> <span class="dv">50</span>) )</span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data_long, <span class="fu">aes</span>(<span class="at">x =</span> group, <span class="at">y =</span> value, <span class="at">fill =</span> group)) <span class="sc">+</span> </span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span> </span>
+<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">width =</span> <span class="fl">0.2</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span> </span>
+<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span> </span>
+<span id="cb33-12"><a href="#cb33-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Grup 1 ve Grup 2 Karşılaştırması"</span>, <span class="at">x =</span> <span class="st">"Gruplar"</span>, <span class="at">y =</span> <span class="st">"Değerler"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="11_hipoteztetstleri_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="11_hipoteztetstleri_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -644,14 +654,9 @@ mean of x mean of y
 <p>Bağımlı örneklem t-testi, aynı bireylerin iki farklı durumda ölçülen değerlerini karşılaştırır.</p>
 <p>Örnek veri oluşturma</p>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: false</span></span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">789</span>)</span>
-<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>before <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">30</span>, <span class="at">mean =</span> <span class="dv">70</span>, <span class="at">sd =</span> <span class="dv">10</span>) </span>
-<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>after <span class="ot">&lt;-</span> before <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">30</span>, <span class="at">mean =</span> <span class="dv">5</span>, <span class="at">sd =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">789</span>)</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>before <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">30</span>, <span class="at">mean =</span> <span class="dv">70</span>, <span class="at">sd =</span> <span class="dv">10</span>) </span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>after <span class="ot">&lt;-</span> before <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">30</span>, <span class="at">mean =</span> <span class="dv">5</span>, <span class="at">sd =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>t-testi uygulama</p>
 <div class="cell">
@@ -689,17 +694,22 @@ mean difference
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: false</span></span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>paired_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>( <span class="at">time =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Önce"</span>, <span class="st">"Sonra"</span>), <span class="at">each =</span> <span class="dv">30</span>), <span class="at">value =</span> <span class="fu">c</span>(before, after), <span class="at">subject =</span> <span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">30</span>, <span class="dv">2</span>) )</span>
-<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(paired_data, <span class="fu">aes</span>(<span class="at">x =</span> time, <span class="at">y =</span> value, <span class="at">group =</span> subject)) <span class="sc">+</span> </span>
-<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">alpha =</span> <span class="fl">0.3</span>) <span class="sc">+</span> </span>
-<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> time), <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span> <span class="fu">theme_minimal</span>() <span class="sc">+</span> </span>
-<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Önce ve Sonra Ölçümleri"</span>, <span class="at">x =</span> <span class="st">"Zaman"</span>, <span class="at">y =</span> <span class="st">"Değerler"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>paired_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>( <span class="at">time =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Önce"</span>, <span class="st">"Sonra"</span>), </span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>                            <span class="at">each =</span> <span class="dv">30</span>), </span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>                           <span class="at">value =</span> <span class="fu">c</span>(before, after), </span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>                           <span class="at">subject =</span> <span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">30</span>, <span class="dv">2</span>) )</span>
+<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(paired_data, <span class="fu">aes</span>(<span class="at">x =</span> time, <span class="at">y =</span> value, <span class="at">group =</span> subject)) <span class="sc">+</span> </span>
+<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">alpha =</span> <span class="fl">0.3</span>) <span class="sc">+</span> </span>
+<span id="cb38-10"><a href="#cb38-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> time), <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span> </span>
+<span id="cb38-11"><a href="#cb38-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span> </span>
+<span id="cb38-12"><a href="#cb38-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Önce ve Sonra Ölçümleri"</span>,</span>
+<span id="cb38-13"><a href="#cb38-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Zaman"</span>, <span class="at">y =</span> <span class="st">"Değerler"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="11_hipoteztetstleri_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="11_hipoteztetstleri_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -718,13 +728,8 @@ mean difference
 <h2 class="anchored" data-anchor-id="wilcoxon-işaretli-sıra-testi">Wilcoxon İşaretli Sıra Testi</h2>
 <p>Örnek veri oluşturma</p>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: false</span></span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>) </span>
-<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>data_np <span class="ot">&lt;-</span> <span class="fu">rexp</span>(<span class="dv">50</span>, <span class="at">rate =</span> <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>) </span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>data_np <span class="ot">&lt;-</span> <span class="fu">rexp</span>(<span class="dv">50</span>, <span class="at">rate =</span> <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Wilcoxon işaretli sıra testi</p>
 <div class="cell">
@@ -777,17 +782,22 @@ alternative hypothesis: true location shift is not equal to 0</code></pre>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: false</span></span>
 <span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>np_data_long <span class="ot">&lt;-</span> <span class="fu">data.frame</span>( <span class="at">value =</span> <span class="fu">c</span>(group1_np, group2_np), <span class="at">group =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Grup 1"</span>, <span class="st">"Grup 2"</span>), <span class="at">each =</span> <span class="dv">40</span>) )</span>
-<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(np_data_long, <span class="fu">aes</span>(<span class="at">x =</span> group, <span class="at">y =</span> value, <span class="at">fill =</span> group)) <span class="sc">+</span> </span>
-<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">trim =</span> <span class="cn">FALSE</span>) <span class="sc">+</span> </span>
-<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">width =</span> <span class="fl">0.1</span>, <span class="at">fill =</span> <span class="st">"white"</span>) <span class="sc">+</span> <span class="fu">theme_minimal</span>() <span class="sc">+</span> </span>
-<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Grup 1 ve Grup 2 Karşılaştırması (Non-parametrik)"</span>, <span class="at">x =</span> <span class="st">"Gruplar"</span>, <span class="at">y =</span> <span class="st">"Değerler"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>np_data_long <span class="ot">&lt;-</span> <span class="fu">data.frame</span>( <span class="at">value =</span> <span class="fu">c</span>(group1_np, group2_np), </span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>                    <span class="at">group =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Grup 1"</span>, <span class="st">"Grup 2"</span>), </span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a>                                <span class="at">each =</span> <span class="dv">40</span>) )</span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(np_data_long, <span class="fu">aes</span>(<span class="at">x =</span> group, <span class="at">y =</span> value, </span>
+<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a>                         <span class="at">fill =</span> group)) <span class="sc">+</span> </span>
+<span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">trim =</span> <span class="cn">FALSE</span>) <span class="sc">+</span> </span>
+<span id="cb47-10"><a href="#cb47-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">width =</span> <span class="fl">0.1</span>, <span class="at">fill =</span> <span class="st">"white"</span>) <span class="sc">+</span> </span>
+<span id="cb47-11"><a href="#cb47-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span> </span>
+<span id="cb47-12"><a href="#cb47-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Grup 1 ve Grup 2 Karşılaştırması</span></span>
+<span id="cb47-13"><a href="#cb47-13" aria-hidden="true" tabindex="-1"></a><span class="st">       (Non-parametrik)"</span>, <span class="at">x =</span> <span class="st">"Gruplar"</span>, <span class="at">y =</span> <span class="st">"Değerler"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="11_hipoteztetstleri_files/figure-html/unnamed-chunk-27-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="11_hipoteztetstleri_files/figure-html/unnamed-chunk-28-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
